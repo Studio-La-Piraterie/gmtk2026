@@ -9,14 +9,17 @@ extends Control
 @onready var description: Label = %Description
 @onready var wave_form: Label = %WaveForm
 @onready var type: ColorRect = %Type
+@onready var get_new_encounter_btn: Button = %GetNewEncounter
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_encounter(encounter)
+	get_new_encounter_btn.pressed.connect(
+		func()->void:
+			_set_encounter(EncounterDispenser.get_new_encounter())
+			)
 
 func _set_encounter(new_encounter : Encounter) -> void:
-	print("New encounter loaded")
-
 	if not is_node_ready() :
 		return
 	
@@ -24,7 +27,6 @@ func _set_encounter(new_encounter : Encounter) -> void:
 		new_encounter = Encounter.new()
 	
 	encounter = new_encounter
-	print("New encounter loaded")
 	lucarne.texture = encounter.sprite
 	reponse.text = "Reponse:" + encounter.response
 	description.text = "Description:" + encounter.description
