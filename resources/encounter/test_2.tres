@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://r8gtq5p676uk"]
+
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_l0ip7"]
+[ext_resource type="Texture2D" uid="uid://dmq5ywv85ent0" path="res://assets/images/dashboard/dashboard.png" id="2_xokmd"]
+
+[resource]
+script = ExtResource("1_l0ip7")
+type = 1
+sprite = ExtResource("2_xokmd")
+description = "Oh mon dieu, un WIP"
+wave_form = 10
+response = "Ca ira mieux d'ici demain"
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

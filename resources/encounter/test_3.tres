@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://btxfmhng7ue6e"]
+
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_7fnh8"]
+[ext_resource type="Texture2D" uid="uid://cxuygyj5fbrbc" path="res://assets/images/dashboard/tableau_de_bord_preview.png" id="2_103oj"]
+
+[resource]
+script = ExtResource("1_7fnh8")
+type = 2
+sprite = ExtResource("2_103oj")
+description = "C'est ca qu'on veut babyyyy"
+wave_form = 3
+response = "Sooooon, soon le joli UI"
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
