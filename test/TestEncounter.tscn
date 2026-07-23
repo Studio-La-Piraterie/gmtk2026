@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dh52yy2jsbixw"]
+
+[ext_resource type="Script" uid="uid://dff77jybakssl" path="res://test/test_encounter.gd" id="1_aav0n"]
+[ext_resource type="Resource" uid="uid://cxjlxsec54m5t" path="res://resources/encounter/test_1.tres" id="2_51502"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="3_14xuf"]
+
+[node name="TestEncounter" type="Control" unique_id=1418125575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aav0n")
+encounter = ExtResource("2_51502")
+
+[node name="Lucarne" type="TextureRect" parent="." unique_id=1404737202]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 731.0
+offset_top = 106.0
+offset_right = 799.0757
+offset_bottom = 146.0
+scale = Vector2(4.9504595, 3.9707043)
+texture = ExtResource("3_14xuf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Reponse" type="Label" parent="." unique_id=913215367]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 384.0
+offset_right = 258.0
+offset_bottom = 407.0
+text = "Reponse:Tout va bien c'est juste Godot"
+
+[node name="Description" type="Label" parent="." unique_id=1775091411]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 748.0
+offset_top = 322.0
+offset_right = 837.0
+offset_bottom = 345.0
+text = "Description:Une tete familiere"
+
+[node name="WaveForm" type="Label" parent="." unique_id=252230742]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 746.0
+offset_top = 358.0
+offset_right = 843.0
+offset_bottom = 381.0
+text = "Wave Form:5"
+
+[node name="Type" type="ColorRect" parent="." unique_id=128574328]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 843.0
+offset_top = 416.0
+offset_right = 978.0
+offset_bottom = 557.0
+color = Color(0, 1, 0, 1)

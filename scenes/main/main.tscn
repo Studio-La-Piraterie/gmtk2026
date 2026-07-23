@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqw2ch4jr4drk"]
 
-[ext_resource type="Texture2D" uid="uid://cbhhqk1xaynd1" path="res://assets/images/dashboard/dashboard.png" id="1_iuonh"]
+[ext_resource type="Texture2D" uid="uid://dmq5ywv85ent0" path="res://assets/images/dashboard/dashboard.png" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://2sd8pks4jtr5" path="res://scenes/main/scripts/main.gd" id="1_k2fmo"]
 [ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="2_k2fmo"]
 
