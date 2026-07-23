@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cqw2ch4jr4drk"]
+
+[ext_resource type="Texture2D" uid="uid://cbhhqk1xaynd1" path="res://assets/images/dashboard/dashboard.png" id="1_iuonh"]
+[ext_resource type="Script" uid="uid://2sd8pks4jtr5" path="res://scenes/main/scripts/main.gd" id="1_k2fmo"]
+[ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="2_k2fmo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5mjv"]
+font = ExtResource("2_k2fmo")
+font_size = 130
+font_color = Color(0.8509804, 0.0627451, 0.03137255, 1)
+
+[node name="Main" type="Node2D" unique_id=1975034830]
+script = ExtResource("1_k2fmo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=142647372]
+offset = Vector2(13.35, 0)
+scale = Vector2(0.43, 0.43)
+transform = Transform2D(0.43, 0, 0, 0.43, 13.35, 0)
+
+[node name="DashboardBG" type="TextureRect" parent="CanvasLayer" unique_id=1621182959]
+anchors_preset = -1
+anchor_right = 2.265
+anchor_bottom = 2.3660002
+offset_right = -0.2800293
+offset_bottom = -0.16809082
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iuonh")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=138150817]
+offset_left = 19.0
+offset_top = 20.0
+offset_right = 375.0
+offset_bottom = 163.0
+color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+
+[node name="MainCountdownLabel" type="Label" parent="CanvasLayer" unique_id=2037397303]
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.064
+anchor_right = 0.325
+anchor_bottom = 0.243
+offset_left = -0.82400036
+offset_top = -1.2000008
+offset_right = -0.46401978
+offset_bottom = 3.4079895
+text = "03:00"
+label_settings = SubResource("LabelSettings_x5mjv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainCountdown" type="Timer" parent="CanvasLayer" unique_id=827509260]
+wait_time = 180.0
