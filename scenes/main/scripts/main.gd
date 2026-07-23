@@ -1,8 +1,7 @@
 extends Node2D
 
-
-@onready var main_countdown_label = $CanvasLayer/MainCountdownLabel
-@onready var main_countdown = $CanvasLayer/MainCountdown
+@onready var main_countdown_label: Label = $MainCountdownLabel
+@onready var main_countdown: Timer = $MainCountdown
 
 
 func _ready():

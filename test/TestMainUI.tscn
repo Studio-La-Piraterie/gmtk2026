@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://geafgyj5qtwa"]
+
+[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main_game.gd" id="1_k7jdy"]
+[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_dl7fd"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="2_ppixs"]
+[ext_resource type="Resource" uid="uid://cxjlxsec54m5t" path="res://resources/encounter/test_1.tres" id="3_4wgxf"]
+[ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_hlc8n"]
+[ext_resource type="Resource" uid="uid://r8gtq5p676uk" path="res://resources/encounter/test_2.tres" id="4_kejyu"]
+
+[node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("dismiss_btn", "kill_btn", "main_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7jdy")
+dismiss_btn = NodePath("MainUI/DismissBtn")
+kill_btn = NodePath("MainUI/KillBtn")
+main_ui = NodePath("MainUI")
+timer_before_new_encounter = NodePath("EncounterCooldown")
+encounter_countdown = NodePath("EncounterCountDown")
+main_countdown = NodePath("MainCountdown")
+encounter_stack = Array[ExtResource("2_ppixs")]([ExtResource("3_4wgxf"), ExtResource("4_kejyu"), ExtResource("3_4wgxf")])
+
+[node name="MainUI" type="Control" parent="." unique_id=1726214704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_dl7fd")
+
+[node name="Lucarne" type="TextureRect" parent="MainUI" unique_id=1892170811]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 731.0
+offset_top = 106.0
+offset_right = 799.0757
+offset_bottom = 146.0
+scale = Vector2(4.9504595, 3.9707043)
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Reponse" type="Label" parent="MainUI" unique_id=1899668707]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 384.0
+offset_right = 258.0
+offset_bottom = 407.0
+text = "Reponse:"
+
+[node name="Description" type="Label" parent="MainUI" unique_id=58379102]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 748.0
+offset_top = 322.0
+offset_right = 842.0
+offset_bottom = 345.0
+text = "Description:"
+
+[node name="WaveForm" type="Label" parent="MainUI" unique_id=825077865]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 746.0
+offset_top = 358.0
+offset_right = 847.0
+offset_bottom = 381.0
+text = "Wave Form:0"
+
+[node name="Type" type="ColorRect" parent="MainUI" unique_id=1803267753]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 843.0
+offset_top = 416.0
+offset_right = 978.0
+offset_bottom = 557.0
+color = Color(0, 1, 0, 1)
+
+[node name="DismissBtn" type="Button" parent="MainUI" unique_id=564313307]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 163.0
+offset_top = 89.0
+offset_right = 231.0
+offset_bottom = 120.0
+text = "Dismiss"
+
+[node name="KillBtn" type="Button" parent="MainUI" unique_id=469252224]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 301.0
+offset_top = 81.0
+offset_right = 341.0
+offset_bottom = 112.0
+text = "Kill"
+
+[node name="MainCountdownLabel" type="Label" parent="MainUI" unique_id=1975338331]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 746.0
+offset_top = 55.0
+offset_right = 1128.0
+offset_bottom = 186.0
+text = "30:00"
+label_settings = ExtResource("3_hlc8n")
+
+[node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
+wait_time = 300.0
+
+[node name="EncounterCountDown" type="Timer" parent="." unique_id=852666925]
+wait_time = 10.0
+
+[node name="EncounterCooldown" type="Timer" parent="." unique_id=455341062]
+wait_time = 5.0
