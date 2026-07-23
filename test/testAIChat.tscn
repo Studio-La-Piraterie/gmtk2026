@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cf2oaydi08p0d"]
+
+[ext_resource type="Script" uid="uid://vuf4exvo7so0" path="res://scenes/main/scripts/AI/test_ai_terminal.gd" id="1_x4jxm"]
+[ext_resource type="Resource" uid="uid://ydbvxkncbigh" path="res://resources/AI/test_ai.tres" id="2_2t2dg"]
+
+[sub_resource type="Gradient" id="Gradient_r225j"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xums1"]
+gradient = SubResource("Gradient_r225j")
+
+[node name="TestAiChat" type="Control" unique_id=1316176673]
+layout_mode = 3
+anchor_right = 0.22500001
+anchor_bottom = 0.24400002
+offset_right = -259.2
+offset_bottom = -158.11201
+script = ExtResource("1_x4jxm")
+AI_neutral = ExtResource("2_2t2dg")
+
+[node name="AIFace" type="TextureRect" parent="." unique_id=820117037]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 163.0
+offset_right = 350.0
+offset_bottom = 463.0
+texture = SubResource("GradientTexture2D_xums1")
+
+[node name="AIText" type="RichTextLabel" parent="." unique_id=1427265588]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 25.0
+offset_right = 1151.0
+offset_bottom = 620.0
+text = "Placeholder text"
