@@ -20,6 +20,9 @@ func set_encounter(encounter : Encounter) -> void:
 
 	if not is_node_ready() :
 		return
+		
+	if encounter == null:
+		encounter = Encounter.new()
 	
 	lucarne.texture = encounter.sprite
 	reponse.text = "Reponse:" + encounter.response
