@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main_game.gd" id="1_k7jdy"]
 [ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_dl7fd"]
-[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="2_ppixs"]
-[ext_resource type="Resource" uid="uid://cxjlxsec54m5t" path="res://resources/encounter/test_1.tres" id="3_4wgxf"]
 [ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_hlc8n"]
-[ext_resource type="Resource" uid="uid://r8gtq5p676uk" path="res://resources/encounter/test_2.tres" id="4_kejyu"]
 
 [node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("dismiss_btn", "kill_btn", "main_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown")]
 layout_mode = 3
@@ -21,7 +18,6 @@ main_ui = NodePath("MainUI")
 timer_before_new_encounter = NodePath("EncounterCooldown")
 encounter_countdown = NodePath("EncounterCountDown")
 main_countdown = NodePath("MainCountdown")
-encounter_stack = Array[ExtResource("2_ppixs")]([ExtResource("3_4wgxf"), ExtResource("4_kejyu"), ExtResource("3_4wgxf")])
 
 [node name="MainUI" type="Control" parent="." unique_id=1726214704]
 layout_mode = 1

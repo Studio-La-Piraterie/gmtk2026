@@ -9,14 +9,11 @@ class_name MainGame extends Node
 @export var encounter_countdown : Timer = Timer.new()
 @export var main_countdown : Timer = Timer.new()
 
-@export var encounter_stack : Array[Encounter] = []
-
 var _current_encounter : Encounter = null :
 	set(new_encounter):
 		_current_encounter = new_encounter
 		if main_ui != null:
 			main_ui.set_encounter(_current_encounter)
-		
 
 func _ready() -> void:
 	main_countdown.start()
@@ -25,20 +22,18 @@ func _ready() -> void:
 	timer_before_new_encounter.start()
 	timer_before_new_encounter.timeout.connect(_go_to_next_encounter)
 	encounter_countdown.timeout.connect(_dismiss_encounter)
+	dismiss_btn.pressed.connect(_dismiss_encounter)
+	kill_btn.pressed.connect(_kill_encounter)
 
 func _physics_process(_delta: float) -> void:
 	main_ui.update_main_countdown(main_countdown.time_left)
-	dismiss_btn.pressed.connect(_dismiss_encounter)
-	kill_btn.pressed.connect(_kill_encounter)
-	
+
 func _go_to_next_encounter() -> void:
-	if encounter_stack.is_empty():
-		return
 	
 	dismiss_btn.disabled = false
 	kill_btn.disabled = false
 	
-	_current_encounter = encounter_stack.pop_front()
+	_current_encounter = EncounterDispenser.get_new_encounter()
 	
 	timer_before_new_encounter.stop()
 	encounter_countdown.start()
