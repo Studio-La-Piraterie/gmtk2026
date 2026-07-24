@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ctjcsyva17aoh"]
+
+[ext_resource type="Script" uid="uid://cg537q5mxjysg" path="res://test/test_unstable_cable.gd" id="1_7jkh6"]
+
+[node name="TestUnstableCable_tscn" type="Control" unique_id=1619806952 node_paths=PackedStringArray("restore_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7jkh6")
+min_failure_countdown = 2.0
+max_failure_countdown = 4.0
+restore_btn = NodePath("restore")
+
+[node name="restore" type="Button" parent="." unique_id=449141018]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 158.0
+offset_right = 526.0
+offset_bottom = 189.0
+text = "Restore"
+
+[node name="IsBroken" type="ColorRect" parent="." unique_id=1662344199]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 402.0
+offset_top = 158.0
+offset_right = 442.0
+offset_bottom = 198.0
