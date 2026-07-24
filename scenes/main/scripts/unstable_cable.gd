@@ -6,6 +6,7 @@ class_name UnstableCable extends Control
 @export var restore_btn := Button.new()
 
 var failure_timer := Timer.new()
+var hasFailed := false
 
 signal failed
 signal restored
@@ -24,9 +25,11 @@ func restart_failure_timer()->void:
 func fail()->void:
 	failure_timer.stop()
 	restore_btn.disabled = false
+	hasFailed = true
 	failed.emit()
 	
 func restore()->void:
 	failure_timer.start()
 	restore_btn.disabled = true
+	hasFailed = false
 	restored.emit()

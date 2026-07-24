@@ -39,7 +39,7 @@ func _go_to_next_encounter() -> void:
 	if _current_encounter == null:
 		return
 
-	main_ui.ui_state = MainUI.State.ENCOUNTER_PRESENT
+	main_ui.resolve_machine_state = MainUI.ResolveMachineState.ENCOUNTER_PRESENT
 	timer_before_new_encounter.stop()
 	encounter_countdown.start()
 	
@@ -62,7 +62,7 @@ func _resolve_encounter(killed : bool) -> void :
 	main_countdown.start(new_main_countdown_time) 
 	
 	_current_encounter = null
-	main_ui.ui_state = MainUI.State.NO_ENCOUNTER
+	main_ui.resolve_machine_state = MainUI.ResolveMachineState.NO_ENCOUNTER
 	
 	if not encounter_manager.are_encounter_remaining():
 		emit_game_over()
