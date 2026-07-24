@@ -1,8 +1,9 @@
-extends Node
+class_name EncounterManager extends Node
 
-var AVAILABLE_ENCOUNTERS : Array[Encounter] = [
+var available_encounters : Array[Encounter] = [
 	preload("res://resources/encounter/test_1.tres"),
 	preload("res://resources/encounter/test_2.tres"),
+	preload("res://resources/encounter/test_3.tres"),
 	preload("res://resources/encounter/test_3.tres")
 ]
 
@@ -10,7 +11,19 @@ var target_probability : int = 0
 var passive_probability : int = 50
 var aggressive_probability : int = 20
 
+var amount_target_killed : int = 0
+var amount_target : int = 0
+
+func _init() -> void:
+	amount_target  = 0
+	for encounter in available_encounters:
+		if encounter.type == Encounter.Type.TARGET:
+			amount_target+=1
+
 func get_new_encounter() -> Encounter:
+	if available_encounters.is_empty():
+		return Encounter.new()
+	
 	var county_the_count : int = 0 #county is a good boi
 	var selected_encounter : Encounter = null
 	var keep_trying = true
@@ -18,7 +31,7 @@ func get_new_encounter() -> Encounter:
 	#ou que la liste de rencontres dispo est mal foutue (ce qui serait plus plausible) 
 	while county_the_count<1000 && keep_trying:
 		county_the_count+=1
-		selected_encounter = AVAILABLE_ENCOUNTERS.pick_random()
+		selected_encounter = available_encounters.pick_random()
 		var probability_to_be_selected : int
 		match selected_encounter.type:
 			Encounter.Type.PASSIVE:
@@ -42,5 +55,12 @@ func get_new_encounter() -> Encounter:
 		aggressive_probability = clampi(aggressive_probability-20,0,100)
 	
 	return selected_encounter 
-	
-	  
+
+func are_encounter_remaining()->bool:
+	return !available_encounters.is_empty()
+
+func are_all_target_dead()-> bool:
+	return amount_target_killed == amount_target
+
+func are_any_target_dead()->bool:
+	return amount_target_killed>0 
