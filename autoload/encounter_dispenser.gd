@@ -22,7 +22,7 @@ func _init() -> void:
 
 func get_new_encounter() -> Encounter:
 	if available_encounters.is_empty():
-		return Encounter.new()
+		return null
 	
 	var county_the_count : int = 0 #county is a good boi
 	var selected_encounter : Encounter = null
