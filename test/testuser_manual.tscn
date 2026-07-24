@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dii3aiuyew87d"]
+
+[ext_resource type="Script" uid="uid://c2owb1kyv7c7t" path="res://test/testUserManual.gd" id="1_io3ue"]
+
+[sub_resource type="Gradient" id="Gradient_5hxmf"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xums1"]
+gradient = SubResource("Gradient_5hxmf")
+
+[sub_resource type="Gradient" id="Gradient_io3ue"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xtrkc"]
+gradient = SubResource("Gradient_io3ue")
+
+[node name="UserManual" type="Control" unique_id=1282962460]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_io3ue")
+
+[node name="PagesContainer" type="HBoxContainer" parent="." unique_id=1895528809]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="LeftPage" type="TextureRect" parent="PagesContainer" unique_id=357600980]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture1D_xums1")
+
+[node name="LeftPageText" type="RichTextLabel" parent="PagesContainer/LeftPage" unique_id=798626689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="RighPage" type="TextureRect" parent="PagesContainer" unique_id=529989639]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture1D_xtrkc")
+
+[node name="RightPageText" type="RichTextLabel" parent="PagesContainer/RighPage" unique_id=779747300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
