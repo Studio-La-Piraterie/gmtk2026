@@ -1,8 +1,5 @@
 class_name MainGame extends Node
 
-@export var dismiss_btn: Button = Button.new()
-@export var kill_btn: Button = Button.new()
-
 @export var main_ui : MainUI = MainUI.new()
 
 @export var timer_before_new_encounter : Timer = Timer.new()
@@ -17,24 +14,21 @@ var _current_encounter : Encounter = null :
 
 func _ready() -> void:
 	main_countdown.start()
-	kill_btn.disabled = true
-	dismiss_btn.disabled = true
+	main_ui.kill_btn.disabled = true
+	main_ui.dismiss_btn.disabled = true
 	timer_before_new_encounter.start()
+	
 	timer_before_new_encounter.timeout.connect(_go_to_next_encounter)
 	encounter_countdown.timeout.connect(_dismiss_encounter)
-	dismiss_btn.pressed.connect(_dismiss_encounter)
-	kill_btn.pressed.connect(_kill_encounter)
+	main_ui.dismiss_btn.pressed.connect(_dismiss_encounter)
+	main_ui.kill_btn.pressed.connect(_kill_encounter)
 
 func _physics_process(_delta: float) -> void:
 	main_ui.update_main_countdown(main_countdown.time_left)
 
-func _go_to_next_encounter() -> void:
-	
-	dismiss_btn.disabled = false
-	kill_btn.disabled = false
-	
+func _go_to_next_encounter() -> void:	
 	_current_encounter = EncounterDispenser.get_new_encounter()
-	
+	main_ui.ui_state = MainUI.State.ENCOUNTER_PRESENT
 	timer_before_new_encounter.stop()
 	encounter_countdown.start()
 	
@@ -48,15 +42,13 @@ func _resolve_encounter(killed : bool) -> void :
 	if _current_encounter == null:
 		return
 	
-	dismiss_btn.disabled = true
-	kill_btn.disabled = true
-	
 	var new_main_countdown_time := main_countdown.time_left + _current_encounter.get_encounter_result(killed)
 	main_countdown.start(new_main_countdown_time) 
 	
 	_current_encounter = null
+	main_ui.ui_state = MainUI.State.NO_ENCOUNTER
+
 	timer_before_new_encounter.start()
 	encounter_countdown.stop()
 	
-
  
