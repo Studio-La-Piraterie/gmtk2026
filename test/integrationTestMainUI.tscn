@@ -40,20 +40,31 @@ kill_btn = NodePath("KillBtn")
 unstable_cable = NodePath("TestUnstableCable_tscn")
 type_color_rect = NodePath("Type")
 
+[node name="Background" type="TextureRect" parent="MainUI" unique_id=656879799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uwpqv")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="EngageBtn" type="Button" parent="MainUI" unique_id=978433572]
 layout_mode = 0
-offset_left = 139.0
-offset_top = 145.0
-offset_right = 147.0
-offset_bottom = 153.0
+offset_left = 669.0
+offset_top = 525.0
+offset_right = 733.0
+offset_bottom = 556.0
 text = "Engage"
 
 [node name="OkBtn" type="Button" parent="MainUI" unique_id=1899771668]
 layout_mode = 0
-offset_left = 252.0
-offset_top = 154.0
-offset_right = 282.0
-offset_bottom = 185.0
+offset_left = 940.0
+offset_top = 459.0
+offset_right = 970.0
+offset_bottom = 490.0
 text = "Ok"
 
 [node name="OkDiode" type="ColorRect" parent="MainUI/OkBtn" unique_id=1412829173]
@@ -67,10 +78,10 @@ metadata/_edit_lock_ = true
 
 [node name="CtrlBtn" type="Button" parent="MainUI" unique_id=839867788]
 layout_mode = 0
-offset_left = 308.0
-offset_top = 154.0
-offset_right = 316.0
-offset_bottom = 162.0
+offset_left = 1000.0
+offset_top = 459.0
+offset_right = 1036.0
+offset_bottom = 490.0
 text = "Ctrl"
 
 [node name="CtrlDiode" type="ColorRect" parent="MainUI/CtrlBtn" unique_id=1257033487]
@@ -85,10 +96,10 @@ metadata/_edit_lock_ = true
 
 [node name="ReadyBtn" type="Button" parent="MainUI" unique_id=1986925438]
 layout_mode = 0
-offset_left = 382.0
-offset_top = 148.0
-offset_right = 445.0
-offset_bottom = 179.0
+offset_left = 1060.0
+offset_top = 459.0
+offset_right = 1123.0
+offset_bottom = 490.0
 text = "Ready"
 
 [node name="ReadyDiode" type="ColorRect" parent="MainUI/ReadyBtn" unique_id=211438339]
@@ -104,28 +115,28 @@ metadata/_edit_lock_ = true
 [node name="DismissBtn" type="Button" parent="MainUI" unique_id=564313307]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 285.0
-offset_top = 255.0
-offset_right = 353.0
-offset_bottom = 286.0
+offset_left = 971.0
+offset_top = 621.0
+offset_right = 1039.0
+offset_bottom = 652.0
 text = "Dismiss"
 
 [node name="KillBtn" type="Button" parent="MainUI" unique_id=469252224]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 380.0
-offset_top = 255.0
-offset_right = 420.0
-offset_bottom = 286.0
+offset_left = 1066.0
+offset_top = 621.0
+offset_right = 1106.0
+offset_bottom = 652.0
 text = "Kill"
 
 [node name="Lucarne" type="TextureRect" parent="MainUI" unique_id=1892170811]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 731.0
-offset_top = 106.0
-offset_right = 799.0757
-offset_bottom = 146.0
+offset_left = 1302.0
+offset_top = 351.0
+offset_right = 1370.0757
+offset_bottom = 391.0
 scale = Vector2(4.9504595, 3.9707043)
 expand_mode = 3
 stretch_mode = 5
@@ -133,38 +144,38 @@ stretch_mode = 5
 [node name="Reponse" type="Label" parent="MainUI" unique_id=1899668707]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 144.0
-offset_top = 384.0
-offset_right = 258.0
-offset_bottom = 407.0
+offset_left = 271.0
+offset_top = 72.0
+offset_right = 385.0
+offset_bottom = 95.0
 text = "Reponse:"
 
 [node name="Description" type="Label" parent="MainUI" unique_id=58379102]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 748.0
-offset_top = 322.0
-offset_right = 842.0
-offset_bottom = 345.0
+offset_left = 1290.0
+offset_top = 631.0
+offset_right = 1384.0
+offset_bottom = 654.0
 text = "Description:"
 
 [node name="WaveForm" type="Label" parent="MainUI" unique_id=825077865]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 746.0
-offset_top = 358.0
-offset_right = 847.0
-offset_bottom = 381.0
+offset_left = 971.0
+offset_top = 229.0
+offset_right = 1072.0
+offset_bottom = 252.0
 text = "Wave Form:0"
 
 [node name="Type" type="ColorRect" parent="MainUI" unique_id=1803267753]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-offset_left = 1481.0
-offset_top = 484.0
-offset_right = 1616.0
-offset_bottom = 625.0
+offset_left = 1507.0
+offset_top = 814.0
+offset_right = 1642.0
+offset_bottom = 955.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 1, 0, 1)
@@ -172,33 +183,22 @@ color = Color(0, 1, 0, 1)
 [node name="MainCountdownLabel" type="Label" parent="MainUI" unique_id=1975338331]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 746.0
-offset_top = 55.0
-offset_right = 1128.0
-offset_bottom = 186.0
+offset_left = 1268.0
+offset_top = 21.0
+offset_right = 1650.0
+offset_bottom = 152.0
 text = "30:00"
 label_settings = ExtResource("3_twywb")
 
 [node name="TestUnstableCable_tscn" parent="MainUI" unique_id=1619806952 instance=ExtResource("4_j2mf3")]
 layout_mode = 1
-offset_left = -404.0
-offset_top = 222.0
-offset_right = -404.0
-offset_bottom = 222.0
+offset_left = -509.0
+offset_top = 277.0
+offset_right = -509.0
+offset_bottom = 277.0
 mouse_filter = 2
 min_failure_countdown = 5.0
 max_failure_countdown = 5.0
-
-[node name="Background" type="TextureRect" parent="MainUI" unique_id=656879799]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_uwpqv")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
 wait_time = 300.0
