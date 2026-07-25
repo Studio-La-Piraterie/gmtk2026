@@ -32,7 +32,8 @@ func _ready() -> void:
 	main_countdown.timeout.connect(emit_game_over)
 
 func _physics_process(_delta: float) -> void:
-	main_ui.update_main_countdown(main_countdown.time_left)
+	if not main_ui.main_countdown_label.is_skipping:
+		main_ui.main_countdown_label.set_displayed_time(main_countdown.time_left)
 
 func _go_to_next_encounter() -> void:	
 	_current_encounter = encounter_manager.get_new_encounter()
@@ -58,8 +59,7 @@ func _resolve_encounter(killed : bool) -> void :
 		
 	encounter_manager.available_encounters.erase(_current_encounter)
 	
-	var new_main_countdown_time := main_countdown.time_left + _current_encounter.get_encounter_result(killed)
-	main_countdown.start(new_main_countdown_time) 
+	var resolve_added_time :=  _current_encounter.get_encounter_result(killed)
 	
 	_current_encounter = null
 	main_ui.resolve_machine_state = MainUI.ResolveMachineState.NO_ENCOUNTER
@@ -69,6 +69,14 @@ func _resolve_encounter(killed : bool) -> void :
 	
 	timer_before_new_encounter.start()
 	encounter_countdown.stop()
+	if resolve_added_time != 0:
+		await do_main_countdown_time_skip(main_countdown.time_left+resolve_added_time)
+
+func do_main_countdown_time_skip(to_time : float)->void:
+	main_countdown.paused = true
+	await main_ui.main_countdown_label.animate_time_skip(main_countdown.time_left,to_time)
+	main_countdown.paused = false
+	main_countdown.start(to_time) 
 
 func emit_game_over()->void:
 	game_over.emit(check_end_game_condition())

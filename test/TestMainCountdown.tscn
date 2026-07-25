@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://hrggbs78dnoq"]
+
+[ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="1_31327"]
+[ext_resource type="Script" uid="uid://ccqjtm7rk26x4" path="res://test/test_main_countdown.gd" id="1_e280j"]
+[ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="1_f5hif"]
+
+[node name="TestMainCountdown" type="Control" unique_id=863772809]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e280j")
+
+[node name="MainCountdown" type="Label" parent="." unique_id=153999331]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 478.0
+offset_top = 216.0
+offset_right = 578.0
+offset_bottom = 267.0
+text = "3:00"
+label_settings = ExtResource("1_31327")
+script = ExtResource("1_f5hif")
+metadata/_custom_type_script = "uid://bvb0rg454spd7"
+
+[node name="Countdown" type="Timer" parent="." unique_id=497779107]
+unique_name_in_owner = true
+wait_time = 30.0
+autostart = true
+
+[node name="Skip" type="Button" parent="." unique_id=689407756]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 208.0
+offset_top = 208.0
+offset_right = 383.0
+offset_bottom = 239.0
+text = "Skip from 2:00 to 1:30"
+
+[node name="Add" type="Button" parent="." unique_id=1116317481]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 221.0
+offset_top = 262.0
+offset_right = 396.0
+offset_bottom = 293.0
+text = "Add 30s"
