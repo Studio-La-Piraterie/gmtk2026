@@ -1,6 +1,6 @@
 class_name AI extends Node
 
-@onready var AI_face = $AIFace
+@onready var AI_face = $AIFaceContainer/AIFace
 @onready var AI_text = $AIText
 
 @export var AI_happy : ArtificialIntelligence
