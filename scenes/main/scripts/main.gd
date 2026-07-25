@@ -51,11 +51,9 @@ func _resolve_encounter(killed : bool) -> void :
 	if _current_encounter == null:
 		return
 		
-	if killed and _current_encounter.type == Encounter.Type.TARGET:
-		encounter_manager.amount_target_killed+=1
-		
-	encounter_manager.available_encounters.erase(_current_encounter)
-	var new_main_countdown_time := main_countdown.time_left + _current_encounter.get_encounter_result(killed)
+	encounter_manager.encounter_processed(_current_encounter,killed)
+	var encounter_result_time : float = _current_encounter.get_encounter_result(killed)
+	var new_main_countdown_time := main_countdown.time_left + encounter_result_time
 	
 	_set_encounter(null)
 	
