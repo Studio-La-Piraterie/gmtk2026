@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ManualPage" format=3 uid="uid://0kvomjpeheeh"]
+
+[ext_resource type="Script" uid="uid://b5ug3sbbcjhyb" path="res://resources/scripts/manual_page.gd" id="1_hjp0q"]
+[ext_resource type="Texture2D" uid="uid://dauyljr8vn1io" path="res://assets/images/guide/guide0_cover.jpg" id="2_ertem"]
+
+[resource]
+script = ExtResource("1_hjp0q")
+text = "This is the text of the first page"
+sprite = ExtResource("2_ertem")
