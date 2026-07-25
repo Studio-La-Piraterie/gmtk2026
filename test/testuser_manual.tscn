@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://0kvomjpeheeh" path="res://resources/manual_pages/test_page.tres" id="3_gr5go"]
 [ext_resource type="Resource" uid="uid://dmey6ypogg755" path="res://resources/manual_pages/test_page2.tres" id="4_an7u1"]
 [ext_resource type="Resource" uid="uid://c28qu3y64sxus" path="res://resources/manual_pages/test_page3.tres" id="5_8x16p"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="6_gr5go"]
 
 [sub_resource type="Gradient" id="Gradient_5hxmf"]
 
@@ -25,6 +26,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_io3ue")
 pages_arr = Array[ExtResource("2_lmrur")]([ExtResource("3_gr5go"), ExtResource("4_an7u1"), ExtResource("4_an7u1"), ExtResource("5_8x16p")])
+
+[node name="CloseButton" type="Button" parent="." unique_id=2110323020]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.96700007
+anchor_right = 1.0
+anchor_bottom = 0.052
+offset_left = 0.01586914
+offset_bottom = 0.30400085
+grow_horizontal = 0
+size_flags_vertical = 0
 
 [node name="PagesContainer" type="HBoxContainer" parent="." unique_id=1895528809]
 layout_mode = 0
@@ -76,3 +89,19 @@ anchor_right = 1.0
 offset_left = -87.0
 offset_bottom = 649.0
 grow_horizontal = 0
+
+[node name="ManualSprite" type="Sprite2D" parent="." unique_id=306557214]
+position = Vector2(464, 511.75)
+scale = Vector2(1.4609375, 2.1367188)
+texture = ExtResource("6_gr5go")
+
+[node name="OpenButton" type="Button" parent="ManualSprite" unique_id=2077604460]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2

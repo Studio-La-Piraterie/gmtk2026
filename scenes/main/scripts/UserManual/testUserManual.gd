@@ -1,6 +1,12 @@
-class_name  UserManual extends Node
+class_name UserManual extends Node
 
 @export var pages_arr : Array[ManualPage]
+@export var blank_page : ManualPage
+
+@onready var container = $PagesContainer
+@onready var minimized_manual = $ManualSprite
+@onready var open_button = $ManualSprite/OpenButton
+@onready var close_button = $CloseButton
 
 @onready var left_page = $PagesContainer/LeftPage
 @onready var left_page_text = $PagesContainer/LeftPage/LeftPageText
@@ -18,16 +24,34 @@ var current_right_page : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	minimized_manual.hide()
 	left_page_button.pressed.connect(previous_page)
 	right_page_button.pressed.connect(next_page)
+	close_button.pressed.connect(close_manual)
+	open_button.pressed.connect(open_manual)
 	set_left_page()
 	set_right_page()
 	if pages_arr.size() % 2 != 0:
-		push_error("The number of pages of the user manual is odd, risks of bug")
+		if blank_page:
+			pages_arr.append(blank_page)
+		else:
+			push_error("There is an uneven number of pages : this will cause bugs. ADD A BLANK PAGE IN UserManual.gd !")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
+
+## Open and zoom on the manual
+func open_manual() -> void:
+	container.show()
+	close_button.show()
+	minimized_manual.hide()
+
+func close_manual() -> void:
+	container.hide()
+	close_button.hide()
+	minimized_manual.show()
+	
 
 func next_page() -> void:
 	# Si la page de droite ne contient aucune page, on annule
@@ -53,7 +77,8 @@ func previous_page() -> void:
 	current_left_page -= 2
 	set_left_page()
 	set_right_page()
-	
+
+## Set and diplay right page
 func set_right_page() -> void:
 	right_page_text.clear()
 	if current_right_page == -1:
@@ -62,6 +87,7 @@ func set_right_page() -> void:
 		right_page.texture = pages_arr[current_right_page].sprite
 		right_page_text.add_text(pages_arr[current_right_page].text) 
 
+## Set and diplay left page
 func set_left_page() -> void:
 	left_page_text.clear()
 	if current_left_page == -1:
