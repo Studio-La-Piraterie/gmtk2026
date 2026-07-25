@@ -31,6 +31,10 @@ window/size/viewport_height=1338
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_gif/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -41,6 +45,10 @@ folder_colors={
 "res://scenes/": "green",
 "res://shared/": "yellow"
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://resources/csv localisation/rencontre.fr.translation", "res://resources/csv localisation/rencontre.en.translation")
 
 [physics]
 
