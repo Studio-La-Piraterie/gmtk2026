@@ -71,3 +71,13 @@ offset_top = 67.0
 offset_right = 188.0
 offset_bottom = 75.0
 text = "Get new encounter"
+
+[node name="GIFPlayer" type="GIFPlayer" parent="." unique_id=441931505]
+expand_mode = 1
+stretch_mode = 5
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 533.0
+offset_top = 400.0
+offset_right = 726.0
+offset_bottom = 574.0

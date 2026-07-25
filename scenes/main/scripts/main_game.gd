@@ -41,6 +41,7 @@ func _go_to_next_encounter() -> void:
 		return
 
 	main_ui.resolve_machine_state = MainUI.ResolveMachineState.ENCOUNTER_PRESENT
+	encounter_manager.play_audio(_current_encounter.audio_stream)
 	timer_before_new_encounter.stop()
 	encounter_countdown.start()
 	

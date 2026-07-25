@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://cxjlxsec54m5t"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_a7mhl"]
+[ext_resource type="AudioStream" uid="uid://bsh2lfprfiyeu" path="res://assets/audio/rencontres/horse.ogg" id="1_k6vi2"]
+[ext_resource type="Texture2D" uid="uid://cpwiu2vy53bk8" path="res://assets/oscilloscoope/ONDE.gif" id="2_3degk"]
 [ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_b8ns5"]
 
 [resource]
@@ -9,4 +11,6 @@ sprite = ExtResource("2_b8ns5")
 description = "Une tete familiere"
 wave_form = 5
 response = "Tout va bien c'est juste Godot"
+audio_stream = ExtResource("1_k6vi2")
+oscillo_gif = ExtResource("2_3degk")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
