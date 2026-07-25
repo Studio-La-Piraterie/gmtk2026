@@ -21,9 +21,10 @@ buses/default_bus_layout="uid://ct33mw21k8ao4"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -39,6 +40,10 @@ folder_colors={
 "res://scenes/": "green",
 "res://shared/": "yellow"
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://resources/csv localisation/rencontre.fr.translation", "res://resources/csv localisation/rencontre.en.translation")
 
 [physics]
 
