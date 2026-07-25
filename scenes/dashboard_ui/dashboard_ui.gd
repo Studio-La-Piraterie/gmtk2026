@@ -5,7 +5,8 @@ class_name DashboardUI extends Control
 @export var encounter_ui: EncounterUI
 @export var unstable_cable : UnstableCable
 
-@onready var main_countdown_label: Label = %MainCountdownLabel
+@onready var main_countdown_display: MainCountdown = %MainCountdownLabel
+@onready var encounter_audio_player: AudioStreamPlayer = $EncounterAudioPlayer
 
 var currently_displayed_encounter : Encounter = null :
 	set = set_encounter
@@ -16,11 +17,6 @@ func _ready() -> void:
 	
 	unstable_cable.failed.connect(unstable_cable_fail)
 	unstable_cable.restored.connect(unstable_cable_restored)
-	
-func update_main_countdown(time_left : float) -> void:
-	var minute = floor(time_left / 60)
-	var second = int(time_left) % 60
-	main_countdown_label.text = "%02d:%02d" % [minute,second]
 
 func set_encounter(encounter : Encounter) -> void:
 	if not is_node_ready() :
@@ -42,6 +38,10 @@ func update_encounter_ui(encounter :  Encounter):
 
 func update_resolve_machine_ui(state : ResolveDissmiss.ResolveMachineState):
 	resolve_dismiss_ui.update_resolve_machine_ui(state)
+
+func update_main_countdown(time_left : float) ->void:
+	if not main_countdown_display.is_skipping:
+		main_countdown_display.displayed_time=time_left
 
 func unstable_cable_fail()->void:
 	update_encounter_ui(Encounter.new())

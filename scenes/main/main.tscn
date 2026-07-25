@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6t82scdcl105" path="res://scenes/dashboard_ui/encounter/encounter_ui.tscn" id="5_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="6_b1x3f"]
 [ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="6_yyfjg"]
-[ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="7_a8run"]
+[ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="8_yyfjg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
 font = ExtResource("6_yyfjg")
@@ -66,7 +66,7 @@ offset_top = -220.0
 offset_right = -0.39996338
 offset_bottom = 0.0
 
-[node name="MainCountdownLabel" type="Label" parent="DashboardUI" unique_id=1975338331]
+[node name="MainCountdownLabel" type="Label" parent="DashboardUI" unique_id=70704991]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -74,20 +74,24 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -493.0
 offset_top = 27.0
-offset_bottom = 136.0
+offset_bottom = 163.0
 grow_horizontal = 0
 text = "30:00"
 label_settings = SubResource("LabelSettings_yyfjg")
+script = ExtResource("8_yyfjg")
+metadata/_custom_type_script = "uid://bvb0rg454spd7"
 
 [node name="TestUnstableCable_tscn" parent="DashboardUI" unique_id=1619806952 instance=ExtResource("6_b1x3f")]
 layout_mode = 1
-offset_left = -404.0
-offset_top = 222.0
-offset_right = -404.0
-offset_bottom = 222.0
+offset_left = -593.0
+offset_top = 343.0
+offset_right = -593.0
+offset_bottom = 343.0
 mouse_filter = 2
 min_failure_countdown = 20.0
 max_failure_countdown = 40.0
+
+[node name="EncounterAudioPlayer" type="AudioStreamPlayer" parent="DashboardUI" unique_id=1306370348]
 
 [node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
 wait_time = 300.0
@@ -98,15 +102,6 @@ wait_time = 15.0
 
 [node name="EncounterCooldown" type="Timer" parent="." unique_id=455341062]
 wait_time = 3.0
-
-[node name="GameOverIndicator" type="Label" parent="." unique_id=2005724412]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 2.0
-offset_right = 196.0
-offset_bottom = 25.0
-text = "Game over state : None"
-script = ExtResource("7_a8run")
 
 [connection signal="pressed" from="DashboardUI/ResolveDismissUI/DismissBtn" to="." method="_on_dismiss_btn_pressed"]
 [connection signal="pressed" from="DashboardUI/ResolveDismissUI/KillBtn" to="." method="_on_kill_btn_pressed"]
