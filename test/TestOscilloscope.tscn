@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dim50lahd0xi"]
+
+[ext_resource type="Script" uid="uid://c7hmsw4bsm3s8" path="res://test/test_oscilloscope.gd" id="1_3gn2o"]
+[ext_resource type="Texture2D" uid="uid://cpwiu2vy53bk8" path="res://assets/oscilloscoope/ONDE.gif" id="1_62bg2"]
+
+[sub_resource type="Theme" id="Theme_df7ct"]
+
+[node name="TestOscilloscope" type="Control" unique_id=97779108 node_paths=PackedStringArray("oscilloscope_player", "slider")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3gn2o")
+oscilloscope_player = NodePath("GIFPlayer")
+slider = NodePath("HSlider")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1584505990]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.06
+offset_left = -150.0
+offset_top = -130.0
+offset_right = 150.0
+offset_bottom = 130.0
+color = Color(0.55579543, 0.35693878, 0.26074943, 1)
+
+[node name="GIFPlayer" type="GIFPlayer" parent="." unique_id=151806562]
+gif = ExtResource("1_62bg2")
+expand_mode = 1
+stretch_mode = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -116.0
+offset_right = 137.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1066620697]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -132.0
+offset_top = 155.0
+offset_right = 142.0
+offset_bottom = 171.0
+theme = SubResource("Theme_df7ct")
+
+[node name="EnableTextt" type="Label" parent="." unique_id=2059153108]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -120.0
+offset_top = -154.0
+offset_right = 95.0
+offset_bottom = -131.0
+text = "Oscilloscope state : Enabled"
+
+[node name="EnableBtn" type="Button" parent="." unique_id=2086018113]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -116.0
+offset_top = -190.0
+offset_right = 107.0
+offset_bottom = -159.0
+text = "Disable/Enable"
+
+[node name="ChangeGif" type="Button" parent="." unique_id=1344052280]
+layout_mode = 0
+offset_left = -326.0
+offset_top = -102.0
+offset_right = -318.0
+offset_bottom = -94.0
+text = "Change oscillo"
