@@ -5,6 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_hlc8n"]
 [ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="4_3bfd1"]
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_fuwwt"]
+[ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="4_ppixs"]
 
 [node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("main_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown")]
 layout_mode = 3
@@ -174,6 +175,7 @@ offset_right = 1128.0
 offset_bottom = 186.0
 text = "30:00"
 label_settings = ExtResource("3_hlc8n")
+script = ExtResource("4_ppixs")
 
 [node name="TestUnstableCable_tscn" parent="MainUI" unique_id=1619806952 instance=ExtResource("4_fuwwt")]
 layout_mode = 1

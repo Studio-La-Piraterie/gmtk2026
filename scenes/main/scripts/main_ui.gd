@@ -14,7 +14,7 @@ class_name MainUI extends Control
 
 @export var unstable_cable : UnstableCable = null
 
-@onready var main_countdown_label: Label = %MainCountdownLabel
+@onready var main_countdown_label: MainCountdown = %MainCountdownLabel
 @onready var lucarne: TextureRect = %Lucarne
 @onready var reponse: Label = %Reponse
 @onready var description: Label = %Description
@@ -50,9 +50,7 @@ func _ready() -> void:
 	unstable_cable.restored.connect(unstable_cable_restored)
 	
 func update_main_countdown(time_left : float) -> void:
-	var minute = floor(time_left / 60)
-	var second = int(time_left) % 60
-	main_countdown_label.text = "%02d:%02d" % [minute,second]
+	main_countdown_label.update_main_countdown(time_left)
 
 func set_encounter(encounter : Encounter) -> void:
 	if not is_node_ready() :
