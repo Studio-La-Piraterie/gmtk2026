@@ -4,6 +4,7 @@ class_name DashboardUI extends Control
 @export var resolve_dismiss_ui: ResolveDissmiss
 @export var encounter_ui: EncounterUI
 @export var unstable_cable : UnstableCable
+@export var oscilloscope : Oscilloscope
 
 @onready var main_countdown_display: MainCountdown = %MainCountdownLabel
 @onready var encounter_audio_player: AudioStreamPlayer = $EncounterAudioPlayer
@@ -23,30 +24,40 @@ func set_encounter(encounter : Encounter) -> void:
 		return
 
 	if encounter == null:
-		resolve_dismiss_ui.set_state(ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER)
+		update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER)
 		encounter = Encounter.new()
 	else:
-		resolve_dismiss_ui.set_state(ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT)
+		update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT)
 	
 	currently_displayed_encounter = encounter
+	play_encounter_audio(encounter.audio_stream)
+	update_oscilloscope_ui(encounter)
 	if not unstable_cable.hasFailed:
 		update_encounter_ui(encounter)
-		
-	
+
+func update_oscilloscope_ui(encounter : Encounter) ->void :
+	oscilloscope.update(encounter.oscillo_gif, encounter.min_oscillo_val, encounter.max_oscillo_val)
+
 func update_encounter_ui(encounter :  Encounter):
 	encounter_ui.update_encounter_ui(encounter)
 
 func update_resolve_machine_ui(state : ResolveDissmiss.ResolveMachineState):
-	resolve_dismiss_ui.update_resolve_machine_ui(state)
+	resolve_dismiss_ui.set_state(state)
 
 func update_main_countdown(time_left : float) ->void:
 	if not main_countdown_display.is_skipping:
 		main_countdown_display.displayed_time=time_left
 
+func play_encounter_audio(encounter_audio : AudioStream) -> void:
+	encounter_audio_player.stream = encounter_audio
+	encounter_audio_player.play()
+
 func unstable_cable_fail()->void:
 	update_encounter_ui(Encounter.new())
 	resolve_dismiss_ui.disable()
+	oscilloscope.disable()
 	
 func unstable_cable_restored()->void:
 	update_encounter_ui(currently_displayed_encounter)
 	resolve_dismiss_ui.enable()
+	oscilloscope.enable()

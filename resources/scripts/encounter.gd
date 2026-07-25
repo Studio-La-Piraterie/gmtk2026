@@ -28,5 +28,10 @@ enum Type {PASSIVE,AGRESSIVE,TARGET}
 var min_oscillo_val : float = 0.0
 var max_oscillo_val : float = 0.0
 
+func _init() -> void:
+	var oscillo_range = randf_range(10.0,30.0)
+	min_oscillo_val = randf_range(0.0,100.0-oscillo_range)
+	max_oscillo_val = min_oscillo_val+oscillo_range
+
 func get_encounter_result(killed : bool) -> float :
 	return ENCOUNTER_RESULTS[self.type][killed]

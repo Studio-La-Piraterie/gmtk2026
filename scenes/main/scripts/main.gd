@@ -57,7 +57,7 @@ func _resolve_encounter(killed : bool) -> void :
 	encounter_manager.available_encounters.erase(_current_encounter)
 	var new_main_countdown_time := main_countdown.time_left + _current_encounter.get_encounter_result(killed)
 	
-	_set_encounter(_current_encounter)
+	_set_encounter(null)
 	
 	dashboard_ui.resolve_dismiss_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER
 	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
