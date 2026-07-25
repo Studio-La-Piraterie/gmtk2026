@@ -1,11 +1,15 @@
 class_name EncounterManager extends Node
 
-var available_encounters : Array[Encounter] = [
+const ENCOUNTER_POOL : Array[Encounter] = [
 	preload("res://resources/encounter/test_1.tres"),
 	preload("res://resources/encounter/test_2.tres"),
 	preload("res://resources/encounter/test_3.tres"),
 	preload("res://resources/encounter/test_3.tres")
 ]
+
+var _available_encounters : Array[Encounter] = []
+var _available_targets : Array[Encounter] = []
+var _current_target : Encounter = null
 
 var target_probability : int = 0
 var passive_probability : int = 50
@@ -16,14 +20,20 @@ var amount_target : int = 0
 
 
 func _init() -> void:
-	amount_target  = 0
-	for encounter in available_encounters:
+	for encounter in ENCOUNTER_POOL:
 		if encounter.type == Encounter.Type.TARGET:
-			amount_target+=1
-
+			_available_targets.append(encounter)
+		else:
+			_available_encounters.append(encounter)
 	
+	_available_targets.shuffle()
+	amount_target = _available_targets.size()
+
+func get_current_target()->Encounter:
+	return _current_target
+
 func get_new_encounter() -> Encounter:
-	if available_encounters.is_empty():
+	if _available_encounters.is_empty():
 		return null
 	
 	var county_the_count : int = 0 #county is a good boi
@@ -33,7 +43,7 @@ func get_new_encounter() -> Encounter:
 	#ou que la liste de rencontres dispo est mal foutue (ce qui serait plus plausible) 
 	while county_the_count<1000 && keep_trying:
 		county_the_count+=1
-		selected_encounter = available_encounters.pick_random()
+		selected_encounter = _available_encounters.pick_random()
 		var probability_to_be_selected : int
 		match selected_encounter.type:
 			Encounter.Type.PASSIVE:
@@ -58,8 +68,21 @@ func get_new_encounter() -> Encounter:
 	
 	return selected_encounter 
 
+func encounter_processed(encounter : Encounter, killed :bool)->void:
+	if killed and encounter.type == Encounter.Type.TARGET:
+		amount_target_killed+=1
+		
+	_available_encounters.erase(encounter)
+	_set_new_target()
+	
+func _set_new_target()->void:
+	if _available_targets.is_empty():
+		return
+	_current_target = _available_targets.pop_back()
+	_available_encounters.append(_current_target)
+
 func are_encounter_remaining()->bool:
-	return !available_encounters.is_empty()
+	return !_available_encounters.is_empty()
 
 func are_all_target_dead()-> bool:
 	return amount_target_killed == amount_target
