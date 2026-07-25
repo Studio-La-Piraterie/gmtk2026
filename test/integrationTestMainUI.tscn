@@ -1,12 +1,11 @@
-[gd_scene format=3 uid="uid://geafgyj5qtwa"]
+[gd_scene format=3 uid="uid://bajr10o34vsi0"]
 
-[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main_game.gd" id="1_k7jdy"]
-[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_dl7fd"]
-[ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_hlc8n"]
-[ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="4_3bfd1"]
-[ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_fuwwt"]
-[ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="4_ppixs"]
-[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/main/scripts/oscilloscope.gd" id="6_4wgxf"]
+[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main.gd" id="1_bq1ek"]
+[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/dashboard_ui/dashboard_ui.gd" id="2_uwpqv"]
+[ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_twywb"]
+[ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_j2mf3"]
+[ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="5_tu6qf"]
+[ext_resource type="Texture2D" uid="uid://dciri8jhuac5p" path="res://assets/images/dashboard/tableau_de_bord_frames_WIP.png" id="5_uwpqv"]
 
 [node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("main_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown")]
 layout_mode = 3
@@ -15,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k7jdy")
+script = ExtResource("1_bq1ek")
 main_ui = NodePath("MainUI")
 timer_before_new_encounter = NodePath("EncounterCooldown")
 encounter_countdown = NodePath("EncounterCountDown")
@@ -28,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_dl7fd")
+script = ExtResource("2_uwpqv")
 engage_btn = NodePath("EngageBtn")
 ok_btn = NodePath("OkBtn")
 ctrl_btn = NodePath("CtrlBtn")
@@ -161,11 +160,14 @@ text = "Wave Form:0"
 
 [node name="Type" type="ColorRect" parent="MainUI" unique_id=1803267753]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 670.0
-offset_top = 325.0
-offset_right = 730.0
-offset_bottom = 377.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1481.0
+offset_top = 484.0
+offset_right = 1616.0
+offset_bottom = 625.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 1, 0, 1)
 
 [node name="MainCountdownLabel" type="Label" parent="MainUI" unique_id=1975338331]
@@ -176,10 +178,9 @@ offset_top = 55.0
 offset_right = 1128.0
 offset_bottom = 186.0
 text = "30:00"
-label_settings = ExtResource("3_hlc8n")
-script = ExtResource("4_ppixs")
+label_settings = ExtResource("3_twywb")
 
-[node name="TestUnstableCable_tscn" parent="MainUI" unique_id=1619806952 instance=ExtResource("4_fuwwt")]
+[node name="TestUnstableCable_tscn" parent="MainUI" unique_id=1619806952 instance=ExtResource("4_j2mf3")]
 layout_mode = 1
 offset_left = -404.0
 offset_top = 222.0
@@ -217,6 +218,17 @@ offset_bottom = 158.0
 [node name="EncounterPlayer" type="AudioStreamPlayer" parent="MainUI" unique_id=1751960123]
 bus = &"Encounter"
 
+[node name="Background" type="TextureRect" parent="MainUI" unique_id=656879799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uwpqv")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
 wait_time = 300.0
 one_shot = true
@@ -234,4 +246,4 @@ offset_top = 13.0
 offset_right = 195.0
 offset_bottom = 36.0
 text = "Game over state : None"
-script = ExtResource("4_3bfd1")
+script = ExtResource("5_tu6qf")
