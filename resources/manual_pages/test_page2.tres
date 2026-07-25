@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ManualPage" format=3 uid="uid://dmey6ypogg755"]
+
+[ext_resource type="Script" uid="uid://b5ug3sbbcjhyb" path="res://resources/scripts/manual_page.gd" id="1_kkon2"]
+
+[resource]
+script = ExtResource("1_kkon2")
+text = "This is the text of a blank page"
