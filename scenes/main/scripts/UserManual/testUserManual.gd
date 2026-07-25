@@ -9,11 +9,9 @@ class_name UserManual extends Node
 @onready var close_button = $CloseButton
 
 @onready var left_page = $PagesContainer/LeftPage
-@onready var left_page_text = $PagesContainer/LeftPage/LeftPageText
 @onready var left_page_button = $PagesContainer/LeftPage/LeftPageButton
 
 @onready var right_page = $PagesContainer/RightPage
-@onready var right_page_text = $PagesContainer/RightPage/RightPageText
 @onready var right_page_button = $PagesContainer/RightPage/RightPageButton
 
 # -1 signifie aucune page à afficher | 
@@ -80,18 +78,14 @@ func previous_page() -> void:
 
 ## Set and diplay right page
 func set_right_page() -> void:
-	right_page_text.clear()
 	if current_right_page == -1:
 		right_page.texture = null
 	elif current_right_page + 1 <= pages_arr.size():
 		right_page.texture = pages_arr[current_right_page].sprite
-		right_page_text.add_text(pages_arr[current_right_page].text) 
 
 ## Set and diplay left page
 func set_left_page() -> void:
-	left_page_text.clear()
 	if current_left_page == -1:
 		left_page.texture = null
 	elif current_left_page + 1 <= pages_arr.size():
 		left_page.texture = pages_arr[current_left_page].sprite
-		left_page_text.add_text(pages_arr[current_left_page].text)
