@@ -11,12 +11,14 @@ extends Control
 @onready var type: ColorRect = %Type
 @onready var get_new_encounter_btn: Button = %GetNewEncounter
 
+var encounter_dispenser := EncounterManager.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_encounter(encounter)
 	get_new_encounter_btn.pressed.connect(
 		func()->void:
-			_set_encounter(EncounterDispenser.get_new_encounter())
+			_set_encounter(encounter_dispenser.get_new_encounter())
 			)
 
 func _set_encounter(new_encounter : Encounter) -> void:
