@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_l3cfh"]
 [ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_6q06x"]
 
-[node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("dismiss_btn", "kill_btn", "main_ui", "main_countdown")]
+[node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("main_ui", "main_countdown")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,8 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k2fmo")
-dismiss_btn = NodePath("MainUI/DismissBtn")
-kill_btn = NodePath("MainUI/KillBtn")
 main_ui = NodePath("MainUI")
 main_countdown = NodePath("MainCounter")
 

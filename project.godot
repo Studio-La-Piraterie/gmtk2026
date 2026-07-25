@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://ct33mw21k8ao4"
 
+[autoload]
+
+GameManager="*uid://bkbd3pfahm61v"
+
 [display]
 
 window/size/always_on_top=true
