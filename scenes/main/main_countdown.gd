@@ -29,7 +29,7 @@ func animate_time_skip(from_time :float, to_time : float) -> void:
 	if from_time == -1:
 		from_time = displayed_time
 		to_time = from_time+to_time
-
+		
 	if tween != null:
 		tween.kill()
 	

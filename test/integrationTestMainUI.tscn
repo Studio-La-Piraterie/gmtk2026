@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bajr10o34vsi0"]
 
-[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main_game.gd" id="1_bq1ek"]
-[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_uwpqv"]
+[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main.gd" id="1_bq1ek"]
+[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/dashboard_ui/dashboard_ui.gd" id="2_uwpqv"]
 [ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_twywb"]
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_j2mf3"]
 [ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="5_tu6qf"]
@@ -20,7 +20,7 @@ timer_before_new_encounter = NodePath("EncounterCooldown")
 encounter_countdown = NodePath("EncounterCountDown")
 main_countdown = NodePath("MainCountdown")
 
-[node name="MainUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("engage_btn", "ok_btn", "ctrl_btn", "ready_btn", "ok_diode", "ctrl_diode", "ready_diode", "dismiss_btn", "kill_btn", "unstable_cable", "type_color_rect")]
+[node name="MainUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("engage_btn", "ok_btn", "ctrl_btn", "ready_btn", "ok_diode", "ctrl_diode", "ready_diode", "dismiss_btn", "kill_btn", "unstable_cable", "oscilloscope", "type_color_rect")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +38,7 @@ ready_diode = NodePath("ReadyBtn/ReadyDiode")
 dismiss_btn = NodePath("DismissBtn")
 kill_btn = NodePath("KillBtn")
 unstable_cable = NodePath("TestUnstableCable_tscn")
+oscilloscope = NodePath("Oscilloscope")
 type_color_rect = NodePath("Type")
 
 [node name="Background" type="TextureRect" parent="MainUI" unique_id=656879799]
@@ -197,8 +198,36 @@ offset_top = 277.0
 offset_right = -509.0
 offset_bottom = 277.0
 mouse_filter = 2
-min_failure_countdown = 5.0
-max_failure_countdown = 5.0
+max_failure_countdown = 3.0
+
+[node name="Oscilloscope" type="Control" parent="MainUI" unique_id=1932204222 node_paths=PackedStringArray("oscilloscope_player", "slider")]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 838.0
+offset_top = 443.0
+offset_right = 878.0
+offset_bottom = 483.0
+script = ExtResource("6_4wgxf")
+oscilloscope_player = NodePath("GIFPlayer")
+slider = NodePath("HSlider")
+
+[node name="GIFPlayer" type="GIFPlayer" parent="MainUI/Oscilloscope" unique_id=560092134]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 24.0
+
+[node name="HSlider" type="HSlider" parent="MainUI/Oscilloscope" unique_id=228392311]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -80.0
+offset_top = 142.0
+offset_right = 82.0
+offset_bottom = 158.0
+
+[node name="EncounterPlayer" type="AudioStreamPlayer" parent="MainUI" unique_id=1751960123]
+bus = &"Encounter"
 
 [node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
 wait_time = 300.0
