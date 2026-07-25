@@ -14,11 +14,8 @@ var aggressive_probability : int = 20
 var amount_target_killed : int = 0
 var amount_target : int = 0
 
-var encounter_audio_player := AudioStreamPlayer.new()
 
 func _init() -> void:
-	add_child(encounter_audio_player)
-	encounter_audio_player.bus = "Encounter"
 	amount_target  = 0
 	for encounter in available_encounters:
 		if encounter.type == Encounter.Type.TARGET:
@@ -69,10 +66,3 @@ func are_all_target_dead()-> bool:
 
 func are_any_target_dead()->bool:
 	return amount_target_killed>0 
-
-func play_audio(audio_stream : AudioStream) ->void:
-	encounter_audio_player.stream = audio_stream
-	encounter_audio_player.play()
-
-func stop_audio()->void:
-	encounter_audio_player.stop()
