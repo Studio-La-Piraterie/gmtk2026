@@ -1,4 +1,4 @@
-class_name ManualPage extends Node
+class_name ManualPage extends Resource
 
 @export var text : String
 @export var type : PageType = PageType.PAGE
@@ -11,24 +11,16 @@ class_name ManualPage extends Node
 enum PageType {PAGE, BEGINNING_FRONT_COVER, BEGINNING_BACK_COVER, ENDING_FRONT_COVER, ENDING_BACK_COVER}
 
 const PAGE_SPRITE : Dictionary = {
-	PageType.PAGE : {
-		#Sprite
-	},
-	PageType.BEGINNING_FRONT_COVER: {
-		#Sprite
-	},
-	PageType.BEGINNING_BACK_COVER: {
-		#Sprite
-	},
-	PageType.ENDING_FRONT_COVER: {
-		#Sprite
-	},
-	PageType.ENDING_BACK_COVER: {
-		#Sprite
-	}
+	PageType.PAGE : preload("res://assets/images/placeholders/blankpage.png"),
+	PageType.BEGINNING_FRONT_COVER: preload("res://assets/images/placeholders/front.png"),
+	PageType.BEGINNING_BACK_COVER: null,
+	PageType.ENDING_FRONT_COVER: preload("res://assets/images/placeholders/back.png"),
+	PageType.ENDING_BACK_COVER: null
 }
 
-@onready var sprite : Texture2D = PAGE_SPRITE[type]
+var sprite : Texture2D:
+	get:
+		return PAGE_SPRITE.get(type, null)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

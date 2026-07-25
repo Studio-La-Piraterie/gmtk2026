@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dii3aiuyew87d"]
 
-[ext_resource type="Script" uid="uid://c2owb1kyv7c7t" path="res://test/testUserManual.gd" id="1_io3ue"]
+[ext_resource type="Script" uid="uid://c2owb1kyv7c7t" path="res://scenes/main/scripts/UserManual/testUserManual.gd" id="1_io3ue"]
+[ext_resource type="Script" uid="uid://b5ug3sbbcjhyb" path="res://resources/scripts/manual_page.gd" id="2_lmrur"]
+[ext_resource type="Resource" uid="uid://0kvomjpeheeh" path="res://resources/manual_pages/test_page.tres" id="3_gr5go"]
+[ext_resource type="Resource" uid="uid://dmey6ypogg755" path="res://resources/manual_pages/test_page2.tres" id="4_an7u1"]
+[ext_resource type="Resource" uid="uid://c28qu3y64sxus" path="res://resources/manual_pages/test_page3.tres" id="5_8x16p"]
 
 [sub_resource type="Gradient" id="Gradient_5hxmf"]
 
@@ -20,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_io3ue")
+pages_arr = Array[ExtResource("2_lmrur")]([ExtResource("3_gr5go"), ExtResource("4_an7u1"), ExtResource("4_an7u1"), ExtResource("5_8x16p")])
 
 [node name="PagesContainer" type="HBoxContainer" parent="." unique_id=1895528809]
 layout_mode = 0
@@ -30,6 +35,7 @@ offset_bottom = 649.0
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("GradientTexture1D_xums1")
+expand_mode = 1
 
 [node name="LeftPageText" type="RichTextLabel" parent="PagesContainer/LeftPage" unique_id=798626689]
 layout_mode = 1
@@ -39,13 +45,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
-[node name="RighPage" type="TextureRect" parent="PagesContainer" unique_id=529989639]
+[node name="LeftPageButton" type="Button" parent="PagesContainer/LeftPage" unique_id=246269845]
+layout_mode = 1
+offset_right = 84.0
+offset_bottom = 649.0
+
+[node name="RightPage" type="TextureRect" parent="PagesContainer" unique_id=529989639]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("GradientTexture1D_xtrkc")
+expand_mode = 1
 
-[node name="RightPageText" type="RichTextLabel" parent="PagesContainer/RighPage" unique_id=779747300]
+[node name="RightPageText" type="RichTextLabel" parent="PagesContainer/RightPage" unique_id=779747300]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,3 +66,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="RightPageButton" type="Button" parent="PagesContainer/RightPage" unique_id=720010012]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_bottom = 649.0
+grow_horizontal = 0
