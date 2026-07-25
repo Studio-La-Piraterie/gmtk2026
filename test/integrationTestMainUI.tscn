@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bajr10o34vsi0"]
 
-[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main_game.gd" id="1_bq1ek"]
-[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_uwpqv"]
+[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main.gd" id="1_bq1ek"]
+[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/dashboard_ui/dashboard_ui.gd" id="2_uwpqv"]
 [ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_twywb"]
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_j2mf3"]
 [ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="5_tu6qf"]
