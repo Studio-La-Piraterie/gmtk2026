@@ -16,6 +16,8 @@ class_name ResolveDissmiss
 var resolve_machine_state : ResolveMachineState = ResolveMachineState.NONE :
 	set = set_state
 
+var disabled := false
+
 enum ResolveMachineState {
 	NONE = -255,
 	NO_ENCOUNTER = 0,
@@ -48,8 +50,10 @@ func set_state(new_state : ResolveMachineState) ->void:
 		new_state = ResolveMachineState.ENCOUNTER_PRESENT
 		
 	resolve_machine_state = new_state
+	if not disabled:
+		_update_resolve_machine_ui(resolve_machine_state)
 
-func update_resolve_machine_ui(new_state : ResolveMachineState)->void:
+func _update_resolve_machine_ui(new_state : ResolveMachineState)->void:
 	if new_state == ResolveMachineState.NONE: return
 	engage_btn.disabled = new_state < ResolveMachineState.ENCOUNTER_PRESENT
 	ok_btn.disabled = new_state < ResolveMachineState.ENGAGE_SWITCHED
@@ -60,3 +64,11 @@ func update_resolve_machine_ui(new_state : ResolveMachineState)->void:
 	ready_diode.color = Color.RED if new_state < ResolveMachineState.READY_PRESSED else Color.GREEN  
 	kill_btn.disabled = new_state < ResolveMachineState.READY_PRESSED
 	dismiss_btn.disabled = new_state < ResolveMachineState.ENCOUNTER_PRESENT
+
+func disable() -> void:
+	disabled = true
+	_update_resolve_machine_ui(ResolveMachineState.NO_ENCOUNTER)
+
+func enable() -> void:
+	disabled = false
+	_update_resolve_machine_ui(resolve_machine_state)

@@ -34,9 +34,7 @@ func _go_to_next_encounter() -> void:
 	_current_encounter = encounter_manager.get_new_encounter()
 	if _current_encounter == null:
 		return
-
-	dashboard_ui.update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT)
-	#dashboard_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT
+	
 	timer_before_new_encounter.stop()
 	encounter_countdown.start()
 	

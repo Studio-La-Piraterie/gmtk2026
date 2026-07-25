@@ -7,14 +7,12 @@ class_name DashboardUI extends Control
 
 @onready var main_countdown_label: Label = %MainCountdownLabel
 
-var currently_displayed_encounter := Encounter.new() :
+var currently_displayed_encounter : Encounter = null :
 	set = set_encounter
-	
-var ui_save_when_unstable_cable_fail : Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_encounter(Encounter.new())
+	set_encounter(null)
 	
 	unstable_cable.failed.connect(unstable_cable_fail)
 	unstable_cable.restored.connect(unstable_cable_restored)
@@ -27,9 +25,12 @@ func update_main_countdown(time_left : float) -> void:
 func set_encounter(encounter : Encounter) -> void:
 	if not is_node_ready() :
 		return
-		
+
 	if encounter == null:
+		resolve_dismiss_ui.set_state(ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER)
 		encounter = Encounter.new()
+	else:
+		resolve_dismiss_ui.set_state(ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT)
 	
 	currently_displayed_encounter = encounter
 	if not unstable_cable.hasFailed:
@@ -44,10 +45,8 @@ func update_resolve_machine_ui(state : ResolveDissmiss.ResolveMachineState):
 
 func unstable_cable_fail()->void:
 	update_encounter_ui(Encounter.new())
-	update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER)
-	if not unstable_cable.hasFailed:
-		update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.NONE)
-
+	resolve_dismiss_ui.disable()
+	
 func unstable_cable_restored()->void:
 	update_encounter_ui(currently_displayed_encounter)
-	update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.NONE)
+	resolve_dismiss_ui.enable()
