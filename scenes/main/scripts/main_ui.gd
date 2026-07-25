@@ -13,6 +13,7 @@ class_name MainUI extends Control
 @export var kill_btn: Button = null
 
 @export var unstable_cable : UnstableCable = null
+@export var oscilloscope : Oscilloscope = null
 
 @onready var main_countdown_label: MainCountdown = %MainCountdownLabel
 @onready var lucarne: TextureRect = %Lucarne

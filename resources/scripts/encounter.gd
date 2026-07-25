@@ -22,6 +22,11 @@ enum Type {PASSIVE,AGRESSIVE,TARGET}
 @export var description : String = ""
 @export var wave_form : int = 0
 @export var response : String = ""
+@export var audio_stream : AudioStream = null
+@export var oscillo_gif : GIFTexture = null
+
+var min_oscillo_val : float = 0.0
+var max_oscillo_val : float = 0.0
 
 func get_encounter_result(killed : bool) -> float :
 	return ENCOUNTER_RESULTS[self.type][killed]

@@ -63,7 +63,7 @@ func _resolve_encounter(killed : bool) -> void :
 	
 	_current_encounter = null
 	main_ui.resolve_machine_state = MainUI.ResolveMachineState.NO_ENCOUNTER
-	
+
 	if not encounter_manager.are_encounter_remaining():
 		emit_game_over()
 	

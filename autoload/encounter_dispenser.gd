@@ -14,12 +14,14 @@ var aggressive_probability : int = 20
 var amount_target_killed : int = 0
 var amount_target : int = 0
 
+
 func _init() -> void:
 	amount_target  = 0
 	for encounter in available_encounters:
 		if encounter.type == Encounter.Type.TARGET:
 			amount_target+=1
 
+	
 func get_new_encounter() -> Encounter:
 	if available_encounters.is_empty():
 		return null
