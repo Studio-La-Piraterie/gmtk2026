@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cg116i37a58ia" path="res://scenes/dashboard_ui/encounter/scripts/encounter_ui.gd" id="1_fenf0"]
 
-[node name="EncounterUI" type="Control" unique_id=1211594830 node_paths=PackedStringArray("lucarne", "description", "wave_form", "type_color_rect")]
+[node name="EncounterUI" type="Control" unique_id=1211594830 node_paths=PackedStringArray("lucarne", "description", "wave_form")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,6 @@ script = ExtResource("1_fenf0")
 lucarne = NodePath("Lucarne")
 description = NodePath("Description")
 wave_form = NodePath("WaveForm")
-type_color_rect = NodePath("Type")
 
 [node name="Lucarne" type="TextureRect" parent="." unique_id=1790096092]
 unique_name_in_owner = true
@@ -44,24 +43,6 @@ offset_top = 495.0
 offset_right = 1593.0
 offset_bottom = 518.0
 text = "Wave Form:0"
-
-[node name="Type" type="ColorRect" parent="." unique_id=1348288158]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1589.0
-offset_top = 553.0
-offset_right = 1724.0
-offset_bottom = 694.0
-color = Color(0, 1, 0, 1)
-
-[node name="GetNewEncounter" type="Button" parent="." unique_id=1255000919]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1567.0
-offset_top = 801.0
-offset_right = 1723.0
-offset_bottom = 832.0
-text = "Get new encounter"
 
 [node name="Reponse" type="Label" parent="." unique_id=2102149937]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
 class_name UnstableCable extends Control
 
-const PLUG_AUDIO = preload("uid://ciotkktiac1mb")
-const UNPLUG_AUDIO = preload("uid://cismrjlr252df")
+const PLUG_AUDIO = preload("res://assets/audio/sfx/plug.wav")
+const UNPLUG_AUDIO = preload("res://assets/audio/sfx/unplug.wav")
 
 @export var min_failure_countdown : float = 40
 @export var max_failure_countdown : float = 90
