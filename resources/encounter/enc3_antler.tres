@@ -20,7 +20,6 @@ animations = [{
 script = ExtResource("1_amf57")
 sprite = SubResource("SpriteFrames_m2fyw")
 description = "antler"
-wave_form = 40
 audio_stream = ExtResource("1_sb4e6")
 oscillo_gif = ExtResource("1_kp2tx")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

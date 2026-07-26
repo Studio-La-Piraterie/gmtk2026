@@ -45,7 +45,6 @@ script = ExtResource("1_3kgck")
 type = 1
 sprite = SubResource("SpriteFrames_u0j5b")
 description = "dryad"
-wave_form = 544
 audio_stream = ExtResource("1_rkvcr")
 oscillo_gif = ExtResource("1_3d6vg")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
