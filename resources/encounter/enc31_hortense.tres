@@ -19,7 +19,7 @@ animations = [{
 [resource]
 script = ExtResource("1_vr2ri")
 sprite = SubResource("SpriteFrames_loqgo")
-description = "hortense"
+description = "HORTENSE"
 audio_stream = ExtResource("1_rmmwy")
 oscillo_gif = ExtResource("1_wnrv2")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

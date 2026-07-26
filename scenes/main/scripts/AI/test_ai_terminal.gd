@@ -12,7 +12,7 @@ class_name AI extends Node
 
 @export var character_update_time : float = 0.09
 @export var character_displayed : int = 3
-@export var time_before_next_ai_message : float = 4.0
+@export var time_before_next_ai_message : float = 8.0
 
 enum Emotion {WORRIED, ANGRY, SAD, NEUTRAL, SURPRISED, CONFIDENT, GRATEFUL, HAPPY, HAPPY_IN_LOVE, IN_LOVE}
 

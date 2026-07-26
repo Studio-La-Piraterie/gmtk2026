@@ -13,4 +13,4 @@ func update_encounter_ui(encounter :  Encounter)->void:
 	encounter_sprite.sprite_frames = encounter.sprite
 	encounter_sprite.play("default")
 	
-	description.text = encounter.description
+	description.text = tr(encounter.description)

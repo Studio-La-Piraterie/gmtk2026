@@ -59,7 +59,7 @@ pause_unpause={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://resources/translation/translation.en.translation", "res://resources/translation/translation.fr.translation")
+locale/translations=PackedStringArray("res://resources/translation/translation.en.translation", "res://resources/translation/translation.fr.translation", "res://resources/translation/encounters_description_translation.en.translation", "res://resources/translation/encounters_description_translation.fr.translation")
 
 [physics]
 

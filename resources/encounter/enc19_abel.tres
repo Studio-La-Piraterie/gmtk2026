@@ -19,7 +19,7 @@ animations = [{
 [resource]
 script = ExtResource("1_eb8ly")
 sprite = SubResource("SpriteFrames_7e4qj")
-description = "abel"
+description = "ABEL"
 audio_stream = ExtResource("1_0puvf")
 oscillo_gif = ExtResource("1_5mosq")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
