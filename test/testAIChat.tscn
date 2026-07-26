@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://cf2oaydi08p0d"]
 
 [ext_resource type="Script" uid="uid://vuf4exvo7so0" path="res://scenes/main/scripts/AI/test_ai_terminal.gd" id="1_x4jxm"]
-[ext_resource type="Resource" uid="uid://ydbvxkncbigh" path="res://resources/AI/test_ai.tres" id="2_2t2dg"]
+[ext_resource type="Resource" uid="uid://baf12t7ntp8mv" path="res://resources/AI/generated/end_gen_laya.tres" id="2_u4qcj"]
+[ext_resource type="Resource" uid="uid://c66h2j5m52vj7" path="res://resources/AI/generated/failed_end_laya.tres" id="3_l1l5s"]
 [ext_resource type="Texture2D" uid="uid://bc8sgm325qcwj" path="res://assets/images/dashboard/Ecran_terminal_final.png" id="3_meqrq"]
 [ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="3_rcf52"]
+[ext_resource type="Resource" uid="uid://y0lkfqn14hfi" path="res://resources/AI/generated/fifth_order_laya.tres" id="4_pn6yh"]
+[ext_resource type="Resource" uid="uid://bxc6jprxxdxtd" path="res://resources/AI/generated/first_order_laya.tres" id="5_eei2v"]
+[ext_resource type="Resource" uid="uid://bjekdkdxdbxfi" path="res://resources/AI/generated/fourth_order_laya.tres" id="6_4qoyf"]
+[ext_resource type="Resource" uid="uid://btfydibpfujof" path="res://resources/AI/generated/game_over_laya.tres" id="7_a6t2w"]
+[ext_resource type="Resource" uid="uid://hkadvy2xnp17" path="res://resources/AI/generated/pacifist_end_laya.tres" id="8_4fuhh"]
+[ext_resource type="Resource" uid="uid://cefanqy84yahq" path="res://resources/AI/generated/second_order_laya.tres" id="9_tsq0x"]
+[ext_resource type="Resource" uid="uid://by64l3h7msy5r" path="res://resources/AI/generated/self_destruction_laya.tres" id="10_disui"]
+[ext_resource type="Resource" uid="uid://b6mqjnf3bynli" path="res://resources/AI/generated/sixth_order_laya.tres" id="11_kdc8s"]
+[ext_resource type="Resource" uid="uid://bgryb0gfj3pb5" path="res://resources/AI/generated/third_order_laya.tres" id="12_k5vto"]
 
 [node name="TestAiChat" type="Control" unique_id=1520334426]
 layout_mode = 3
@@ -13,7 +23,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x4jxm")
-AI_neutral = ExtResource("2_2t2dg")
+discussions = Dictionary[String, Object]({
+"END_GEN_LAYA": ExtResource("2_u4qcj"),
+"FAILED_END_LAYA": ExtResource("3_l1l5s"),
+"FIFTH_ORDER_LAYA": ExtResource("4_pn6yh"),
+"FIRST_ORDER_LAYA": ExtResource("5_eei2v"),
+"FOURTH_ORDER_LAYA": ExtResource("6_4qoyf"),
+"GAME_OVER_LAYA": ExtResource("7_a6t2w"),
+"PACIFIST_END_LAYA": ExtResource("8_4fuhh"),
+"SECOND_ORDER_LAYA": ExtResource("9_tsq0x"),
+"SELF_DESTRUCTION_LAYA": ExtResource("10_disui"),
+"SIXTH_ORDER_LAYA": ExtResource("11_kdc8s"),
+"THIRD_ORDER_LAYA": ExtResource("12_k5vto")
+})
 
 [node name="TerminalTexture" type="TextureRect" parent="." unique_id=1448462062]
 layout_mode = 1

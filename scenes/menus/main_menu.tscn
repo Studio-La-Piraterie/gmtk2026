@@ -1,9 +1,154 @@
 [gd_scene format=3 uid="uid://b7emjsefebla7"]
 
-[node name="UnstableCable" type="Control" unique_id=1325246831]
+[ext_resource type="Script" uid="uid://devofahpc43a8" path="res://scenes/menus/scripts/main_menu.gd" id="1_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://bcn4uwmrdqgyw" path="res://assets/menu/mainmenu/mainmenu_backgroundframe_1.png" id="2_6bivr"]
+[ext_resource type="Texture2D" uid="uid://dgui7f7p5r4qp" path="res://assets/menu/mainmenu/mainmenu_backgroundframe_2.png" id="3_imvie"]
+[ext_resource type="Texture2D" uid="uid://cwkve6pqqvptx" path="res://assets/menu/mainmenu/mainmenu_backgroundframe_3.png" id="4_ng0o5"]
+[ext_resource type="Texture2D" uid="uid://bqwroel3qyvr5" path="res://assets/menu/mainmenu/mainmenu_title.png" id="5_88kup"]
+[ext_resource type="Texture2D" uid="uid://cdtku1j8fih3j" path="res://assets/menu/mainmenu/mainmenu_notselect_start.png" id="5_imvie"]
+[ext_resource type="Texture2D" uid="uid://d2pg6hh3rbycb" path="res://assets/menu/mainmenu/mainmenu_select_start.png" id="6_ng0o5"]
+[ext_resource type="Texture2D" uid="uid://c50vwelymqj02" path="res://assets/menu/mainmenu/mainmenu_select_quit_main.png" id="8_3w8rc"]
+[ext_resource type="Texture2D" uid="uid://dsguvl67wg6s6" path="res://assets/menu/pausemenu/pausemenu_select_language_hover.png" id="8_88kup"]
+[ext_resource type="Texture2D" uid="uid://cdjqk433w71tn" path="res://assets/menu/pausemenu/pausemenu_select_language_V2.png" id="8_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://o5tjui48ch7u" path="res://assets/menu/mainmenu/mainmenu_notselect_credits.png" id="9_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://ws55d0h1r082" path="res://assets/menu/mainmenu/mainmenu_select_quit_hover_main.png" id="9_uxao6"]
+[ext_resource type="Texture2D" uid="uid://c4ws7go2cok0s" path="res://assets/menu/mainmenu/mainmenu_select_credits.png" id="10_3w8rc"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_m2y2t"]
+frames = 3
+speed_scale = 2.0
+frame_0/texture = ExtResource("2_6bivr")
+frame_1/texture = ExtResource("3_imvie")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_ng0o5")
+frame_2/duration = 1.0
+
+[sub_resource type="Animation" id="Animation_3w8rc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_m2y2t")]
+}
+
+[sub_resource type="Animation" id="Animation_bh4e2"]
+resource_name = "anim_background_menu"
+length = 0.6
+loop_mode = 1
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"image_1",
+"time": 0.0
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"image_2",
+"time": 0.2027423
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"image_3",
+"time": 0.408541
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_6bivr"), ExtResource("3_imvie"), ExtResource("4_ng0o5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w8rc"]
+_data = {
+&"RESET": SubResource("Animation_3w8rc"),
+&"anim_background_menu": SubResource("Animation_bh4e2")
+}
+
+[node name="MainMenu" type="Control" unique_id=850704912]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bh4e2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1025611969]
+root_node = NodePath("../AnimBackground")
+libraries/ = SubResource("AnimationLibrary_3w8rc")
+autoplay = &"anim_background_menu"
+
+[node name="AnimBackground" type="TextureRect" parent="." unique_id=455743205]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_m2y2t")
+
+[node name="TextureRect" type="TextureRect" parent="AnimBackground" unique_id=898370367]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -706.0
+offset_top = -450.0
+offset_right = -467.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("5_88kup")
+
+[node name="Start" type="TextureButton" parent="AnimBackground" unique_id=1878778420]
+layout_mode = 0
+offset_left = 537.00006
+offset_top = 632.00006
+offset_right = 697.00006
+offset_bottom = 683.00006
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("5_imvie")
+texture_hover = ExtResource("6_ng0o5")
+
+[node name="Start2" type="TextureButton" parent="AnimBackground" unique_id=1727055677]
+layout_mode = 0
+offset_left = 1363.0001
+offset_top = 565.00006
+offset_right = 1526.0001
+offset_bottom = 616.00006
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("8_3w8rc")
+texture_hover = ExtResource("9_uxao6")
+
+[node name="Language" type="TextureButton" parent="AnimBackground" unique_id=98355146]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 906.0
+offset_right = 1019.0
+offset_bottom = 944.0
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("8_bh4e2")
+texture_hover = ExtResource("8_88kup")
+
+[node name="Credits" type="TextureButton" parent="AnimBackground" unique_id=941047227]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 1177.0001
+offset_right = 1512.0
+offset_bottom = 1229.0001
+scale = Vector2(1.19, 1.19)
+texture_normal = ExtResource("9_bh4e2")
+texture_hover = ExtResource("10_3w8rc")

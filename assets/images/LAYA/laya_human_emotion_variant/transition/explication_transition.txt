@@ -1,0 +1,1 @@
+plus en avance dans les nombres plus la transition baisse en opacité exemple (frame1= 100% / frame2 = 50% / frame3= 0%)
