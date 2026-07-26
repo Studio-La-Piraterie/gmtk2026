@@ -3,9 +3,10 @@ class_name AI extends Node
 @onready var AI_face = $TerminalContainer/AIFaceContainer/AIFace
 @onready var AI_text = $TerminalContainer/AITextContainer/AIText
 
-@export var AI_happy : ArtificialIntelligence
-@export var AI_neutral : ArtificialIntelligence
-@export var AI_sad : ArtificialIntelligence
+@export var discussions : Dictionary[String, ArtificialIntelligence]
+#@export var AI_happy : ArtificialIntelligence
+#@export var AI_neutral : ArtificialIntelligence
+#@export var AI_sad : ArtificialIntelligence
 
 @export var character_update_time : float = 0.09
 @export var character_displayed : int = 3
@@ -14,21 +15,21 @@ class_name AI extends Node
 enum Emotion {WORRIED, ANGRY, SAD, NEUTRAL, SURPRISED, CONFIDENT, GRATEFUL, HAPPY, HAPPY_IN_LOVE, IN_LOVE}
 
 const AI_FACE : Dictionary = {
-	Emotion.WORRIED: "",
-	Emotion.ANGRY: "",
-	Emotion.SAD: "",
-	Emotion.NEUTRAL: "",
-	Emotion.SURPRISED : "",
-	Emotion.CONFIDENT : "",
-	Emotion.GRATEFUL : "",
-	Emotion.HAPPY : "",
-	Emotion.HAPPY_IN_LOVE : "",
-	Emotion.IN_LOVE : ""
+	Emotion.WORRIED: preload("res://assets/images/LAYA/laya_human_emotion_variant/worried.png"),
+	Emotion.ANGRY: preload("res://assets/images/LAYA/laya_human_emotion_variant/angry.png"),
+	Emotion.SAD: preload("res://assets/images/LAYA/laya_human_emotion_variant/sad.png"),
+	Emotion.NEUTRAL: preload("res://assets/images/LAYA/laya_human_emotion_variant/neutral.png"),
+	Emotion.SURPRISED : preload("res://assets/images/LAYA/laya_human_emotion_variant/surprised.png"),
+	Emotion.CONFIDENT : preload("res://assets/images/LAYA/laya_human_emotion_variant/happy.png"), #Don't have confident so I put happy
+	Emotion.GRATEFUL : preload("res://assets/images/LAYA/laya_human_emotion_variant/grateful.png"),
+	Emotion.HAPPY : preload("res://assets/images/LAYA/laya_human_emotion_variant/happy.png"),
+	Emotion.HAPPY_IN_LOVE : preload("res://assets/images/LAYA/laya_human_emotion_variant/hapilly_inlove.png"),
+	Emotion.IN_LOVE : preload("res://assets/images/LAYA/laya_human_emotion_variant/in_love.png")
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	update_terminal(AI_neutral)
+	update_terminal(discussions["SELF_DESTRUCTION_LAYA"])
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
