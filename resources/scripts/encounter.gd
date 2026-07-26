@@ -17,11 +17,16 @@ const ENCOUNTER_RESULTS : Dictionary = {
 
 enum Type {PASSIVE,AGRESSIVE,TARGET}
 
+@export_category("Encounter carac")
 @export var type : Type = Type.PASSIVE
 @export var sprite : SpriteFrames = null
 @export var description : String = ""
 @export var audio_stream : AudioStream = null
 @export var oscillo_gif : GIFTexture = null
+
+@export_category("Order carac")
+@export var target_order : String = ""
+@export var show_oscillo : bool = false
 
 var min_oscillo_val : float = 0.0
 var max_oscillo_val : float = 0.0

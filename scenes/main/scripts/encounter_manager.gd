@@ -12,7 +12,6 @@ var aggressive_probability : int = 20
 var amount_target_killed : int = 0
 var amount_target : int = 0
 
-
 func _init() -> void:
 	for encounter in ENCOUNTER_POOL:
 		if encounter.type == Encounter.Type.TARGET:

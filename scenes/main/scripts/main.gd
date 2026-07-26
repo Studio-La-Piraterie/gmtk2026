@@ -15,6 +15,9 @@ signal game_over(game_over_type : GameOverType)
 var _current_encounter : Encounter = null :
 	set = _set_encounter
 
+var _current_target : Encounter = null :
+	set = _set_target
+
 func _ready() -> void:
 	pause_menu.resume_game()
 	add_child(encounter_manager)
@@ -33,6 +36,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	dashboard_ui.update_main_countdown(main_countdown.time_left)
+
+func _set_target(new_target : Encounter):
+	_current_target = new_target
+	if dashboard_ui != null:
+		dashboard_ui.set_target(_current_target)
 
 func _set_encounter(new_encounter : Encounter):
 	_current_encounter = new_encounter
@@ -62,7 +70,8 @@ func _resolve_encounter(killed : bool) -> void :
 	var new_main_countdown_time := main_countdown.time_left + encounter_result_time
 	
 	_set_encounter(null)
-	
+	_set_target(encounter_manager.get_current_target())
+
 	dashboard_ui.resolve_dismiss_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER
 	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
 	
