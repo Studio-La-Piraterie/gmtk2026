@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="6_b1x3f"]
 [ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="6_yyfjg"]
 [ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="8_yyfjg"]
-[ext_resource type="PackedScene" uid="uid://dim50lahd0xi" path="res://test/TestOscilloscope.tscn" id="9_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://b3rl2w1d1cfd8" path="res://scenes/main/dashboard_elements/Oscilloscope.tscn" id="9_b1x3f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
 font = ExtResource("6_yyfjg")
@@ -40,7 +40,7 @@ script = ExtResource("2_hujxm")
 resolve_dismiss_ui = NodePath("ResolveDismissUI")
 encounter_ui = NodePath("EncounterUI")
 unstable_cable = NodePath("TestUnstableCable_tscn")
-oscilloscope = NodePath("TestOscilloscope")
+oscilloscope = NodePath("Oscilloscope")
 
 [node name="Background" type="TextureRect" parent="DashboardUI" unique_id=606904987]
 layout_mode = 1
@@ -93,14 +93,10 @@ mouse_filter = 2
 min_failure_countdown = 20.0
 max_failure_countdown = 40.0
 
-[node name="TestOscilloscope" parent="DashboardUI" unique_id=97779108 instance=ExtResource("9_b1x3f")]
-layout_mode = 1
-offset_left = 775.0
-offset_top = 447.0
-offset_right = 775.0
-offset_bottom = 447.0
-
 [node name="EncounterAudioPlayer" type="AudioStreamPlayer" parent="DashboardUI" unique_id=1306370348]
+
+[node name="Oscilloscope" parent="DashboardUI" unique_id=705844124 instance=ExtResource("9_b1x3f")]
+layout_mode = 0
 
 [node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
 wait_time = 300.0
