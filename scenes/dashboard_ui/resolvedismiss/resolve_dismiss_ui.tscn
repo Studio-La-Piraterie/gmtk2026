@@ -67,6 +67,7 @@ offset_top = -165.0
 offset_right = 1735.0
 offset_bottom = 1332.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("5_ijxki")
 
 [node name="CtrlBtn" type="TextureButton" parent="." unique_id=500118641]
@@ -88,6 +89,7 @@ offset_top = 46.0
 offset_right = 1894.0
 offset_bottom = 1543.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("5_ijxki")
 
 [node name="ReadyBtn" type="TextureButton" parent="." unique_id=1482499074]
@@ -109,6 +111,7 @@ offset_top = 46.0
 offset_right = 1908.0
 offset_bottom = 1543.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("5_ijxki")
 
 [node name="DismissBtn" type="TextureButton" parent="." unique_id=30045910]
