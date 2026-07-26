@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://7kmd8eq0flj"]
+
+[ext_resource type="Texture2D" uid="uid://5dc22b5nlyxd" path="res://assets/menu/pausemenu/pausemenu_background_frame1.png" id="1_gh0u6"]
+[ext_resource type="Texture2D" uid="uid://gk2yym6gc6ep" path="res://assets/menu/pausemenu/pausemenu_background_frame2.png" id="2_eyfc8"]
+[ext_resource type="Texture2D" uid="uid://dav2swkk5i8nq" path="res://assets/menu/pausemenu/pausemenu_background_frame3.png" id="3_xiui8"]
+[ext_resource type="Texture2D" uid="uid://b8qvok7e0sykp" path="res://assets/menu/pausemenu/pausemenu_select_resume.png" id="4_gqhbq"]
+[ext_resource type="Texture2D" uid="uid://c8w3tbyuo16pc" path="res://assets/menu/pausemenu/pausemenu_select_quit.png" id="5_dgi6y"]
+[ext_resource type="Texture2D" uid="uid://bpm4rayu3hkrf" path="res://assets/menu/pausemenu/pausemenu_select_resume_hover.png" id="5_opdvj"]
+[ext_resource type="Texture2D" uid="uid://bsqjyimhr2inb" path="res://assets/menu/pausemenu/pausemenu_select_quit_hover_V2.png" id="6_gqhbq"]
+[ext_resource type="Texture2D" uid="uid://cwf2migwggfwo" path="res://assets/menu/specificbutton/pausemenu_select_french.png" id="7_dgi6y"]
+[ext_resource type="Texture2D" uid="uid://3pxr647bjsk2" path="res://assets/menu/specificbutton/pausemenu_select_english.png" id="8_dqjbd"]
+[ext_resource type="Texture2D" uid="uid://dqtil82ub3cgl" path="res://assets/menu/specificbutton/pausemenu_select_french_hover.png" id="8_opdvj"]
+[ext_resource type="Texture2D" uid="uid://dw16q8i6mcvuy" path="res://assets/menu/specificbutton/pausemenu_select_english_hover.png" id="10_pf6lc"]
+
+[sub_resource type="Animation" id="Animation_dqjbd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gh0u6")]
+}
+
+[sub_resource type="Animation" id="Animation_opdvj"]
+resource_name = "anim_pause_menu"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_gh0u6"), ExtResource("2_eyfc8"), ExtResource("3_xiui8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pf6lc"]
+_data = {
+&"RESET": SubResource("Animation_dqjbd"),
+&"anim_pause_menu": SubResource("Animation_opdvj")
+}
+
+[node name="pause_menu" type="Control" unique_id=1456723423]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2080349553]
+libraries/ = SubResource("AnimationLibrary_pf6lc")
+autoplay = &"anim_pause_menu"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=638261695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gh0u6")
+
+[node name="Resume" type="TextureButton" parent="TextureRect" unique_id=1711906270]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 27.0
+offset_right = 68.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.18, 1.18)
+texture_normal = ExtResource("4_gqhbq")
+texture_hover = ExtResource("5_opdvj")
+
+[node name="Quit" type="TextureButton" parent="TextureRect" unique_id=1916308335]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = 428.0
+offset_right = 35.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.23, 1.23)
+texture_normal = ExtResource("5_dgi6y")
+texture_hover = ExtResource("6_gqhbq")
+
+[node name="French" type="TextureButton" parent="TextureRect" unique_id=143941239]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = 292.99994
+offset_right = 3.0
+offset_bottom = 330.99994
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.77, 1.77)
+texture_normal = ExtResource("7_dgi6y")
+texture_hover = ExtResource("8_opdvj")
+
+[node name="English" type="TextureButton" parent="TextureRect" unique_id=54885656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.00006
+offset_top = 159.0
+offset_right = 15.999939
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.77, 1.77)
+texture_normal = ExtResource("8_dqjbd")
+texture_hover = ExtResource("10_pf6lc")
