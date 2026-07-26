@@ -32,7 +32,6 @@ func restart_failure_timer()->void:
 
 
 func fail()->void:
-	print("Fail")
 	bzit_animation.play("bzit")
 
 	failure_timer.stop()
@@ -44,7 +43,6 @@ func fail()->void:
 	failed.emit()
 	
 func restore()->void:
-	print("Restore")
 	failure_timer.start()
 	restore_btn.disabled = true
 	restore_btn.button_pressed = true

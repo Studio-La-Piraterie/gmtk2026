@@ -4,6 +4,7 @@ class_name MainGame extends Node
 @export var timer_before_new_encounter : Timer
 @export var encounter_countdown : Timer
 @export var main_countdown : Timer
+@export var pause_menu: PauseMenu 
 
 var encounter_manager := EncounterManager.new()
 
@@ -14,8 +15,8 @@ signal game_over(game_over_type : GameOverType)
 var _current_encounter : Encounter = null :
 	set = _set_encounter
 
-
 func _ready() -> void:
+	pause_menu.resume_game()
 	add_child(encounter_manager)
 	
 	main_countdown.start()
@@ -24,6 +25,11 @@ func _ready() -> void:
 	timer_before_new_encounter.timeout.connect(_go_to_next_encounter)
 	encounter_countdown.timeout.connect(_dismiss_encounter)
 	main_countdown.timeout.connect(emit_game_over)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause_unpause") && not get_tree().is_paused():
+		get_viewport().set_input_as_handled()
+		pause_menu.pause_game()
 
 func _process(_delta: float) -> void:
 	dashboard_ui.update_main_countdown(main_countdown.time_left)

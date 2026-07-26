@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ArtificialIntelligence" format=3 uid="uid://baf12t7ntp8mv"]
+
+[ext_resource type="Script" uid="uid://bgcojfd6b5top" path="res://resources/scripts/artificial_intelligence.gd" id="1_2ta06"]
+
+[resource]
+script = ExtResource("1_2ta06")
+emotion = 1
+pair = Dictionary[String, int]({
+"END_GEN_LAYA0": 1,
+"END_GEN_LAYA1": 1,
+"END_GEN_LAYA2": 1,
+"END_GEN_LAYA3": 1,
+"END_GEN_LAYA4": 1,
+"END_GEN_LAYA5": 1,
+"END_GEN_LAYA6": 1
+})

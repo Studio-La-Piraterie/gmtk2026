@@ -4,13 +4,9 @@ extends Control
 @export var encounter : Encounter = Encounter.new() :
 	set = _set_encounter
 
-@onready var lucarne: TextureRect = %Lucarne
-@onready var reponse: Label = %Reponse
-@onready var description: Label = %Description
-@onready var wave_form: Label = %WaveForm
-@onready var type: ColorRect = %Type
+@export var encounter_ui: EncounterUI
+@export var oscilloscope_ui: Oscilloscope
 @onready var get_new_encounter_btn: Button = %GetNewEncounter
-@onready var gif_player: GIFPlayer = %GIFPlayer
 
 var encounter_dispenser := EncounterManager.new()
 
@@ -30,14 +26,11 @@ func _set_encounter(new_encounter : Encounter) -> void:
 	if new_encounter == null:
 		new_encounter = Encounter.new()
 	
-	encounter = new_encounter
-	lucarne.texture = encounter.sprite
-	reponse.text = "Reponse:" + encounter.response
-	description.text = "Description:" + encounter.description
-	wave_form.text = "Wave Form:" + str(encounter.wave_form)
-	encounter_dispenser.play_audio(encounter.audio_stream)
-	type.color = type2color(encounter.type)
-	gif_player.gif = encounter.oscillo_gif
+	encounter_ui.update_encounter_ui(encounter)
+	
+	AudioManager.play_encounter_audio(encounter.audio_stream)
+	
+	oscilloscope_ui.update(encounter.oscillo_gif, encounter.min_oscillo_val, encounter.max_oscillo_val)
 	
 func type2color (encounter_type : Encounter.Type) -> Color :
 	match encounter_type:
