@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://c71jiguui3jh1"]
+
+[ext_resource type="Texture2D" uid="uid://csj0i782oq15v" path="res://assets/images/scope/macbeth.gif" id="1_befyd"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_s6e5i"]
+[ext_resource type="Texture2D" uid="uid://102o4602uug7" path="res://assets/images/rencontres/macbeth.png" id="2_r7da0"]
+
+[resource]
+script = ExtResource("1_s6e5i")
+type = 1
+sprite = ExtResource("2_r7da0")
+oscillo_gif = ExtResource("1_befyd")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://cfsi12mw8o10y"]
+
+[ext_resource type="Texture2D" uid="uid://drjyjblkn8dgk" path="res://assets/images/scope/saskia.gif" id="1_jg8i5"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_r4pha"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_bu2ti"]
+
+[resource]
+script = ExtResource("1_r4pha")
+sprite = ExtResource("2_bu2ti")
+oscillo_gif = ExtResource("1_jg8i5")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

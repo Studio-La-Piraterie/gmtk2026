@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://4qwaajk3x4of"]
+
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_gpmsb"]
+[ext_resource type="Texture2D" uid="uid://unm7mdjgvdng" path="res://assets/images/scope/godot.gif" id="1_mtm7p"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_y2opl"]
+
+[resource]
+script = ExtResource("1_gpmsb")
+type = 1
+sprite = ExtResource("2_y2opl")
+oscillo_gif = ExtResource("1_mtm7p")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

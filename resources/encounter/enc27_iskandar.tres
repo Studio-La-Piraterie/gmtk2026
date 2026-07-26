@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://h0t6uqq252wy"]
+
+[ext_resource type="Texture2D" uid="uid://drortrer2d32v" path="res://assets/images/scope/iskandar.gif" id="1_dpn5v"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_hd4a8"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_ar1pr"]
+
+[resource]
+script = ExtResource("1_hd4a8")
+type = 2
+sprite = ExtResource("2_ar1pr")
+oscillo_gif = ExtResource("1_dpn5v")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

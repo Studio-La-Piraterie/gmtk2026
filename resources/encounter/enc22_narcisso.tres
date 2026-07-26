@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://bvlj6tcageja2"]
+
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_jcfnv"]
+[ext_resource type="Texture2D" uid="uid://di6cadvaeh3b8" path="res://assets/images/scope/narcisso.gif" id="1_wkw1i"]
+[ext_resource type="Texture2D" uid="uid://58bl66wa2q4w" path="res://assets/images/rencontres/sinon.png" id="2_wkw1i"]
+
+[resource]
+script = ExtResource("1_jcfnv")
+sprite = ExtResource("2_wkw1i")
+oscillo_gif = ExtResource("1_wkw1i")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

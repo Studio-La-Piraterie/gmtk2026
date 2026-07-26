@@ -2,33 +2,97 @@
 
 [ext_resource type="Script" uid="uid://vuf4exvo7so0" path="res://scenes/main/scripts/AI/test_ai_terminal.gd" id="1_x4jxm"]
 [ext_resource type="Resource" uid="uid://ydbvxkncbigh" path="res://resources/AI/test_ai.tres" id="2_2t2dg"]
+[ext_resource type="Texture2D" uid="uid://bc8sgm325qcwj" path="res://assets/images/dashboard/Ecran_terminal_final.png" id="3_meqrq"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="3_rcf52"]
 
-[sub_resource type="Gradient" id="Gradient_r225j"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xums1"]
-gradient = SubResource("Gradient_r225j")
-
-[node name="TestAiChat" type="Control" unique_id=1316176673]
+[node name="TestAiChat" type="Control" unique_id=1520334426]
 layout_mode = 3
-anchor_right = 0.22500001
-anchor_bottom = 0.24400002
-offset_right = -259.2
-offset_bottom = -158.11201
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_x4jxm")
 AI_neutral = ExtResource("2_2t2dg")
 
-[node name="AIFace" type="TextureRect" parent="." unique_id=820117037]
-layout_mode = 0
-offset_left = 77.0
-offset_top = 163.0
-offset_right = 350.0
-offset_bottom = 463.0
-texture = SubResource("GradientTexture2D_xums1")
+[node name="TerminalTexture" type="TextureRect" parent="." unique_id=1448462062]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1498.0
+offset_top = -644.0
+offset_right = 1559.0
+offset_bottom = 981.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_meqrq")
 
-[node name="AIText" type="RichTextLabel" parent="." unique_id=1427265588]
-layout_mode = 0
-offset_left = 466.0
-offset_top = 25.0
-offset_right = 1151.0
-offset_bottom = 620.0
+[node name="TerminalContainer" type="HBoxContainer" parent="." unique_id=2119301817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftMargin" type="Control" parent="TerminalContainer" unique_id=1410967470]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.08
+
+[node name="AIFaceContainer" type="VBoxContainer" parent="TerminalContainer" unique_id=1437104429]
+custom_maximum_size = Vector2(800, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="TopMargin" type="Control" parent="TerminalContainer/AIFaceContainer" unique_id=1086763371]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="AIFace" type="TextureRect" parent="TerminalContainer/AIFaceContainer" unique_id=706919053]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.55
+texture = ExtResource("3_rcf52")
+
+[node name="BottomMargin" type="Control" parent="TerminalContainer/AIFaceContainer" unique_id=1190105750]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="FaceTextMargin" type="Control" parent="TerminalContainer" unique_id=1735927759]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="AITextContainer" type="VBoxContainer" parent="TerminalContainer" unique_id=1086487553]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="TopMargin" type="Control" parent="TerminalContainer/AITextContainer" unique_id=1564591831]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="AIText" type="RichTextLabel" parent="TerminalContainer/AITextContainer" unique_id=1427265588]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+theme_override_font_sizes/normal_font_size = 30
 text = "Placeholder text"
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomMargin" type="Control" parent="TerminalContainer/AITextContainer" unique_id=1699578994]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="RightMargin" type="Control" parent="TerminalContainer" unique_id=1819777228]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.08

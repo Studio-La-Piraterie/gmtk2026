@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://btxfmhng7ue6e"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_7fnh8"]
+[ext_resource type="AudioStream" uid="uid://qqin6sawgi3f" path="res://assets/audio/rencontres/karen.ogg" id="1_jcdfd"]
+[ext_resource type="Texture2D" uid="uid://cpwiu2vy53bk8" path="res://assets/oscilloscoope/ONDE.gif" id="2_8gjk4"]
 [ext_resource type="Texture2D" uid="uid://cxuygyj5fbrbc" path="res://assets/images/dashboard/tableau_de_bord_preview.png" id="2_103oj"]
 
 [resource]
@@ -10,4 +12,6 @@ sprite = ExtResource("2_103oj")
 description = "C'est ca qu'on veut babyyyy"
 wave_form = 3
 response = "Sooooon, soon le joli UI"
+audio_stream = ExtResource("1_jcdfd")
+oscillo_gif = ExtResource("2_8gjk4")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

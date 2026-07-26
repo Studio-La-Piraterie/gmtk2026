@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://cd6iyo6x8j0tq"]
+
+[ext_resource type="Texture2D" uid="uid://c8j63j7cs5kpg" path="res://assets/images/scope/lawliet.gif" id="1_bk07u"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_owysv"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_1m27i"]
+
+[resource]
+script = ExtResource("1_owysv")
+type = 1
+sprite = ExtResource("2_1m27i")
+oscillo_gif = ExtResource("1_bk07u")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

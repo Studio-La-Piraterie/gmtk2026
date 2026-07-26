@@ -12,10 +12,8 @@ enum GameOverType {TIME_UP, PACIFIC_VICTORY, NEUTRAL_VICTORY, AGGRESSIVE_VICTORY
 signal game_over(game_over_type : GameOverType)
 
 var _current_encounter : Encounter = null :
-	set(new_encounter):
-		_current_encounter = new_encounter
-		if dashboard_ui != null:
-			dashboard_ui.set_encounter(_current_encounter)
+	set = _set_encounter
+
 
 func _ready() -> void:
 	add_child(encounter_manager)
@@ -30,13 +28,16 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	dashboard_ui.update_main_countdown(main_countdown.time_left)
 
+func _set_encounter(new_encounter : Encounter):
+	_current_encounter = new_encounter
+	if dashboard_ui != null:
+		dashboard_ui.set_encounter(_current_encounter)
+
 func _go_to_next_encounter() -> void:	
 	_current_encounter = encounter_manager.get_new_encounter()
 	if _current_encounter == null:
 		return
-
-	dashboard_ui.update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT)
-	#dashboard_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT
+	
 	timer_before_new_encounter.stop()
 	encounter_countdown.start()
 	
@@ -50,18 +51,17 @@ func _resolve_encounter(killed : bool) -> void :
 	if _current_encounter == null:
 		return
 		
-	if killed and _current_encounter.type == Encounter.Type.TARGET:
-		encounter_manager.amount_target_killed+=1
-		
-	encounter_manager.available_encounters.erase(_current_encounter)
+	encounter_manager.encounter_processed(_current_encounter,killed)
+	var encounter_result_time : float = _current_encounter.get_encounter_result(killed)
+	var new_main_countdown_time := main_countdown.time_left + encounter_result_time
 	
-	var new_main_countdown_time := main_countdown.time_left + _current_encounter.get_encounter_result(killed)
-	main_countdown.start(new_main_countdown_time) 
-	
-	_current_encounter = null
+	_set_encounter(null)
 	
 	dashboard_ui.resolve_dismiss_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER
+	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
 	
+	main_countdown.start(new_main_countdown_time) 
+
 	if not encounter_manager.are_encounter_remaining():
 		emit_game_over()
 	

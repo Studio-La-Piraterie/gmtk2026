@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cg537q5mxjysg" path="res://test/test_unstable_cable.gd" id="1_7jkh6"]
 
-[node name="TestUnstableCable_tscn" type="Control" unique_id=1619806952 node_paths=PackedStringArray("restore_btn")]
+[node name="TestUnstableCable_tscn" type="Control" unique_id=1619806952 node_paths=PackedStringArray("restore_btn", "plug_unplug_audio")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -15,6 +15,10 @@ script = ExtResource("1_7jkh6")
 min_failure_countdown = 2.0
 max_failure_countdown = 4.0
 restore_btn = NodePath("restore")
+plug_unplug_audio = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1345858630]
+bus = &"SFX"
 
 [node name="restore" type="Button" parent="." unique_id=449141018]
 layout_mode = 1

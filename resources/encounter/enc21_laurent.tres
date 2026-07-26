@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://bi2fuba05y5t"]
+
+[ext_resource type="Texture2D" uid="uid://cklho5ghk3yfn" path="res://assets/images/scope/laurent.gif" id="1_5305f"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_gws2i"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_io57u"]
+
+[resource]
+script = ExtResource("1_gws2i")
+sprite = ExtResource("2_io57u")
+oscillo_gif = ExtResource("1_5305f")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

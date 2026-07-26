@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dii3aiuyew87d"]
+
+[ext_resource type="Script" uid="uid://c2owb1kyv7c7t" path="res://scenes/main/scripts/UserManual/testUserManual.gd" id="1_io3ue"]
+[ext_resource type="Script" uid="uid://b5ug3sbbcjhyb" path="res://resources/scripts/manual_page.gd" id="2_lmrur"]
+[ext_resource type="Resource" uid="uid://0kvomjpeheeh" path="res://resources/manual_pages/page0.tres" id="3_gr5go"]
+[ext_resource type="Resource" uid="uid://bknfjlc8xtgwg" path="res://resources/manual_pages/page1.tres" id="4_8xkcu"]
+[ext_resource type="Resource" uid="uid://b8rs3lvygrjxy" path="res://resources/manual_pages/page2.tres" id="5_4qm04"]
+[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="6_gr5go"]
+[ext_resource type="Resource" uid="uid://cs5fwjk0lnebt" path="res://resources/manual_pages/page3.tres" id="6_rnln3"]
+[ext_resource type="Resource" uid="uid://jqwidb1g3drr" path="res://resources/manual_pages/page4.tres" id="7_cpk3v"]
+[ext_resource type="Resource" uid="uid://bf3nhjcm286rx" path="res://resources/manual_pages/page5.tres" id="8_bn2og"]
+[ext_resource type="Resource" uid="uid://b5hhvohpxg2sc" path="res://resources/manual_pages/page6.tres" id="9_sarpu"]
+[ext_resource type="Resource" uid="uid://c40u2ykco6n72" path="res://resources/manual_pages/page7.tres" id="10_w2jjw"]
+[ext_resource type="Resource" uid="uid://dyah5w2gkgk0j" path="res://resources/manual_pages/page8.tres" id="11_0ua1p"]
+[ext_resource type="Resource" uid="uid://bsy6gfsvjv0pt" path="res://resources/manual_pages/page9.tres" id="12_k5wsa"]
+
+[sub_resource type="Gradient" id="Gradient_5hxmf"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xums1"]
+gradient = SubResource("Gradient_5hxmf")
+
+[sub_resource type="Gradient" id="Gradient_io3ue"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xtrkc"]
+gradient = SubResource("Gradient_io3ue")
+
+[node name="UserManual" type="Control" unique_id=1282962460]
+layout_mode = 3
+anchor_right = 0.597
+anchor_bottom = 0.48200002
+offset_right = 0.76000977
+offset_bottom = 0.083984375
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_io3ue")
+pages_arr = Array[ExtResource("2_lmrur")]([ExtResource("3_gr5go"), ExtResource("4_8xkcu"), ExtResource("5_4qm04"), ExtResource("6_rnln3"), ExtResource("7_cpk3v"), ExtResource("8_bn2og"), ExtResource("9_sarpu"), ExtResource("10_w2jjw"), ExtResource("11_0ua1p"), ExtResource("12_k5wsa")])
+
+[node name="CloseButton" type="Button" parent="." unique_id=2110323020]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.57900006
+anchor_right = 0.59800005
+anchor_bottom = 0.025
+offset_left = 3.3199463
+offset_top = 2.0
+offset_right = -2.1601563
+offset_bottom = -0.45000076
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="ManualSprite" type="Sprite2D" parent="." unique_id=306557214]
+position = Vector2(464, 511.75)
+scale = Vector2(1.4609375, 2.1367188)
+texture = ExtResource("6_gr5go")
+
+[node name="OpenButton" type="Button" parent="ManualSprite" unique_id=2077604460]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PagesContainer" type="HBoxContainer" parent="." unique_id=1895528809]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="LeftPage" type="TextureRect" parent="PagesContainer" unique_id=357600980]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture1D_xums1")
+expand_mode = 1
+
+[node name="LeftPageText" type="RichTextLabel" parent="PagesContainer/LeftPage" unique_id=798626689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="LeftPageButton" type="Button" parent="PagesContainer/LeftPage" unique_id=246269845]
+layout_mode = 1
+offset_right = 88.0
+offset_bottom = 649.0
+
+[node name="RightPage" type="TextureRect" parent="PagesContainer" unique_id=529989639]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture1D_xtrkc")
+expand_mode = 1
+
+[node name="RightPageText" type="RichTextLabel" parent="PagesContainer/RightPage" unique_id=779747300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="RightPageButton" type="Button" parent="PagesContainer/RightPage" unique_id=720010012]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_bottom = 649.0
+grow_horizontal = 0
