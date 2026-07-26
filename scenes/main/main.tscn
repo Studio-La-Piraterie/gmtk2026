@@ -40,7 +40,7 @@ encounter_countdown = NodePath("EncounterCountDown")
 main_countdown = NodePath("MainCountdown")
 pause_menu = NodePath("pause_menu")
 
-[node name="DashboardUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("resolve_dismiss_ui", "encounter_ui", "unstable_cable", "oscilloscope")]
+[node name="DashboardUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("resolve_dismiss_ui", "encounter_ui", "unstable_cable", "oscilloscope", "order_terminal")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +53,7 @@ resolve_dismiss_ui = NodePath("ResolveDismissUI")
 encounter_ui = NodePath("EncounterUI")
 unstable_cable = NodePath("UnstableCable")
 oscilloscope = NodePath("Oscilloscope")
+order_terminal = NodePath("OrderTerminal")
 
 [node name="Background" type="TextureRect" parent="DashboardUI" unique_id=606904987]
 layout_mode = 1
@@ -99,11 +100,6 @@ bus = &"Encounter"
 [node name="Oscilloscope" parent="DashboardUI" unique_id=705844124 instance=ExtResource("9_b1x3f")]
 layout_mode = 0
 
-[node name="UnstableCable" parent="DashboardUI" unique_id=1325246831 instance=ExtResource("9_a8run")]
-layout_mode = 0
-min_failure_countdown = 2.0
-max_failure_countdown = 3.0
-
 [node name="OrderTerminal" parent="DashboardUI" unique_id=509945745 instance=ExtResource("10_th5th")]
 layout_mode = 0
 
@@ -132,6 +128,12 @@ offset_left = 28.0
 offset_top = 35.0
 offset_right = 767.76
 offset_bottom = 680.084
+mouse_filter = 2
+
+[node name="UnstableCable" parent="DashboardUI" unique_id=1325246831 instance=ExtResource("9_a8run")]
+layout_mode = 0
+min_failure_countdown = 2.0
+max_failure_countdown = 3.0
 
 [node name="pause_menu" parent="." unique_id=1456723423 instance=ExtResource("10_a8run")]
 visible = false

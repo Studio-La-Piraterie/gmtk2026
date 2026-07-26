@@ -21,6 +21,7 @@ func _init() -> void:
 	
 	_available_targets.shuffle()
 	amount_target = _available_targets.size()
+	_set_new_target()
 
 func get_current_target()->Encounter:
 	return _current_target
