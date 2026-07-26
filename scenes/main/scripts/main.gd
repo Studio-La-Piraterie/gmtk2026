@@ -12,6 +12,28 @@ enum GameOverType {TIME_UP, PACIFIC_VICTORY, NEUTRAL_VICTORY, AGGRESSIVE_VICTORY
 
 signal game_over(game_over_type : GameOverType)
 
+func _on_game_over(game_over_type : GameOverType):
+	main_countdown.pause()
+	var ai_chat_text : String 
+	match game_over_type:
+		GameOverType.TIME_UP:
+			"GAME_OVER_END_LAYA"
+		GameOverType.PACIFIC_VICTORY:
+			"PACIFIST_END_LAYA"
+		GameOverType.NEUTRAL_VICTORY:
+			"FAILED_END_LAYA"
+		GameOverType.AGGRESSIVE_VICTORY:
+			"END_GEN_LAYA"
+		
+	dashboard_ui.ai_chat.update_terminal(dashboard_ui.ai_chat.discussions[ai_chat_text])
+	await get_tree().create_timer(7)
+	
+	var fade_t : Tween = create_tween()
+	fade_t.tween_property(self,"modulate",Color.BLACK,1.5)
+	await fade_t.finished
+	GameManager.change_game_scene(GameManager.GameState.MAIN_MENU)
+
+	
 var _current_encounter : Encounter = null :
 	set = _set_encounter
 
@@ -31,6 +53,7 @@ func _ready() -> void:
 	timer_before_new_encounter.timeout.connect(_go_to_next_encounter)
 	encounter_countdown.timeout.connect(_dismiss_encounter)
 	main_countdown.timeout.connect(emit_game_over)
+	game_over.connect(_on_game_over)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause_unpause") && not get_tree().is_paused():
