@@ -1,11 +1,25 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://bi2fuba05y5t"]
 
+[ext_resource type="AudioStream" uid="uid://drumenhne1eyq" path="res://assets/audio/rencontres/laurent.ogg" id="1_67nom"]
 [ext_resource type="Texture2D" uid="uid://cklho5ghk3yfn" path="res://assets/images/scope/laurent.gif" id="1_5305f"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_gws2i"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_io57u"]
+[ext_resource type="Texture2D" uid="uid://b2d5et4jjislr" path="res://assets/images/rencontres/sansnom.png" id="4_0tvb5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a01lv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0tvb5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_gws2i")
-sprite = ExtResource("2_io57u")
+sprite = SubResource("SpriteFrames_a01lv")
+description = "laurent"
+audio_stream = ExtResource("1_67nom")
 oscillo_gif = ExtResource("1_5305f")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

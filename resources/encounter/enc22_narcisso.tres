@@ -1,11 +1,81 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://bvlj6tcageja2"]
 
+[ext_resource type="AudioStream" uid="uid://bcyqspwowgyjs" path="res://assets/audio/rencontres/narcisso.ogg" id="1_8qsbm"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_jcfnv"]
 [ext_resource type="Texture2D" uid="uid://di6cadvaeh3b8" path="res://assets/images/scope/narcisso.gif" id="1_wkw1i"]
-[ext_resource type="Texture2D" uid="uid://58bl66wa2q4w" path="res://assets/images/rencontres/sinon.png" id="2_wkw1i"]
+[ext_resource type="Texture2D" uid="uid://ctd2hew75hulg" path="res://assets/images/rencontres/anim/narcisoo/narcisso1.png" id="4_ns5fo"]
+[ext_resource type="Texture2D" uid="uid://c0ft7nne3lh6d" path="res://assets/images/rencontres/anim/narcisoo/narcisso2.png" id="5_nleyy"]
+[ext_resource type="Texture2D" uid="uid://ckjn876kcpeek" path="res://assets/images/rencontres/anim/narcisoo/narcisso3.png" id="6_i1kfd"]
+[ext_resource type="Texture2D" uid="uid://beemvh6vn5mxr" path="res://assets/images/rencontres/anim/narcisoo/narcisso4.png" id="7_8ptto"]
+[ext_resource type="Texture2D" uid="uid://bn08lnff8uyy3" path="res://assets/images/rencontres/anim/narcisoo/narcisso5.png" id="8_ksiul"]
+[ext_resource type="Texture2D" uid="uid://tsclps5ki23q" path="res://assets/images/rencontres/anim/narcisoo/narcisso6.png" id="9_kcmhs"]
+[ext_resource type="Texture2D" uid="uid://cj1c5ad4wryri" path="res://assets/images/rencontres/anim/narcisoo/narcisso7.png" id="10_qfplh"]
+[ext_resource type="Texture2D" uid="uid://b4pijifvovk14" path="res://assets/images/rencontres/anim/narcisoo/narcisso8.png" id="11_8kxnj"]
+[ext_resource type="Texture2D" uid="uid://bnjthx7bhk4bb" path="res://assets/images/rencontres/anim/narcisoo/narcisso9.png" id="12_dpgkx"]
+[ext_resource type="Texture2D" uid="uid://bhk27srb8iiff" path="res://assets/images/rencontres/anim/narcisoo/narcisso10.png" id="13_jf5lg"]
+[ext_resource type="Texture2D" uid="uid://ca28p6udndub6" path="res://assets/images/rencontres/anim/narcisoo/narcisso11.png" id="14_1c1vn"]
+[ext_resource type="Texture2D" uid="uid://d00qbpo8hinu4" path="res://assets/images/rencontres/anim/narcisoo/narcisso12.png" id="15_6mfbf"]
+[ext_resource type="Texture2D" uid="uid://3vsjjttclxte" path="res://assets/images/rencontres/anim/narcisoo/narcisso13.png" id="16_8k74a"]
+[ext_resource type="Texture2D" uid="uid://c3r6xrj1nensg" path="res://assets/images/rencontres/anim/narcisoo/narcisso14.png" id="17_jes06"]
+[ext_resource type="Texture2D" uid="uid://b03pc2ybpk4pi" path="res://assets/images/rencontres/anim/narcisoo/narcisso15.png" id="18_dioly"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nh1xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ns5fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nleyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i1kfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8ptto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ksiul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kcmhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qfplh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8kxnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dpgkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jf5lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1c1vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6mfbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8k74a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jes06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dioly")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_jcfnv")
-sprite = ExtResource("2_wkw1i")
+sprite = SubResource("SpriteFrames_nh1xu")
+description = "narcisso"
+audio_stream = ExtResource("1_8qsbm")
 oscillo_gif = ExtResource("1_wkw1i")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

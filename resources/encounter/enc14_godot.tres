@@ -1,12 +1,35 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://4qwaajk3x4of"]
 
+[ext_resource type="AudioStream" uid="uid://brqmluto4mh2g" path="res://assets/audio/rencontres/godot.ogg" id="1_8blxo"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_gpmsb"]
 [ext_resource type="Texture2D" uid="uid://unm7mdjgvdng" path="res://assets/images/scope/godot.gif" id="1_mtm7p"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_y2opl"]
+[ext_resource type="Texture2D" uid="uid://cl4ypvtdgawjf" path="res://assets/images/rencontres/anim/godot/godot1.png" id="4_x5ajv"]
+[ext_resource type="Texture2D" uid="uid://c67qtgtqmfw7k" path="res://assets/images/rencontres/anim/godot/godot2.png" id="5_pquob"]
+[ext_resource type="Texture2D" uid="uid://bhbpca7tyie3" path="res://assets/images/rencontres/anim/godot/godot3.png" id="6_ngerm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bf4ca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x5ajv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pquob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ngerm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_gpmsb")
 type = 1
-sprite = ExtResource("2_y2opl")
+sprite = SubResource("SpriteFrames_bf4ca")
+description = "godot"
+wave_form = 149
+audio_stream = ExtResource("1_8blxo")
 oscillo_gif = ExtResource("1_mtm7p")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

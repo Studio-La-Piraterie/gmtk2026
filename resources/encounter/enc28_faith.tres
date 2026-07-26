@@ -1,12 +1,26 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://b766ghtnd0v4a"]
 
 [ext_resource type="Texture2D" uid="uid://l572rk4bvxtb" path="res://assets/images/scope/faith.gif" id="1_f7alo"]
+[ext_resource type="AudioStream" uid="uid://bqicuti4utv6t" path="res://assets/audio/rencontres/faith.ogg" id="1_loqgo"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_x1rip"]
 [ext_resource type="Texture2D" uid="uid://e7w5mkgcbr7w" path="res://assets/images/rencontres/faith.png" id="2_r3amf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cne11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r3amf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_x1rip")
 type = 1
-sprite = ExtResource("2_r3amf")
+sprite = SubResource("SpriteFrames_cne11")
+description = "faith"
+audio_stream = ExtResource("1_loqgo")
 oscillo_gif = ExtResource("1_f7alo")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

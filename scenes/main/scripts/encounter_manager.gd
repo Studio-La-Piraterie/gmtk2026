@@ -1,12 +1,6 @@
 class_name EncounterManager extends Node
 
-const ENCOUNTER_POOL : Array[Encounter] = [
-	preload("res://resources/encounter/test_1.tres"),
-	preload("res://resources/encounter/test_2.tres"),
-	preload("res://resources/encounter/test_3.tres"),
-	preload("res://resources/encounter/test_3.tres")
-]
-
+var ENCOUNTER_POOL : Array = Utils.load_files_from_path("res://resources/encounter/")
 var _available_encounters : Array[Encounter] = []
 var _available_targets : Array[Encounter] = []
 var _current_target : Encounter = null

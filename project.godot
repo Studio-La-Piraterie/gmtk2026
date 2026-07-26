@@ -23,6 +23,8 @@ buses/default_bus_layout="uid://ct33mw21k8ao4"
 
 GameManager="*uid://bkbd3pfahm61v"
 SignalBus="*uid://douchx8t4mg31"
+Utils="*uid://dpawhisk253d8"
+AudioManager="*uid://cuw2g63xeyj8x"
 
 [display]
 
@@ -48,7 +50,7 @@ folder_colors={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://resources/csv localisation/rencontre.fr.translation", "res://resources/csv localisation/rencontre.en.translation")
+locale/translations=PackedStringArray("res://resources/localization/rencontres.en.translation", "res://resources/localization/rencontres.fr.translation")
 
 [physics]
 
