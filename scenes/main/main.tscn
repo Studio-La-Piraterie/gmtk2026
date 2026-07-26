@@ -42,7 +42,7 @@ encounter_countdown = NodePath("EncounterCountDown")
 main_countdown = NodePath("MainCountdown")
 pause_menu = NodePath("pause_menu")
 
-[node name="DashboardUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("resolve_dismiss_ui", "encounter_ui", "unstable_cable", "oscilloscope", "order_terminal")]
+[node name="DashboardUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("resolve_dismiss_ui", "encounter_ui", "unstable_cable", "oscilloscope", "order_terminal", "ai_chat")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,6 +56,7 @@ encounter_ui = NodePath("EncounterUI")
 unstable_cable = NodePath("UnstableCable")
 oscilloscope = NodePath("Oscilloscope")
 order_terminal = NodePath("OrderTerminal")
+ai_chat = NodePath("AiChat")
 
 [node name="Background" type="TextureRect" parent="DashboardUI" unique_id=606904987]
 layout_mode = 1
