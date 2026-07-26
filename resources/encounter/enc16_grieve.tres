@@ -1,11 +1,25 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://d4le0a02wteov"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_5b1ps"]
+[ext_resource type="AudioStream" uid="uid://dmvq6cng2cxlc" path="res://assets/audio/rencontres/grieve.ogg" id="1_5ktkh"]
 [ext_resource type="Texture2D" uid="uid://ccuqrotdtju6y" path="res://assets/images/scope/grieve.gif" id="1_dc0a5"]
 [ext_resource type="Texture2D" uid="uid://ceq8eghhywsy7" path="res://assets/images/rencontres/grieve.png" id="2_582eh"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3g42r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_582eh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_5b1ps")
-sprite = ExtResource("2_582eh")
+sprite = SubResource("SpriteFrames_3g42r")
+description = "grieve"
+audio_stream = ExtResource("1_5ktkh")
 oscillo_gif = ExtResource("1_dc0a5")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://geafgyj5qtwa"]
 
-[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main_game.gd" id="1_k7jdy"]
-[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/main/scripts/main_ui.gd" id="2_dl7fd"]
+[ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main.gd" id="1_k7jdy"]
+[ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/dashboard_ui/dashboard_ui.gd" id="2_dl7fd"]
 [ext_resource type="LabelSettings" uid="uid://1qhvbcsy3k4h" path="res://assets/ui/label_settings/main_countdown_label.tres" id="3_hlc8n"]
 [ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="4_3bfd1"]
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_fuwwt"]
 [ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="4_ppixs"]
-[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/main/scripts/oscilloscope.gd" id="6_4wgxf"]
+[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/dashboard_ui/oscilloscope/scripts/oscilloscope.gd" id="6_4wgxf"]
 [ext_resource type="PackedScene" uid="uid://cf2oaydi08p0d" path="res://test/testAIChat.tscn" id="8_kejyu"]
 
 [node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("main_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown")]

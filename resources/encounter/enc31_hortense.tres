@@ -1,11 +1,25 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://cw7p73u0gicp2"]
 
+[ext_resource type="AudioStream" uid="uid://cvo6gnfgxndvq" path="res://assets/audio/rencontres/hortense.ogg" id="1_rmmwy"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_vr2ri"]
 [ext_resource type="Texture2D" uid="uid://bgtsbn24apa7o" path="res://assets/images/scope/hortense.gif" id="1_wnrv2"]
 [ext_resource type="Texture2D" uid="uid://co1hk4qawslq3" path="res://assets/images/rencontres/hortense.png" id="2_xxqw6"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_loqgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xxqw6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_vr2ri")
-sprite = ExtResource("2_xxqw6")
+sprite = SubResource("SpriteFrames_loqgo")
+description = "hortense"
+audio_stream = ExtResource("1_rmmwy")
 oscillo_gif = ExtResource("1_wnrv2")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

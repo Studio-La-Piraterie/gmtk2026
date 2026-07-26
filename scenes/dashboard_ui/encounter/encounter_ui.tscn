@@ -1,8 +1,41 @@
 [gd_scene format=3 uid="uid://6t82scdcl105"]
 
 [ext_resource type="Script" uid="uid://cg116i37a58ia" path="res://scenes/dashboard_ui/encounter/scripts/encounter_ui.gd" id="1_fenf0"]
+[ext_resource type="Texture2D" uid="uid://bu073ph2mjy7q" path="res://assets/images/dashboard/hublot.png" id="2_8xpg4"]
+[ext_resource type="Texture2D" uid="uid://l1wxbjqsxqfu" path="res://assets/images/rencontres/anim/clown/clown1.png" id="3_gwxm0"]
+[ext_resource type="Texture2D" uid="uid://dr5f8u7bptiw3" path="res://assets/images/rencontres/anim/flowerman/flowerman1.png" id="5_gwxm0"]
+[ext_resource type="Texture2D" uid="uid://n7bg264sy8cn" path="res://assets/images/rencontres/anim/Flowervoid/Flowervoid1.png" id="6_kfd1c"]
+[ext_resource type="Texture2D" uid="uid://b1t3uh456cesg" path="res://assets/images/dashboard/Petit_timer_final.png" id="7_0tlg5"]
+[ext_resource type="Texture2D" uid="uid://bpfkvlgxq6hao" path="res://assets/images/rencontres/anim/forest_sister/forest_sister2.png" id="7_7145b"]
+[ext_resource type="FontFile" uid="uid://dvjdhrrcnxcai" path="res://assets/fonts/bauhaus_bernard_black.ttf" id="8_3rngt"]
+[ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="9_yqepy"]
 
-[node name="EncounterUI" type="Control" unique_id=1211594830 node_paths=PackedStringArray("lucarne", "description", "wave_form")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_drw0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gwxm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gwxm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kfd1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7145b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8run"]
+font = ExtResource("8_3rngt")
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+
+[node name="EncounterUI" type="Control" unique_id=1211594830 node_paths=PackedStringArray("lucarne", "encounter_sprite", "description")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,43 +45,82 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_fenf0")
 lucarne = NodePath("Lucarne")
+encounter_sprite = NodePath("Lucarne/LucarneBG/EncounterSprite")
 description = NodePath("Description")
-wave_form = NodePath("WaveForm")
 
-[node name="Lucarne" type="TextureRect" parent="." unique_id=1790096092]
+[node name="Lucarne" type="Control" parent="." unique_id=2090227737]
 unique_name_in_owner = true
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 0
 offset_left = 1477.0
 offset_top = 243.0
-offset_right = 1545.0757
-offset_bottom = 283.0
-scale = Vector2(4.9504595, 3.9707043)
-expand_mode = 3
-stretch_mode = 5
+offset_right = 1477.0
+offset_bottom = 243.0
+
+[node name="LucarneGlass" type="TextureRect" parent="Lucarne" unique_id=285127238]
+modulate = Color(1, 1, 1, 0.12156863)
+layout_mode = 0
+offset_left = 1598.0
+offset_top = -724.00006
+offset_right = 4598.0
+offset_bottom = 3276.0
+rotation = 1.5707964
+scale = Vector2(0.61, 0.61)
+offset_transform_enabled = true
+texture = ExtResource("7_0tlg5")
+
+[node name="LucarneBG" type="TextureRect" parent="Lucarne" unique_id=2035608467]
+show_behind_parent = true
+z_index = 1
+layout_mode = 1
+offset_left = -129.0
+offset_top = -46.0
+offset_right = 503.0
+offset_bottom = 726.0
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("2_8xpg4")
+stretch_mode = 3
+
+[node name="EncounterSprite" type="AnimatedSprite2D" parent="Lucarne/LucarneBG" unique_id=782076438]
+show_behind_parent = true
+position = Vector2(322, 365)
+sprite_frames = SubResource("SpriteFrames_drw0f")
+
+[node name="EncounterDesc" type="TextureRect" parent="Lucarne" unique_id=1074810704]
+layout_mode = 0
+offset_left = -702.0
+offset_top = 26.0
+offset_right = 1798.0
+offset_bottom = 1538.61
+scale = Vector2(0.61, 0.61)
+offset_transform_enabled = true
+texture = ExtResource("7_0tlg5")
+metadata/_edit_lock_ = true
 
 [node name="Description" type="Label" parent="." unique_id=1607046340]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(355, 85)
 layout_mode = 0
-offset_left = 1494.0
-offset_top = 459.0
-offset_right = 1588.0
-offset_bottom = 482.0
-text = "Description:"
+offset_left = 1408.0
+offset_top = 791.0
+offset_right = 1763.0
+offset_bottom = 876.0
+text = "You were convinced he was in a pretty poor shape. All things come to he who blooms."
+label_settings = SubResource("LabelSettings_a8run")
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="WaveForm" type="Label" parent="." unique_id=112638847]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1492.0
-offset_top = 495.0
-offset_right = 1593.0
-offset_bottom = 518.0
-text = "Wave Form:0"
-
-[node name="Reponse" type="Label" parent="." unique_id=2102149937]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 60.0
-offset_top = 386.0
-offset_right = 174.0
-offset_bottom = 409.0
-text = "Reponse:"
+[node name="Background" type="TextureRect" parent="." unique_id=697878473]
+modulate = Color(1, 1, 1, 0.26666668)
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1518.0
+offset_bottom = 872.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_yqepy")
+stretch_mode = 2
+metadata/_edit_lock_ = true

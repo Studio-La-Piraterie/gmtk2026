@@ -1,12 +1,42 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://ch7at5lhtcpiq"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_2gi8s"]
+[ext_resource type="AudioStream" uid="uid://cm4ml1s7j1wqa" path="res://assets/audio/rencontres/persephone.ogg" id="1_68aog"]
 [ext_resource type="Texture2D" uid="uid://byv2fm5i0ln6n" path="res://assets/images/scope/persephone.gif" id="1_mlc6o"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_emgwq"]
+[ext_resource type="Texture2D" uid="uid://3ej55udejg0a" path="res://assets/images/rencontres/anim/persephone/persephone1.png" id="4_lwngj"]
+[ext_resource type="Texture2D" uid="uid://dt5qrh3521mut" path="res://assets/images/rencontres/anim/persephone/persephone2.png" id="5_0kj8u"]
+[ext_resource type="Texture2D" uid="uid://bbbwqcub3l4ct" path="res://assets/images/rencontres/anim/persephone/persephone3.png" id="6_lg1rd"]
+[ext_resource type="Texture2D" uid="uid://fxvntyuiir21" path="res://assets/images/rencontres/anim/persephone/persephone4.png" id="7_8fsjn"]
+[ext_resource type="Texture2D" uid="uid://bo0hi6fmhcgls" path="res://assets/images/rencontres/anim/persephone/persephone5.png" id="8_bnq6t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mla5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lwngj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0kj8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lg1rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8fsjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bnq6t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_2gi8s")
 type = 1
-sprite = ExtResource("2_emgwq")
+sprite = SubResource("SpriteFrames_6mla5")
+description = "persephone"
+audio_stream = ExtResource("1_68aog")
 oscillo_gif = ExtResource("1_mlc6o")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

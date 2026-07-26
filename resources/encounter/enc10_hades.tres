@@ -1,12 +1,26 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://dbqbjurmxwspf"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_grn61"]
-[ext_resource type="Texture2D" uid="uid://hyyf71m5dfeq" path="res://assets/images/scope/hades.gif" id="1_r5aim"]
+[ext_resource type="AudioStream" uid="uid://cyirxtdhcfc0m" path="res://assets/audio/rencontres/hades.ogg" id="1_qmqk8"]
 [ext_resource type="Texture2D" uid="uid://d00hoehsuyn8g" path="res://assets/images/rencontres/hades.png" id="2_60ncw"]
+[ext_resource type="Texture2D" uid="uid://hyyf71m5dfeq" path="res://assets/images/scope/hades.gif" id="2_wj8hj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnxcd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_60ncw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_grn61")
 type = 1
-sprite = ExtResource("2_60ncw")
-oscillo_gif = ExtResource("1_r5aim")
+sprite = SubResource("SpriteFrames_nnxcd")
+description = "hades"
+audio_stream = ExtResource("1_qmqk8")
+oscillo_gif = ExtResource("2_wj8hj")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

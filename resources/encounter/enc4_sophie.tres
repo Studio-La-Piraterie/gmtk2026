@@ -1,11 +1,49 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://bbm3tjv1jhjdd"]
 
+[ext_resource type="AudioStream" uid="uid://r3mu678ghy0n" path="res://assets/audio/rencontres/sophie.ogg" id="1_3hn8q"]
 [ext_resource type="Texture2D" uid="uid://dhkopgaiq1ej7" path="res://assets/images/scope/sophie.gif" id="1_ivhqr"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_rfbmx"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_3qul1"]
+[ext_resource type="Texture2D" uid="uid://b5a8c6e6x617w" path="res://assets/images/rencontres/anim/sophie/Sophie1.PNG" id="4_8v8jo"]
+[ext_resource type="Texture2D" uid="uid://cj8c7pw1mq675" path="res://assets/images/rencontres/anim/sophie/Sophie2.PNG" id="5_myonn"]
+[ext_resource type="Texture2D" uid="uid://dbmlf40haaqh1" path="res://assets/images/rencontres/anim/sophie/Sophie3.PNG" id="6_afx8l"]
+[ext_resource type="Texture2D" uid="uid://d2i6eodcsbmsq" path="res://assets/images/rencontres/anim/sophie/Sophie4.PNG" id="7_piaem"]
+[ext_resource type="Texture2D" uid="uid://dofuo6xbt7ndr" path="res://assets/images/rencontres/anim/sophie/Sophie5.PNG" id="8_ty01q"]
+[ext_resource type="Texture2D" uid="uid://daswhgjg3dcyo" path="res://assets/images/rencontres/anim/sophie/Sophie7.PNG" id="9_5yoju"]
+[ext_resource type="Texture2D" uid="uid://ojy0f4mnthk" path="res://assets/images/rencontres/anim/sophie/Sophie8.PNG" id="10_4ntao"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sb4e6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8v8jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_myonn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_afx8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_piaem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ty01q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5yoju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ntao")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_rfbmx")
-sprite = ExtResource("2_3qul1")
+sprite = SubResource("SpriteFrames_sb4e6")
+description = "sophie"
+audio_stream = ExtResource("1_3hn8q")
 oscillo_gif = ExtResource("1_ivhqr")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

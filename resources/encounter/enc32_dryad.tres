@@ -2,11 +2,49 @@
 
 [ext_resource type="Texture2D" uid="uid://xuawiq1t7o6j" path="res://assets/images/scope/dryad.gif" id="1_3d6vg"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_3kgck"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_s52ll"]
+[ext_resource type="AudioStream" uid="uid://b2wihju122h3m" path="res://assets/audio/rencontres/dryiad.ogg" id="1_rkvcr"]
+[ext_resource type="Texture2D" uid="uid://bymx1ou8pmpx7" path="res://assets/images/rencontres/anim/forest_sister/forest_sister1.png" id="4_jnra4"]
+[ext_resource type="Texture2D" uid="uid://bpfkvlgxq6hao" path="res://assets/images/rencontres/anim/forest_sister/forest_sister2.png" id="5_xgcpl"]
+[ext_resource type="Texture2D" uid="uid://bh4ul6blid62w" path="res://assets/images/rencontres/anim/forest_sister/forest_sister3.png" id="6_q5pms"]
+[ext_resource type="Texture2D" uid="uid://dt5axcu53bigs" path="res://assets/images/rencontres/anim/forest_sister/forest_sister4.png" id="7_4554p"]
+[ext_resource type="Texture2D" uid="uid://d2mp7k3oedawk" path="res://assets/images/rencontres/anim/forest_sister/forest_sister5.png" id="8_odfga"]
+[ext_resource type="Texture2D" uid="uid://b2ikve0dxk71q" path="res://assets/images/rencontres/anim/forest_sister/forest_sister6.png" id="9_exiqc"]
+[ext_resource type="Texture2D" uid="uid://6cwxl30c65l" path="res://assets/images/rencontres/anim/forest_sister/forest_sister7.png" id="10_u1yuh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0j5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jnra4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xgcpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q5pms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4554p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_odfga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_exiqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u1yuh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_3kgck")
 type = 1
-sprite = ExtResource("2_s52ll")
+sprite = SubResource("SpriteFrames_u0j5b")
+description = "dryad"
+audio_stream = ExtResource("1_rkvcr")
 oscillo_gif = ExtResource("1_3d6vg")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
