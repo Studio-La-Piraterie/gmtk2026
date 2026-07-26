@@ -34,11 +34,10 @@ func _ready() -> void:
 	update_terminal(discussions["SELF_DESTRUCTION_LAYA"])
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func update_terminal(ai : ArtificialIntelligence) -> void:
+	if ai == null :
+		return
+	
 	#update_AI_face(ai.sprite)
 	for key in ai.pair:
 		await update_AI_face(AI_FACE[ai.pair[key]])

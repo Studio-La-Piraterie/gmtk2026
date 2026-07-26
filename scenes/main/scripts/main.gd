@@ -41,6 +41,9 @@ func _process(_delta: float) -> void:
 	dashboard_ui.update_main_countdown(main_countdown.time_left)
 
 func _set_target(new_target : Encounter):
+	if _current_target != new_target:
+		dashboard_ui.update_ai_chat_target()
+	
 	_current_target = new_target
 	if dashboard_ui != null:
 		dashboard_ui.set_target(_current_target)

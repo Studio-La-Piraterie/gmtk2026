@@ -7,6 +7,7 @@ class_name DashboardUI extends Control
 @export var oscilloscope : Oscilloscope
 
 @export var order_terminal : OrderTerminal
+@export var ai_chat : AI
 
 @onready var main_countdown_display: MainCountdown = %MainCountdownLabel
 @onready var encounter_audio_player: AudioStreamPlayer = $EncounterAudioPlayer
@@ -48,6 +49,9 @@ func set_encounter(encounter : Encounter) -> void:
 	update_oscilloscope_ui(encounter)
 	if not unstable_cable.hasFailed:
 		update_encounter_ui(encounter)
+
+func update_ai_chat_target():
+	ai_chat.update_terminal(ai_chat.discussion_order.pop_front())
 
 func update_oscilloscope_ui(encounter : Encounter) ->void :
 	oscilloscope.update(encounter.oscillo_gif, encounter.min_oscillo_val, encounter.max_oscillo_val)
