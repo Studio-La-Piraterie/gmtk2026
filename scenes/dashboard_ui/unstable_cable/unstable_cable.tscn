@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bcm2bfgakeubx"]
+
+[ext_resource type="Script" uid="uid://txjbxc3fvh6" path="res://scenes/main/scripts/unstable_cable.gd" id="1_6lhwu"]
+[ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="2_b2m45"]
+[ext_resource type="Texture2D" uid="uid://w62uinpdnm3s" path="res://assets/images/dashboard/prise_cable_débranché.png" id="3_b2m45"]
+[ext_resource type="Texture2D" uid="uid://bp206l7taphth" path="res://assets/images/dashboard/prise_cable_branché.png" id="4_ko3qd"]
+[ext_resource type="Texture2D" uid="uid://e6lhfjsj1cgt" path="res://assets/images/VFX/cable/cable_vfx_1.png" id="5_mmqhv"]
+[ext_resource type="Texture2D" uid="uid://fqd3i2hmruyn" path="res://assets/images/VFX/cable/cable_vfx_2.png" id="6_3xyvf"]
+[ext_resource type="Texture2D" uid="uid://btfs2psjeaga" path="res://assets/images/VFX/cable/cable_vfx_3.png" id="7_67egj"]
+
+[sub_resource type="Animation" id="Animation_mmqhv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/BzitText:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_mmqhv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton/BzitText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3xyvf"]
+resource_name = "bzit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/BzitText:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_mmqhv"), ExtResource("6_3xyvf"), ExtResource("7_67egj"), ExtResource("5_mmqhv"), ExtResource("6_3xyvf"), ExtResource("7_67egj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton/BzitText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_67egj"]
+_data = {
+&"RESET": SubResource("Animation_mmqhv"),
+&"bzit": SubResource("Animation_3xyvf")
+}
+
+[node name="UnstableCable" type="Control" unique_id=1325246831 node_paths=PackedStringArray("restore_btn", "plug_unplug_audio", "bzit_animation")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6lhwu")
+min_failure_countdown = 20.0
+max_failure_countdown = 40.0
+restore_btn = NodePath("TextureButton")
+plug_unplug_audio = NodePath("AudioStreamPlayer")
+bzit_animation = NodePath("BzitAnim")
+
+[node name="dashboard" type="TextureRect" parent="." unique_id=201658864]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_b2m45")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=505818881]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 147.0
+offset_top = 1036.0
+offset_right = 669.0
+offset_bottom = 1484.0
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("3_b2m45")
+texture_pressed = ExtResource("4_ko3qd")
+texture_hover = ExtResource("3_b2m45")
+texture_disabled = ExtResource("4_ko3qd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BzitText" type="TextureRect" parent="TextureButton" unique_id=1109950658]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -217.0
+offset_right = 249.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mmqhv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1046727766]
+bus = &"SFX"
+
+[node name="BzitAnim" type="AnimationPlayer" parent="." unique_id=245850474]
+libraries/ = SubResource("AnimationLibrary_67egj")
+speed_scale = 1.5
