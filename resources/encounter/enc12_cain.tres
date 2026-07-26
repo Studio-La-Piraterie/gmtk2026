@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://dt4k2m2muug6l"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_djlwr"]
+[ext_resource type="Texture2D" uid="uid://cso23jdy5y7oi" path="res://assets/images/scope/cain.gif" id="1_i42vq"]
 [ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_bk2d7"]
 
 [resource]
 script = ExtResource("1_djlwr")
 type = 2
 sprite = ExtResource("2_bk2d7")
+oscillo_gif = ExtResource("1_i42vq")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

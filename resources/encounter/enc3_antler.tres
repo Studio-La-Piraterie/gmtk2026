@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://suqqpicegn8i"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_amf57"]
+[ext_resource type="Texture2D" uid="uid://46ooqiphbhol" path="res://assets/images/scope/antler.gif" id="1_kp2tx"]
 [ext_resource type="Texture2D" uid="uid://dbyse2a4ravgf" path="res://assets/images/rencontres/antler.png" id="2_kp2tx"]
 
 [resource]
 script = ExtResource("1_amf57")
 sprite = ExtResource("2_kp2tx")
+oscillo_gif = ExtResource("1_kp2tx")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
