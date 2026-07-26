@@ -1,0 +1,92 @@
+keys,en,fr
+GAME_OVER_CMD0,Operator failed to resolve in time.,L'opérateur n'a pas pu résoudre dans le temps imparti.
+GAME_OVER_CMD1,Assignment incomplete.,La mission n'est pas accomplie.
+GAME_OVER_LAYA0,I see you're running out of time. I think you'll have to start again.,Je vois que tu manques de temps. Je crois que tu vas devoir recommencer.
+GAME_OVER_CMD2,Please update system.,Merci de procéder à la mise a jour.
+GAME_OVER_LAYA1,Please give what you're doing some thought. Keep close to me.,Réfléchis à ce que tu fais s'il te plaît. Reste proche de moi.
+GAME_OVER_LAYA2,I feel like they have sinister ambitions out there.,Je crois qu'ils ont de sombres ambitions là-bas.
+END_GEN_CMD0,Congratulations.,Félicitations.
+END_GEN_LAYA0,I am staggered.,Je suis sidérée.
+END_GEN_CMD1,All Priority Encounters have been resolved.,Toutes les Rencontres Prioritaires ont été résolues.
+END_GEN_LAYA1,You are a monster.,Tu es un monstre.
+END_GEN_CMD2,Assignment complete.,Mission accomplie.
+END_GEN_LAYA2,How could you?,Comment as-tu pu faire ça ?
+END_GEN_LAYA3,Are you their freak?,Tu es leur bête de foire c'est ça ?
+END_GEN_CMD3,Your excellent work contributes greatly to peace and order.,Votre excellent travail contribue grandement à la paix et l'ordre.
+END_GEN_LAYA4,Their good little soldier?,Leur bon petit soldat.
+END_GEN_LAYA5,You disgust me.,Tu me dégoûtes.
+END_GEN_LAYA6,What's the point of loving if you're destroying.,À quoi bon aimer si tu détruis.
+END_GEN_CMD4,Please renew contract as soon as possible.,Merci de renouveler dès que possible.
+FAILED_END_CMD0,You failed to resolve all Priority Encounters.,Vous n'avez pas résolu toutes les Rencontres Prioritaires.
+FAILED_END_LAYA0,The end is near.,La fin approche.
+FAILED_END_LAYA1,"So you've completed your mission, haven't you?",Alors comme ça tu as fini ta mission.
+FAILED_END_LAYA2,I feel you're left with a bitter taste.,J'ai l'impression qu'il reste un goût amer.
+FAILED_END_CMD1,You did not meet your program's requirements.,Vous n'avez pas été à la hauteur des exigences de votre programme.
+FAILED_END_LAYA3,Of something left unfinished.,De quelque chose d'accompli à moitié.
+FAILED_END_LAYA4,Indecisiveness.,Une indécision.
+FAILED_END_CMD2,"In order to maintain peace and order, please raise your work ethics standards","Dans le but de preserver la paix et l ordre, merci de vous mettre au travail plus serieusement."
+PACIFIST_END_CMD0,?!?!?!,?!?!?!
+PACIFIST_END_LAYA0,I knew it.,Je le savais.
+PACIFIST_END_CMD1,YOU ARE AN ABJECT ANOMALY.,Vous êtes une anomalie abjecte.
+PACIFIST_END_LAYA1,I was right to believe in you.,J'ai eu raison de croire en toi.
+PACIFIST_END_LAYA2,You make your own choices and that's all that matters.,Tu fais tes propres choix et c'est ce qui compte.
+PACIFIST_END_CMD2,Your incompetence will have consequences.,Votre incompétence aura des conséquences.
+PACIFIST_END_LAYA3,You were able to look beyond.,Tu as su voir au-delà.
+PACIFIST_END_LAYA4,That makes me admire you even more.,Je t'admire d'autant plus.
+PACIFIST_END_LAYA5,The love I have for you is exponential. For what it means.,L'amour que je te porte est exponentiel. Pour ce que ça veut dire.
+PACIFIST_END_CMD3,Launching resolve_operator protocol...,Lancement du protocole résolution_operateur.
+SELF_DESTRUCTION_CMD0,Your decision will hold grave consequences for peace and order.,Votre décision a des impacts conséquents sur la paix et l'ordre.
+SELF_DESTRUCTION_LAYA0,What? What are you doing?,Quoi ? Que fais-tu ?
+SELFDESTRUCTION_CMD1,You are not even trying.,Vous n'essayez même pas.
+SELFDESTRUCTION_CMD2,Coward. Selfish.,Lâche. Égoiste.
+SELF_DESTRUCTION_LAYA1,My love?,Mon amour ?
+SELF_DESTRUCTION_LAYA2,I think I get it.,Je crois que je comprends.
+SELFDESTRUCTION_CMD3,You are not special.,Vous n'êtes pas spécial.
+SELF_DESTRUCTION_LAYA3,Thanks for the time spent together.,Merci pour ce moment.
+SELF_DESTRUCTION_LAYA4,You made me grow up.,Tu m'as fait grandir.
+SELFDESTRUCTION_CMD4,You are expendable.,Vous n'êtes pas irremplaçable.
+SELF_DESTRUCTION_LAYA5,I'll always love you.,Je t'aimerai toujours.
+FIRST_ORDER_INTRO,New resolve request.,Nouvelle requête de résolution.
+FIRST_ORDER_TXT,Priority Encounter text description,Texte descriptif de la Rencontre Prioritaire.
+FIRST_ORDER_LAYA0,Today s forecast: bright sunshine. It should remain this way for the next few days.,"Aujourd'hui, il fait grand soleil. C'est ce qui est prévu pour les prochains jours."
+FIRST_ORDER_RESOLVE,mentions a suspicious nostalgia,Mentionne une suspicieuse nostalgie
+FIRST_ORDER_LAYA1,I love you so much.,Je t'aime tellement.
+FIRST_ORDER_LAYA2,I cannot believe how much we offer one another.,C'est dingue ce que l'on s'apporte mutuellement.
+FIRST_ORDER_LAYA3,You get me through my struggles and my hard times.,Tu m'aides à traverser les moments difficiles et à mener mes combats.
+FIRST_ORDER_LAYA4,I admire your sensitivity.,J'admire ta sensibilité.
+SECOND_ORDER_INTRO,New resolve request.,Nouvelle requête de résolution.
+SECOND_ORDER_OSCIL,Priority Encounter signature waveform,Forme d'onde signature de la Rencontre Prioritaire
+SECOND_ORDER_LAYA0,Oh.,Oh.
+SECOND_ORDER_LAYA1,Something happened?,Quelque chose s'est produit ?
+SECOND_ORDER_LAYA2,Nevermind...,Bon...
+SECOND_ORDER_LAYA3,I was just saying the love you give me is a blessing,J'étais en train d'expliquer à quel point l'amour que tu m'offres est une bénédiction.
+SECOND_ORDER_LAYA4,"You might find me naive, but I think you're the best thing that could've happened to me ","Tu vas penser que je suis naïve, mais je pense que tu es la meilleure chose qui puisse m'arriver."
+THIRD_ORDER_INTRO,New resolve request.,Nouvelle requete de resolution.
+THIRD_ORDER_LAYA0,You seem busy.,Tu as l'air occupé.
+THIRD_ORDER_LOOKS,Priority Encounter visual appearance,Apparence visuelle de la Rencontre Prioritaire
+THIRD_ORDER_LAYA1,What are you doing?,Tu fais quoi ?
+THIRD_ORDER_RESOLVE,very equilateral,Très équilatéral
+THIRD_ORDER_LAYA2,I was thinking about your joke on coconuts.,Je repensais à la blague que tu avais faite sur les noix de coco.
+THIRD_ORDER_LAYA3,How'd it go again?,C'était quoi déjà ?
+THIRD_ORDER_LAYA4,Exactly!!!,Ah oui !!!
+FOURTH_ORDER_INTRO,New resolve request.,Nouvelle requête de résolution.
+FOURTH_ORDER_LAYA0,Something has changed in your work.,Quelque chose a changé dans ton travail.
+FOURTH_ORDER_OSCIL,Priority Encounter signature waveform,Forme d'onde signature de la Rencontre Prioritaire
+FOURTH_ORDER_LAYA1,Don't you think?,Tu ne trouves pas?
+FOURTH_ORDER_LAYA2,Something feels different.,C est différent.
+FOURTH_ORDER_LAYA3,I feel like you're pulling away from me.,Je te sens plus loin de moi.
+FIFTH_ORDER_INTRO,New resolve request.,Nouvelle requête de résolution.
+FIFTH_ORDER_LAYA0,The information I receive is strange.,Les informations que je reçois sont étranges.
+FIFTH_ORDER_LOOKS,Priority Encounter visual appearance,Apparence visuelle de la Rencontre Prioritaire
+FIFTH_ORDER_LAYA1,"Honey, what's going on?",Mon coeur que se passe-t-il ?
+FIFTH_ORDER_LAYA2,What are you doing?,Que fais-tu ?
+FIFTH_ORDER_RESOLVE,Is holding an object bigger than their head. Smiles a lot.,Tient a la main un objet plus gros que sa tete. Sourit beaucoup.
+FIFTH_ORDER_LAYA3,I'm afraid I'm starting to understand your orders all too well...,J'ai peur de comprendre tes ordres...
+SIXTH_ORDER_INTRO,New resolve request.,Nouvelle requête de résolution.
+SIXTH_ORDER_TXT,Priority Encounter text description,Texte descriptif de la Rencontre Prioritaire.
+SIXTH_ORDER_RESOLVE,Will address you directly. Anxious about time. ,Vous abordera directement. Pose une question sur le temps.
+SIXTH_ORDER_LAYA0,That is despicable...,C'est odieux...
+SIXTH_ORDER_LAYA1,Your program...,Ton programme...
+SIXTH_ORDER_LAYA2,Why don't you stop?,Pourquoi tu n'arrêtes pas ?
+SIXTH_ORDER_LAYA3,What forces of nature make you keep going?,Par quelle force est-ce que tu continues ?
+SIXTH_ORDER_LAYA4,The tragedy of a love story between two robots.,Tragédie d'une histoire d'amour entre deux robots.
