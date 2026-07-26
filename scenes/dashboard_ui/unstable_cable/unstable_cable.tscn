@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://txjbxc3fvh6" path="res://scenes/main/scripts/unstable_cable.gd" id="1_6lhwu"]
 [ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="2_b2m45"]
-[ext_resource type="Texture2D" uid="uid://w62uinpdnm3s" path="res://assets/images/dashboard/prise_cable_débranché.png" id="3_b2m45"]
-[ext_resource type="Texture2D" uid="uid://bp206l7taphth" path="res://assets/images/dashboard/prise_cable_branché.png" id="4_ko3qd"]
+[ext_resource type="Texture2D" uid="uid://cf2oawl3egy4t" path="res://assets/images/dashboard/prise_cable_débranché.png" id="3_b2m45"]
+[ext_resource type="Texture2D" uid="uid://tky7f2ckrof4" path="res://assets/images/dashboard/prise_cable_branché.png" id="4_ko3qd"]
 [ext_resource type="Texture2D" uid="uid://e6lhfjsj1cgt" path="res://assets/images/VFX/cable/cable_vfx_1.png" id="5_mmqhv"]
 [ext_resource type="Texture2D" uid="uid://fqd3i2hmruyn" path="res://assets/images/VFX/cable/cable_vfx_2.png" id="6_3xyvf"]
 [ext_resource type="Texture2D" uid="uid://btfs2psjeaga" path="res://assets/images/VFX/cable/cable_vfx_3.png" id="7_67egj"]
@@ -38,6 +38,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_3xyvf"]
 resource_name = "bzit"
 length = 0.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
