@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ArtificialIntelligence" format=3 uid="uid://c66h2j5m52vj7"]
+
+[ext_resource type="Script" uid="uid://bgcojfd6b5top" path="res://resources/scripts/artificial_intelligence.gd" id="1_bs75c"]
+
+[resource]
+script = ExtResource("1_bs75c")
+pair = Dictionary[String, int]({
+"FAILED_END_LAYA0": 3,
+"FAILED_END_LAYA1": 3,
+"FAILED_END_LAYA2": 3,
+"FAILED_END_LAYA3": 3,
+"FAILED_END_LAYA4": 3
+})
