@@ -11,6 +11,21 @@ class_name AI extends Node
 @export var character_displayed : int = 3
 @export var time_before_next_ai_message : float = 4.0
 
+enum Emotion {WORRIED, ANGRY, SAD, NEUTRAL, SURPRISED, CONFIDENT, GRATEFUL, HAPPY, HAPPY_IN_LOVE, IN_LOVE}
+
+const AI_FACE : Dictionary = {
+	Emotion.WORRIED: "",
+	Emotion.ANGRY: "",
+	Emotion.SAD: "",
+	Emotion.NEUTRAL: "",
+	Emotion.SURPRISED : "",
+	Emotion.CONFIDENT : "",
+	Emotion.GRATEFUL : "",
+	Emotion.HAPPY : "",
+	Emotion.HAPPY_IN_LOVE : "",
+	Emotion.IN_LOVE : ""
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_terminal(AI_neutral)
@@ -20,10 +35,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func update_terminal(ai : ArtificialIntelligence):
-	update_AI_face(ai.sprite)
-	for str in ai.discussion:
-		await update_AI_text(str, character_update_time, character_displayed)
+func update_terminal(ai : ArtificialIntelligence) -> void:
+	#update_AI_face(ai.sprite)
+	for key in ai.pair:
+		await update_AI_face(AI_FACE[ai.pair[key]])
+		await update_AI_text(tr(key), character_update_time, character_displayed)
 		await get_tree().create_timer(time_before_next_ai_message).timeout
 
 ## Update the face of the AI on the terminal

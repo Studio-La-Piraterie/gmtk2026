@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ArtificialIntelligence" format=3 uid="uid://bxc6jprxxdxtd"]
+
+[ext_resource type="Script" uid="uid://bgcojfd6b5top" path="res://resources/scripts/artificial_intelligence.gd" id="1_jglcg"]
+
+[resource]
+script = ExtResource("1_jglcg")
+emotion = 8
+pair = Dictionary[String, int]({
+"FIRST_ORDER_LAYA0": 8,
+"FIRST_ORDER_LAYA1": 8,
+"FIRST_ORDER_LAYA2": 8,
+"FIRST_ORDER_LAYA3": 8,
+"FIRST_ORDER_LAYA4": 8
+})

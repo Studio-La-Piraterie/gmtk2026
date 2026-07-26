@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ArtificialIntelligence" format=3 uid="uid://by64l3h7msy5r"]
+
+[ext_resource type="Script" uid="uid://bgcojfd6b5top" path="res://resources/scripts/artificial_intelligence.gd" id="1_u0n4h"]
+
+[resource]
+script = ExtResource("1_u0n4h")
+emotion = 4
+pair = Dictionary[String, int]({
+"SELF_DESTRUCTION_LAYA0": 4,
+"SELF_DESTRUCTION_LAYA1": 0,
+"SELF_DESTRUCTION_LAYA2": 2,
+"SELF_DESTRUCTION_LAYA3": 6,
+"SELF_DESTRUCTION_LAYA4": 6,
+"SELF_DESTRUCTION_LAYA5": 9
+})
