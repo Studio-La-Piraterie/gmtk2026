@@ -23,8 +23,8 @@ func _check_slider(value : float) -> void:
 
 func update(oscillo_gif : GIFTexture, min_encounter_val : float, max_encounter_val : float):
 	oscilloscope_player.gif = oscillo_gif
-	min_encounter_value = clampf(0.0,100.0,min_encounter_val) 
-	max_encounter_val = clampf(min_encounter_value,100.0,max_encounter_val)
+	min_encounter_value = clampf(min_encounter_val,0.0,100.0) 
+	max_encounter_value = clampf(max_encounter_val,min_encounter_value,100.0)
 
 func disable() -> void:
 	disabled = true

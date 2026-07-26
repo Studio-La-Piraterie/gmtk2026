@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b3rl2w1d1cfd8"]
+
+[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/main/scripts/oscilloscope.gd" id="1_tvtp8"]
+[ext_resource type="Texture2D" uid="uid://dciri8jhuac5p" path="res://assets/images/dashboard/tableau_de_bord_frames_WIP.png" id="2_mnjav"]
+[ext_resource type="Texture2D" uid="uid://dvjteq6qk2meq" path="res://assets/images/scope/misa.gif" id="3_sbv0s"]
+[ext_resource type="Texture2D" uid="uid://cfd7drr6j04b2" path="res://assets/images/dashboard/reglette_bouton.png" id="4_mnjav"]
+[ext_resource type="Texture2D" uid="uid://bkwnhhnsbt0ma" path="res://assets/images/dashboard/reglette_fond.png" id="5_sbv0s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mnjav"]
+content_margin_left = 10.0
+content_margin_top = 33.0
+content_margin_right = 9.0
+content_margin_bottom = 38.0
+texture = ExtResource("5_sbv0s")
+expand_margin_left = 31.0
+expand_margin_right = 28.0
+region_rect = Rect2(0, 0, 563, 93)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sbv0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxu4w"]
+
+[node name="Oscilloscope" type="Control" unique_id=705844124 node_paths=PackedStringArray("oscilloscope_player", "slider")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tvtp8")
+oscilloscope_player = NodePath("GIFPlayer")
+slider = NodePath("HSlider")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1655761850]
+visible = false
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1338.0
+texture = ExtResource("2_mnjav")
+stretch_mode = 2
+
+[node name="GIFPlayer" type="GIFPlayer" parent="." unique_id=1559494471]
+gif = ExtResource("3_sbv0s")
+expand_mode = 1
+stretch_mode = 5
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1585.0
+offset_top = 980.0
+offset_right = 1847.0
+offset_bottom = 1256.0
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1501206796]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1367.0
+offset_top = 964.0
+offset_right = 1562.0
+offset_bottom = 1053.0
+theme_override_constants/center_grabber = 1
+theme_override_constants/grabber_offset = 10
+theme_override_icons/grabber = ExtResource("4_mnjav")
+theme_override_icons/grabber_highlight = ExtResource("4_mnjav")
+theme_override_icons/grabber_disabled = ExtResource("4_mnjav")
+theme_override_styles/slider = SubResource("StyleBoxTexture_mnjav")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_sbv0s")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_mxu4w")
