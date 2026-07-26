@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="6_yyfjg"]
 [ext_resource type="Script" uid="uid://bvb0rg454spd7" path="res://scenes/main/main_countdown.gd" id="8_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://bcm2bfgakeubx" path="res://scenes/dashboard_ui/unstable_cable/unstable_cable.tscn" id="9_a8run"]
-[ext_resource type="PackedScene" uid="uid://b3rl2w1d1cfd8" path="res://scenes/main/dashboard_elements/Oscilloscope.tscn" id="9_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://b3rl2w1d1cfd8" path="res://scenes/dashboard_ui/oscilloscope/Oscilloscope.tscn" id="9_b1x3f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
 font = ExtResource("6_yyfjg")
@@ -89,8 +89,8 @@ layout_mode = 0
 
 [node name="UnstableCable" parent="DashboardUI" unique_id=1325246831 instance=ExtResource("9_a8run")]
 layout_mode = 0
-min_failure_countdown = 2.0
-max_failure_countdown = 2.0
+min_failure_countdown = 30.0
+max_failure_countdown = 60.0
 
 [node name="MainCountdown" type="Timer" parent="." unique_id=27757834]
 wait_time = 300.0
