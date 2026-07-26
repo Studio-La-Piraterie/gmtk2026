@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b7emjsefebla7"]
 
-[ext_resource type="Script" uid="uid://devofahpc43a8" path="res://scenes/menus/scripts/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Texture2D" uid="uid://c11y1x4bd1p6a" path="res://assets/menu/mainmenu/mainmenu_backgroundframe_1.png" id="2_6bivr"]
 [ext_resource type="Texture2D" uid="uid://ck36fikus6emf" path="res://assets/menu/mainmenu/mainmenu_backgroundframe_2.png" id="3_imvie"]
 [ext_resource type="Texture2D" uid="uid://dqcga4b72s3qi" path="res://assets/menu/mainmenu/mainmenu_backgroundframe_3.png" id="4_ng0o5"]
@@ -23,6 +22,57 @@ frame_1/duration = 1.0
 frame_2/texture = ExtResource("4_ng0o5")
 frame_2/duration = 1.0
 
+[sub_resource type="Animation" id="Animation_3w8rc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_m2y2t")]
+}
+
+[sub_resource type="Animation" id="Animation_bh4e2"]
+resource_name = "anim_background_menu"
+length = 0.6
+loop_mode = 1
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"image_1",
+"time": 0.0
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"image_2",
+"time": 0.2027423
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"image_3",
+"time": 0.408541
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_6bivr"), ExtResource("3_imvie"), ExtResource("4_ng0o5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w8rc"]
+_data = {
+&"RESET": SubResource("Animation_3w8rc"),
+&"anim_background_menu": SubResource("Animation_bh4e2")
+}
+
 [node name="MainMenu" type="Control" unique_id=850704912]
 layout_mode = 3
 anchors_preset = 15
@@ -30,7 +80,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xqga4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1025611969]
+root_node = NodePath("../AnimBackground")
+libraries/ = SubResource("AnimationLibrary_3w8rc")
+autoplay = &"anim_background_menu"
 
 [node name="AnimBackground" type="TextureRect" parent="." unique_id=455743205]
 layout_mode = 1

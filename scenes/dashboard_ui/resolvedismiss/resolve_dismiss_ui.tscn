@@ -39,14 +39,16 @@ texture = ExtResource("2_apt3v")
 [node name="EngageBtn" type="TextureButton" parent="." unique_id=887532472]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 75.0
-offset_top = 492.0
-offset_right = 326.0
-offset_bottom = 792.0
+offset_left = 615.0
+offset_top = 707.0
+offset_right = 686.0
+offset_bottom = 790.0
 toggle_mode = true
 texture_normal = ExtResource("3_apt3v")
 texture_pressed = ExtResource("4_y11cp")
 texture_disabled = ExtResource("3_apt3v")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="OkBtn" type="TextureButton" parent="." unique_id=1655178272]
 layout_mode = 1
@@ -62,13 +64,15 @@ texture_disabled = ExtResource("3_320nj")
 [node name="OkDiode" type="TextureRect" parent="OkBtn" unique_id=1797904851]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -352.0
-offset_top = -165.0
-offset_right = 1735.0
-offset_bottom = 1332.0
+offset_left = 27.0
+offset_top = -55.0
+offset_right = 118.99196
+offset_bottom = 35.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("5_ijxki")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CtrlBtn" type="TextureButton" parent="." unique_id=500118641]
 layout_mode = 1
@@ -84,13 +88,15 @@ texture_disabled = ExtResource("3_320nj")
 [node name="CtrlDiode" type="TextureRect" parent="CtrlBtn" unique_id=59076395]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -193.0
-offset_top = 46.0
-offset_right = 1894.0
-offset_bottom = 1543.0
+offset_left = 29.0
+offset_top = -57.0
+offset_right = 120.99196
+offset_bottom = 33.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("5_ijxki")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ReadyBtn" type="TextureButton" parent="." unique_id=1482499074]
 layout_mode = 1
@@ -106,13 +112,15 @@ texture_disabled = ExtResource("3_320nj")
 [node name="ReadyDiode" type="TextureRect" parent="ReadyBtn" unique_id=1894363458]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -179.0
-offset_top = 46.0
-offset_right = 1908.0
-offset_bottom = 1543.0
+offset_left = 30.0
+offset_top = -54.0
+offset_right = 121.99196
+offset_bottom = 36.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("5_ijxki")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="DismissBtn" type="TextureButton" parent="." unique_id=30045910]
 unique_name_in_owner = true
