@@ -75,9 +75,11 @@ func unstable_cable_fail()->void:
 	resolve_dismiss_ui.disable()
 	oscilloscope.disable()
 	order_terminal.disable()
+	encounter_audio_player.stream_paused = true
 	
 func unstable_cable_restored()->void:
 	update_encounter_ui(currently_displayed_encounter)
 	resolve_dismiss_ui.enable()
 	oscilloscope.enable()
 	order_terminal.enable()
+	encounter_audio_player.stream_paused = false

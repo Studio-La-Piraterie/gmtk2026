@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/dashboard_ui/dashboard_ui.gd" id="2_hujxm"]
 [ext_resource type="Texture2D" uid="uid://cwi6jeduti6sn" path="res://assets/images/dashboard/control_panel_sansframe.png" id="3_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://bj1lew07ctuuo" path="res://scenes/dashboard_ui/resolvedismiss/resolve_dismiss_ui.tscn" id="4_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://devdfcvnnfj02" path="res://assets/images/dashboard/2Dasset_timerbackground_final.png" id="5_m4h2d"]
 [ext_resource type="PackedScene" uid="uid://6t82scdcl105" path="res://scenes/dashboard_ui/encounter/encounter_ui.tscn" id="5_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://dwk46t024q0i0" path="res://scenes/main/scripts/UserManual/user_manual.tscn" id="6_th5th"]
 [ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="6_yyfjg"]
@@ -72,15 +73,26 @@ stretch_mode = 2
 layout_mode = 1
 mouse_filter = 2
 
-[node name="MainCountdownLabel" type="Label" parent="DashboardUI" unique_id=70704991]
+[node name="CountdownBack" type="TextureRect" parent="DashboardUI" unique_id=1267822788]
+layout_mode = 0
+offset_left = -68.0
+offset_top = -64.0
+offset_right = 2019.0
+offset_bottom = 1433.0
+mouse_filter = 2
+texture = ExtResource("5_m4h2d")
+metadata/_edit_lock_ = true
+
+[node name="MainCountdownLabel" type="Label" parent="DashboardUI/CountdownBack" unique_id=70704991]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -493.0
-offset_top = 27.0
-offset_bottom = 163.0
+offset_left = -635.0
+offset_top = 111.0
+offset_right = -142.0
+offset_bottom = 247.0
 grow_horizontal = 0
 text = "30:00"
 label_settings = SubResource("LabelSettings_yyfjg")
@@ -127,8 +139,8 @@ mouse_filter = 2
 [node name="UnstableCable" parent="DashboardUI" unique_id=1325246831 instance=ExtResource("9_a8run")]
 layout_mode = 0
 mouse_filter = 2
-min_failure_countdown = 2.0
-max_failure_countdown = 3.0
+min_failure_countdown = 40.0
+max_failure_countdown = 120.0
 
 [node name="ResolveDismissUI" parent="DashboardUI" unique_id=232656449 instance=ExtResource("4_yyfjg")]
 layout_mode = 1
