@@ -31,4 +31,6 @@ sprite = SubResource("SpriteFrames_0puvf")
 description = "horse"
 audio_stream = ExtResource("1_yaeml")
 oscillo_gif = ExtResource("1_psxod")
+target_order = Array[String](["SECOND_ORDER_INTRO", "SECOND_ORDER_OSCIL"])
+show_oscillo = true
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

@@ -35,4 +35,5 @@ sprite = SubResource("SpriteFrames_lpqwm")
 description = "cain"
 audio_stream = ExtResource("1_jchpv")
 oscillo_gif = ExtResource("1_i42vq")
+target_order = Array[String](["FIFTH_ORDER_INTRO", "FIFTH_ORDER_LOOKS", "FIFTH_ORDER_RESOLVE"])
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

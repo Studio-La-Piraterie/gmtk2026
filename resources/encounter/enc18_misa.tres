@@ -23,4 +23,6 @@ sprite = SubResource("SpriteFrames_yax81")
 description = "misa"
 audio_stream = ExtResource("1_nbv6w")
 oscillo_gif = ExtResource("1_7e4qj")
+target_order = Array[String](["FOURTH_ORDER_INTRO", "FOURTH_ORDER_OSCIL"])
+show_oscillo = true
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
