@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bj1lew07ctuuo"]
 
 [ext_resource type="Script" uid="uid://51gwyo0hp6x" path="res://scenes/dashboard_ui/resolvedismiss/scripts/resolve_dismiss_ui.gd" id="1_8k1j0"]
-[ext_resource type="Texture2D" uid="uid://dciri8jhuac5p" path="res://assets/images/dashboard/tableau_de_bord_frames_WIP.png" id="2_qa4ht"]
+[ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="2_apt3v"]
 [ext_resource type="Texture2D" uid="uid://dpaumj55sxsnq" path="res://assets/images/dashboard/button/button_grey.PNG" id="3_320nj"]
-[ext_resource type="Texture2D" uid="uid://cdv1od86arl0r" path="res://assets/images/dashboard/switch_off_cropped.png" id="3_apt3v"]
+[ext_resource type="Texture2D" uid="uid://djhs1ruhhmet4" path="res://assets/images/dashboard/switch_off_cropped.png" id="3_apt3v"]
 [ext_resource type="Texture2D" uid="uid://dubwhidhyux42" path="res://assets/images/dashboard/button/button_grey_press.PNG" id="4_sgdqs"]
-[ext_resource type="Texture2D" uid="uid://11vwfpa8r6ae" path="res://assets/images/dashboard/switch_on_cropped.png" id="4_y11cp"]
+[ext_resource type="Texture2D" uid="uid://b0wer6yoeplcl" path="res://assets/images/dashboard/switch_on_cropped.png" id="4_y11cp"]
 [ext_resource type="Texture2D" uid="uid://biuq6ya62nns2" path="res://assets/images/dashboard/diode_off_final.png" id="5_ijxki"]
 [ext_resource type="Texture2D" uid="uid://bfpdxx0toxlby" path="res://assets/images/dashboard/button/butto_green.PNG" id="6_320nj"]
 [ext_resource type="Texture2D" uid="uid://daqo3igjwmkrc" path="res://assets/images/dashboard/button/button_press_green.PNG" id="7_sgdqs"]
@@ -34,7 +34,7 @@ kill_btn = NodePath("KillBtn")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1338.0
-texture = ExtResource("2_qa4ht")
+texture = ExtResource("2_apt3v")
 
 [node name="EngageBtn" type="TextureButton" parent="." unique_id=887532472]
 layout_mode = 1
