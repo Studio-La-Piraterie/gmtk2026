@@ -19,6 +19,9 @@ var _current_target : Encounter = null :
 	set = _set_target
 
 func _ready() -> void:
+	
+	_set_target(encounter_manager.get_current_target())
+
 	pause_menu.resume_game()
 	add_child(encounter_manager)
 	

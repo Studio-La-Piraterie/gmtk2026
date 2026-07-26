@@ -19,7 +19,7 @@ var currently_displayed_encounter : Encounter = null :
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_encounter(null)
-	
+	set_target(current_target)
 	unstable_cable.failed.connect(unstable_cable_fail)
 	unstable_cable.restored.connect(unstable_cable_restored)
 
