@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvpqu4mxlnnu4" path="res://scenes/main/scripts/main.gd" id="1_hujxm"]
 [ext_resource type="Script" uid="uid://bpftrbp7bne3e" path="res://scenes/dashboard_ui/dashboard_ui.gd" id="2_hujxm"]
-[ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="3_b1x3f"]
+[ext_resource type="Texture2D" uid="uid://cwi6jeduti6sn" path="res://assets/images/dashboard/control_panel_sansframe.png" id="3_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://bj1lew07ctuuo" path="res://scenes/dashboard_ui/resolvedismiss/resolve_dismiss_ui.tscn" id="4_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://6t82scdcl105" path="res://scenes/dashboard_ui/encounter/encounter_ui.tscn" id="5_yyfjg"]
 [ext_resource type="FontFile" uid="uid://dm3yvffx1dkdx" path="res://assets/fonts/OffBit-DotBold.ttf" id="6_yyfjg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3rl2w1d1cfd8" path="res://scenes/dashboard_ui/oscilloscope/Oscilloscope.tscn" id="9_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://7kmd8eq0flj" path="res://scenes/menus/pause_menu.tscn" id="10_a8run"]
 [ext_resource type="PackedScene" uid="uid://budh4x7uwmjac" path="res://scenes/main/scripts/AI/AIChat.tscn" id="10_blune"]
+[ext_resource type="PackedScene" uid="uid://drqeq1enobsok" path="res://scenes/dashboard_ui/order_terminal/order_terminal.tscn" id="10_th5th"]
 [ext_resource type="Texture2D" uid="uid://bc8sgm325qcwj" path="res://assets/images/dashboard/Ecran_terminal_final.png" id="11_th5th"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
@@ -96,6 +97,9 @@ layout_mode = 0
 layout_mode = 0
 min_failure_countdown = 2.0
 max_failure_countdown = 3.0
+
+[node name="OrderTerminal" parent="DashboardUI" unique_id=509945745 instance=ExtResource("10_th5th")]
+layout_mode = 0
 
 [node name="AiChat" parent="DashboardUI" unique_id=1520334426 instance=ExtResource("10_blune")]
 layout_mode = 1

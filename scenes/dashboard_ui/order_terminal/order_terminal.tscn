@@ -29,25 +29,24 @@ texture = ExtResource("2_724mp")
 [node name="Terminal" type="TextureRect" parent="." unique_id=843694055]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 677.0
+offset_left = 576.0
 offset_top = 7.0
-offset_right = 1404.0
+offset_right = 1278.0
 offset_bottom = 350.0
 mouse_filter = 2
 texture = ExtResource("3_0ciqq")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="OrderDisplay" type="Label" parent="Terminal" unique_id=1681774937]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 1
 anchors_preset = -1
-offset_left = 56.0
+offset_left = 80.0
 offset_top = 69.0
-offset_right = 216.0
+offset_right = 423.0
 offset_bottom = 278.0
-text = "efuin usbnvc usnb oiusef lksnv siovn"
+text = "efuin usbnvc usnb oiusef lksnv siovn efuin usbnvc usnb oiusef lksnv siovn efuin usbnvc usnb oiusef lksnv siovn efuin usbnvc usnb oiusef lksnv siovn efuin usbnvc usnb oiusef lksnv siovn"
 autowrap_mode = 2
 
 [node name="OrderGif" type="GIFPlayer" parent="Terminal" unique_id=1368756144]
@@ -57,14 +56,15 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-offset_left = 227.0
-offset_top = 67.0
-offset_right = 423.0
-offset_bottom = 287.0
+offset_left = 441.0
+offset_top = 72.0
+offset_right = 637.0
+offset_bottom = 292.0
 mouse_filter = 2
 
 [node name="Disable" type="Button" parent="." unique_id=434394278]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 827.0
 offset_top = 342.0
