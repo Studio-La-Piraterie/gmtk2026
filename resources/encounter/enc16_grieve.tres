@@ -20,7 +20,6 @@ animations = [{
 script = ExtResource("1_5b1ps")
 sprite = SubResource("SpriteFrames_3g42r")
 description = "grieve"
-wave_form = 646
 audio_stream = ExtResource("1_5ktkh")
 oscillo_gif = ExtResource("1_dc0a5")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

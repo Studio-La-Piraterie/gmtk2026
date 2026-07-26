@@ -21,7 +21,6 @@ script = ExtResource("1_4la3f")
 type = 2
 sprite = SubResource("SpriteFrames_5l7y1")
 description = "bella"
-wave_form = 210
 audio_stream = ExtResource("1_eeb1v")
 oscillo_gif = ExtResource("1_s3erf")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
