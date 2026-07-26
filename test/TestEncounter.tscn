@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dff77jybakssl" path="res://test/test_encounter.gd" id="1_aav0n"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="2_lv8na"]
+[ext_resource type="PackedScene" uid="uid://6t82scdcl105" path="res://scenes/dashboard_ui/encounter/encounter_ui.tscn" id="3_51502"]
+[ext_resource type="PackedScene" uid="uid://b3rl2w1d1cfd8" path="res://scenes/dashboard_ui/oscilloscope/Oscilloscope.tscn" id="4_14xuf"]
 
-[sub_resource type="Resource" id="Resource_lv8na"]
+[sub_resource type="Resource" id="Resource_14xuf"]
 script = ExtResource("2_lv8na")
 
-[node name="TestEncounter" type="Control" unique_id=1418125575]
+[node name="TestEncounter" type="Control" unique_id=1418125575 node_paths=PackedStringArray("encounter_ui", "oscilloscope_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,70 +16,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aav0n")
-encounter = SubResource("Resource_lv8na")
+encounter = SubResource("Resource_14xuf")
+encounter_ui = NodePath("EncounterUI")
+oscilloscope_ui = NodePath("Oscilloscope")
 
-[node name="Lucarne" type="TextureRect" parent="." unique_id=1404737202]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 731.0
-offset_top = 106.0
-offset_right = 799.0757
-offset_bottom = 146.0
-scale = Vector2(4.9504595, 3.9707043)
-expand_mode = 3
-stretch_mode = 5
+[node name="EncounterUI" parent="." unique_id=1211594830 instance=ExtResource("3_51502")]
+layout_mode = 1
 
-[node name="Reponse" type="Label" parent="." unique_id=913215367]
-unique_name_in_owner = true
+[node name="Oscilloscope" parent="." unique_id=705844124 instance=ExtResource("4_14xuf")]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 384.0
-offset_right = 258.0
-offset_bottom = 407.0
-text = "Reponse:"
-
-[node name="Description" type="Label" parent="." unique_id=1775091411]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 748.0
-offset_top = 322.0
-offset_right = 837.0
-offset_bottom = 345.0
-text = "Description:"
-
-[node name="WaveForm" type="Label" parent="." unique_id=252230742]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 746.0
-offset_top = 358.0
-offset_right = 843.0
-offset_bottom = 381.0
-text = "Wave Form:0"
-
-[node name="Type" type="ColorRect" parent="." unique_id=128574328]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 843.0
-offset_top = 416.0
-offset_right = 978.0
-offset_bottom = 557.0
-color = Color(0, 1, 0, 1)
 
 [node name="GetNewEncounter" type="Button" parent="." unique_id=1582860217]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 180.0
-offset_top = 67.0
-offset_right = 188.0
-offset_bottom = 75.0
+offset_left = 1502.0
+offset_top = 924.0
+offset_right = 1658.0
+offset_bottom = 955.0
 text = "Get new encounter"
-
-[node name="GIFPlayer" type="GIFPlayer" parent="." unique_id=441931505]
-expand_mode = 1
-stretch_mode = 5
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 533.0
-offset_top = 400.0
-offset_right = 726.0
-offset_bottom = 574.0

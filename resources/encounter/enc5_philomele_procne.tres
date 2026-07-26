@@ -3,15 +3,32 @@
 [ext_resource type="Texture2D" uid="uid://e4tbcihvgnbl" path="res://assets/images/scope/philomele_procne.gif" id="1_2disf"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_5bcbj"]
 [ext_resource type="AudioStream" uid="uid://c7sfls7puub65" path="res://assets/audio/rencontres/philomele_procne.ogg" id="1_sryql"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_i44le"]
+[ext_resource type="Texture2D" uid="uid://rgn0fwvbpc54" path="res://assets/images/rencontres/anim/Sunflower/Sunflower1.png" id="4_mnk1h"]
+[ext_resource type="Texture2D" uid="uid://cu6b1s61260s7" path="res://assets/images/rencontres/anim/Sunflower/Sunflower2.png" id="5_76wda"]
+[ext_resource type="Texture2D" uid="uid://b2mrurifheuyi" path="res://assets/images/rencontres/anim/Sunflower/Sunflower3.png" id="6_y6w4j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljyh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mnk1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76wda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y6w4j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_5bcbj")
-type = null
-sprite = ExtResource("2_i44le")
+sprite = SubResource("SpriteFrames_ljyh6")
 description = "philomele_procne"
 wave_form = null
-response = null
 audio_stream = ExtResource("1_sryql")
 oscillo_gif = ExtResource("1_2disf")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

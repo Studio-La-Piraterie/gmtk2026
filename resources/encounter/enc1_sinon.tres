@@ -2,14 +2,24 @@
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_5bgfa"]
 [ext_resource type="Texture2D" uid="uid://d4vwxqomf5o4" path="res://assets/images/scope/sinon.gif" id="1_852bm"]
+[ext_resource type="AudioStream" uid="uid://b5c1rxjusjh36" path="res://assets/audio/rencontres/sinon.ogg" id="1_bo7eq"]
 [ext_resource type="Texture2D" uid="uid://58bl66wa2q4w" path="res://assets/images/rencontres/sinon.png" id="2_5bgfa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0hty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5bgfa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_5bgfa")
-type = null
-sprite = ExtResource("2_5bgfa")
+sprite = SubResource("SpriteFrames_b0hty")
 description = "sinon"
-wave_form = null
-response = null
+audio_stream = ExtResource("1_bo7eq")
 oscillo_gif = ExtResource("1_852bm")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

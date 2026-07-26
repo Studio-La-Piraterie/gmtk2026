@@ -1,15 +1,37 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://3pqoo55e643t"]
 
+[ext_resource type="Texture2D" uid="uid://l1wxbjqsxqfu" path="res://assets/images/rencontres/anim/clown/clown1.png" id="1_7u811"]
+[ext_resource type="AudioStream" uid="uid://baa638tx3eul4" path="res://assets/audio/rencontres/clown.ogg" id="1_o5mjp"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_v06a7"]
 [ext_resource type="Texture2D" uid="uid://bfb24ctque13p" path="res://assets/images/scope/clown.gif" id="1_y5cut"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_w8sbs"]
+[ext_resource type="Texture2D" uid="uid://sbqxtnbhdt86" path="res://assets/images/rencontres/anim/clown/clown2.png" id="2_o5mjp"]
+[ext_resource type="Texture2D" uid="uid://yex288eo48t5" path="res://assets/images/rencontres/anim/clown/clown3.png" id="3_rn3ag"]
+[ext_resource type="Texture2D" uid="uid://dswvi4jmwq6gy" path="res://assets/images/rencontres/anim/clown/clown4.png" id="4_wj5e0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xpg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7u811")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o5mjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rn3ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wj5e0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_v06a7")
-type = null
-sprite = ExtResource("2_w8sbs")
+sprite = SubResource("SpriteFrames_8xpg4")
 description = "clown"
-wave_form = 69
-response = null
+audio_stream = ExtResource("1_o5mjp")
 oscillo_gif = ExtResource("1_y5cut")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

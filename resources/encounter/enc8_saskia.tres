@@ -3,15 +3,79 @@
 [ext_resource type="AudioStream" uid="uid://6khwp6od0oit" path="res://assets/audio/rencontres/saskia.ogg" id="1_bixos"]
 [ext_resource type="Texture2D" uid="uid://drjyjblkn8dgk" path="res://assets/images/scope/saskia.gif" id="1_jg8i5"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_r4pha"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_bu2ti"]
+[ext_resource type="Texture2D" uid="uid://d0a4vn8o2idam" path="res://assets/images/rencontres/anim/Saskia/saskia1.png" id="4_qoyqv"]
+[ext_resource type="Texture2D" uid="uid://8ebnfxcjfi6b" path="res://assets/images/rencontres/anim/Saskia/saskia2.png" id="5_oxlm3"]
+[ext_resource type="Texture2D" uid="uid://dkv1gcxm55bco" path="res://assets/images/rencontres/anim/Saskia/saskia3.png" id="6_boefi"]
+[ext_resource type="Texture2D" uid="uid://chq6gj3ypgb8f" path="res://assets/images/rencontres/anim/Saskia/saskia4.png" id="7_wkv07"]
+[ext_resource type="Texture2D" uid="uid://5fritxw3cixx" path="res://assets/images/rencontres/anim/Saskia/saskia5.png" id="8_vek3i"]
+[ext_resource type="Texture2D" uid="uid://boq1ouq1mbgy5" path="res://assets/images/rencontres/anim/Saskia/saskia6.png" id="9_w0pou"]
+[ext_resource type="Texture2D" uid="uid://bchb7oyani6hc" path="res://assets/images/rencontres/anim/Saskia/saskia7.png" id="10_0gmn8"]
+[ext_resource type="Texture2D" uid="uid://d3d360w5d87gh" path="res://assets/images/rencontres/anim/Saskia/saskia8.png" id="11_gsavd"]
+[ext_resource type="Texture2D" uid="uid://drdhig158psq7" path="res://assets/images/rencontres/anim/Saskia/saskia9.png" id="12_81idf"]
+[ext_resource type="Texture2D" uid="uid://4w0apua3k80h" path="res://assets/images/rencontres/anim/Saskia/saskia10.png" id="13_cekvw"]
+[ext_resource type="Texture2D" uid="uid://dm6rg80hr0mhj" path="res://assets/images/rencontres/anim/Saskia/saskia11.png" id="14_ns7bp"]
+[ext_resource type="Texture2D" uid="uid://crotcclm2j25x" path="res://assets/images/rencontres/anim/Saskia/saskia12.png" id="15_vdfid"]
+[ext_resource type="Texture2D" uid="uid://b1yt32lddtbku" path="res://assets/images/rencontres/anim/Saskia/saskia13.png" id="16_37vqg"]
+[ext_resource type="Texture2D" uid="uid://dgu3ooau0qoy5" path="res://assets/images/rencontres/anim/Saskia/saskia14.png" id="17_20i5s"]
+[ext_resource type="Texture2D" uid="uid://cik60duuru4lo" path="res://assets/images/rencontres/anim/Saskia/saskia15.png" id="18_40kdj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rn3ag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qoyqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oxlm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_boefi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wkv07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vek3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w0pou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0gmn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gsavd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_81idf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cekvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ns7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vdfid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_37vqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_20i5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_40kdj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_r4pha")
-type = null
-sprite = ExtResource("2_bu2ti")
+sprite = SubResource("SpriteFrames_rn3ag")
 description = "saskia"
-wave_form = null
-response = null
 audio_stream = ExtResource("1_bixos")
 oscillo_gif = ExtResource("1_jg8i5")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

@@ -5,13 +5,22 @@
 [ext_resource type="AudioStream" uid="uid://llwr6l84kb7g" path="res://assets/audio/rencontres/antler.ogg" id="1_sb4e6"]
 [ext_resource type="Texture2D" uid="uid://dbyse2a4ravgf" path="res://assets/images/rencontres/antler.png" id="2_kp2tx"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2fyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kp2tx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_amf57")
-type = null
-sprite = ExtResource("2_kp2tx")
+sprite = SubResource("SpriteFrames_m2fyw")
 description = "antler"
 wave_form = 40
-response = null
 audio_stream = ExtResource("1_sb4e6")
 oscillo_gif = ExtResource("1_kp2tx")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

@@ -5,13 +5,21 @@
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_xdksd"]
 [ext_resource type="Texture2D" uid="uid://c8ccqet2jrvlh" path="res://assets/images/rencontres/child.png" id="2_rar0f"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yl2y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rar0f")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_xdksd")
-type = null
-sprite = ExtResource("2_rar0f")
+sprite = SubResource("SpriteFrames_yl2y3")
 description = "child"
-wave_form = null
-response = null
 audio_stream = ExtResource("1_nnxcd")
 oscillo_gif = ExtResource("1_rar0f")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
