@@ -58,6 +58,7 @@ func _resolve_encounter(killed : bool) -> void :
 		return
 		
 	encounter_manager.encounter_processed(_current_encounter,killed)
+	
 	var encounter_result_time : float = _current_encounter.get_encounter_result(killed)
 	var new_main_countdown_time := main_countdown.time_left + encounter_result_time
 	

@@ -1,4 +1,5 @@
 extends Control
+class_name OrderTerminal
 
 @onready var terminal: TextureRect = %Terminal
 @onready var order_display: Label = %OrderDisplay

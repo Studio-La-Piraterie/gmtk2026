@@ -6,9 +6,13 @@ class_name DashboardUI extends Control
 @export var unstable_cable : UnstableCable
 @export var oscilloscope : Oscilloscope
 
+@export var order_terminal : OrderTerminal
+
 @onready var main_countdown_display: MainCountdown = %MainCountdownLabel
 @onready var encounter_audio_player: AudioStreamPlayer = $EncounterAudioPlayer
 
+var current_target : Encounter = null :
+	set = set_target
 var currently_displayed_encounter : Encounter = null :
 	set = set_encounter
 
@@ -19,6 +23,16 @@ func _ready() -> void:
 	unstable_cable.failed.connect(unstable_cable_fail)
 	unstable_cable.restored.connect(unstable_cable_restored)
 
+func set_target(new_target : Encounter) ->void:
+	if not is_node_ready() :
+		return
+	if new_target == null:
+		new_target = Encounter.new()
+	
+	current_target = new_target
+	order_terminal.set_encounter_order(current_target)
+	
+	
 func set_encounter(encounter : Encounter) -> void:
 	if not is_node_ready() :
 		return
@@ -56,8 +70,10 @@ func unstable_cable_fail()->void:
 	update_encounter_ui(Encounter.new())
 	resolve_dismiss_ui.disable()
 	oscilloscope.disable()
+	order_terminal.disable()
 	
 func unstable_cable_restored()->void:
 	update_encounter_ui(currently_displayed_encounter)
 	resolve_dismiss_ui.enable()
 	oscilloscope.enable()
+	order_terminal.enable()
