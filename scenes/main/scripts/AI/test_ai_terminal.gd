@@ -9,6 +9,7 @@ class_name AI extends Node
 
 @export var character_update_time : float = 0.09
 @export var character_displayed : int = 3
+@export var time_before_next_ai_message : float = 4.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +22,9 @@ func _process(delta: float) -> void:
 
 func update_terminal(ai : ArtificialIntelligence):
 	update_AI_face(ai.sprite)
-	update_AI_text(ai.discussion, character_update_time, character_displayed)
+	for str in ai.discussion:
+		await update_AI_text(str, character_update_time, character_displayed)
+		await get_tree().create_timer(time_before_next_ai_message).timeout
 
 ## Update the face of the AI on the terminal
 func update_AI_face(sprite : Texture2D) -> void:
