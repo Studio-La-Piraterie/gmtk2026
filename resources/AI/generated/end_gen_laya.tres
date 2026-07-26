@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_2ta06")
-emotion = 1
 pair = Dictionary[String, int]({
 "END_GEN_LAYA0": 1,
 "END_GEN_LAYA1": 1,

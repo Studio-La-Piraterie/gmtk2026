@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://budh4x7uwmjac" path="res://scenes/main/scripts/AI/AIChat.tscn" id="10_blune"]
 [ext_resource type="PackedScene" uid="uid://drqeq1enobsok" path="res://scenes/dashboard_ui/order_terminal/order_terminal.tscn" id="10_th5th"]
 [ext_resource type="Texture2D" uid="uid://bc8sgm325qcwj" path="res://assets/images/dashboard/Ecran_terminal_final.png" id="11_th5th"]
+[ext_resource type="Script" uid="uid://bgcojfd6b5top" path="res://resources/scripts/artificial_intelligence.gd" id="12_necax"]
+[ext_resource type="Resource" uid="uid://bxc6jprxxdxtd" path="res://resources/AI/generated/first_order_laya.tres" id="13_r4lks"]
+[ext_resource type="Resource" uid="uid://cefanqy84yahq" path="res://resources/AI/generated/second_order_laya.tres" id="14_pg34l"]
+[ext_resource type="Resource" uid="uid://bgryb0gfj3pb5" path="res://resources/AI/generated/third_order_laya.tres" id="15_m4h2d"]
+[ext_resource type="Resource" uid="uid://bjekdkdxdbxfi" path="res://resources/AI/generated/fourth_order_laya.tres" id="16_p8abn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
 font = ExtResource("6_yyfjg")
@@ -108,6 +113,7 @@ offset_left = 21.0
 offset_top = 17.0
 offset_right = -1364.0
 offset_bottom = -993.0
+discussion_order = Array[ExtResource("12_necax")]([ExtResource("13_r4lks"), ExtResource("14_pg34l"), ExtResource("15_m4h2d"), ExtResource("16_p8abn")])
 
 [node name="TextureRect" type="TextureRect" parent="DashboardUI/AiChat" unique_id=958163991]
 show_behind_parent = true

@@ -8,6 +8,8 @@ class_name AI extends Node
 #@export var AI_neutral : ArtificialIntelligence
 #@export var AI_sad : ArtificialIntelligence
 
+@export var discussion_order : Array[ArtificialIntelligence]
+
 @export var character_update_time : float = 0.09
 @export var character_displayed : int = 3
 @export var time_before_next_ai_message : float = 4.0
