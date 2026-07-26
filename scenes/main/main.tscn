@@ -19,6 +19,8 @@
 [ext_resource type="Resource" uid="uid://cefanqy84yahq" path="res://resources/AI/generated/second_order_laya.tres" id="14_pg34l"]
 [ext_resource type="Resource" uid="uid://bgryb0gfj3pb5" path="res://resources/AI/generated/third_order_laya.tres" id="15_m4h2d"]
 [ext_resource type="Resource" uid="uid://bjekdkdxdbxfi" path="res://resources/AI/generated/fourth_order_laya.tres" id="16_p8abn"]
+[ext_resource type="Resource" uid="uid://y0lkfqn14hfi" path="res://resources/AI/generated/fifth_order_laya.tres" id="16_pg34l"]
+[ext_resource type="Resource" uid="uid://b6mqjnf3bynli" path="res://resources/AI/generated/sixth_order_laya.tres" id="17_m4h2d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
 font = ExtResource("6_yyfjg")
@@ -109,7 +111,7 @@ offset_left = 21.0
 offset_top = 17.0
 offset_right = -1364.0
 offset_bottom = -993.0
-discussion_order = Array[ExtResource("12_necax")]([ExtResource("13_r4lks"), ExtResource("14_pg34l"), ExtResource("15_m4h2d"), ExtResource("16_p8abn")])
+discussion_order = Array[ExtResource("12_necax")]([ExtResource("13_r4lks"), ExtResource("14_pg34l"), ExtResource("15_m4h2d"), ExtResource("16_p8abn"), ExtResource("16_pg34l"), ExtResource("17_m4h2d")])
 
 [node name="TextureRect" type="TextureRect" parent="DashboardUI/AiChat" unique_id=958163991]
 show_behind_parent = true
