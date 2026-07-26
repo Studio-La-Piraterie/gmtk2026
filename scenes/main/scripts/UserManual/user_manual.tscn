@@ -12,7 +12,9 @@
 [ext_resource type="Resource" uid="uid://c40u2ykco6n72" path="res://resources/manual_pages/page7.tres" id="10_5l3mu"]
 [ext_resource type="Resource" uid="uid://dyah5w2gkgk0j" path="res://resources/manual_pages/page8.tres" id="11_iv2ph"]
 [ext_resource type="Resource" uid="uid://bsy6gfsvjv0pt" path="res://resources/manual_pages/page9.tres" id="12_r3tbb"]
+[ext_resource type="Resource" uid="uid://6omws0mximd7" path="res://resources/manual_pages/page10.tres" id="13_ex0x8"]
 [ext_resource type="Texture2D" uid="uid://dauyljr8vn1io" path="res://assets/images/guide/guide0_cover.jpg" id="13_ie0jy"]
+[ext_resource type="Resource" uid="uid://cey7pmtun7x1i" path="res://resources/manual_pages/page11.tres" id="14_lgs8q"]
 
 [sub_resource type="Gradient" id="Gradient_5hxmf"]
 
@@ -35,7 +37,7 @@ offset_bottom = 429.08398
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dmr00")
-pages_arr = Array[ExtResource("2_our78")]([ExtResource("3_hwps5"), ExtResource("4_46jbt"), ExtResource("5_dcppl"), ExtResource("6_2g0xr"), ExtResource("7_q4fsr"), ExtResource("8_ka0th"), ExtResource("9_jbtdi"), ExtResource("10_5l3mu"), ExtResource("11_iv2ph"), ExtResource("12_r3tbb")])
+pages_arr = Array[ExtResource("2_our78")]([ExtResource("3_hwps5"), ExtResource("4_46jbt"), ExtResource("5_dcppl"), ExtResource("6_2g0xr"), ExtResource("7_q4fsr"), ExtResource("8_ka0th"), ExtResource("9_jbtdi"), ExtResource("10_5l3mu"), ExtResource("11_iv2ph"), ExtResource("12_r3tbb"), ExtResource("13_ex0x8"), ExtResource("14_lgs8q")])
 
 [node name="CloseButton" type="Button" parent="." unique_id=2110323020]
 visible = false
