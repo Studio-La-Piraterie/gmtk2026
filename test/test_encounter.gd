@@ -10,13 +10,17 @@ extends Control
 @onready var wave_form: Label = %WaveForm
 @onready var type: ColorRect = %Type
 @onready var get_new_encounter_btn: Button = %GetNewEncounter
+@onready var gif_player: GIFPlayer = %GIFPlayer
+
+var encounter_dispenser := EncounterManager.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_encounter(encounter)
+	add_child(encounter_dispenser)
 	get_new_encounter_btn.pressed.connect(
 		func()->void:
-			_set_encounter(EncounterDispenser.get_new_encounter())
+			_set_encounter(encounter_dispenser.get_new_encounter())
 			)
 
 func _set_encounter(new_encounter : Encounter) -> void:
@@ -31,7 +35,9 @@ func _set_encounter(new_encounter : Encounter) -> void:
 	reponse.text = "Reponse:" + encounter.response
 	description.text = "Description:" + encounter.description
 	wave_form.text = "Wave Form:" + str(encounter.wave_form)
+	encounter_dispenser.play_audio(encounter.audio_stream)
 	type.color = type2color(encounter.type)
+	gif_player.gif = encounter.oscillo_gif
 	
 func type2color (encounter_type : Encounter.Type) -> Color :
 	match encounter_type:

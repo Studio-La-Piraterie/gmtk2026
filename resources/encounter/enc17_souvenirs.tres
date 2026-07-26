@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://dlmrce0tul1jw"]
+
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_pfoi0"]
+[ext_resource type="Texture2D" uid="uid://dgjo0nb1avkie" path="res://assets/images/rencontres/souvenirs.png" id="2_nkuva"]
+
+[resource]
+script = ExtResource("1_pfoi0")
+type = 1
+sprite = ExtResource("2_nkuva")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
