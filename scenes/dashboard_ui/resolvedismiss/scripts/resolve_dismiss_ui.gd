@@ -39,7 +39,8 @@ func _ready():
 	kill_btn.pressed.connect(func(): SignalBus.resolve_encounter.emit(true))
 	
 	set_state(ResolveMachineState.NO_ENCOUNTER)
-	
+
+
 func set_state(new_state : ResolveMachineState) ->void:
 	
 	match new_state:

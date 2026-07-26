@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://cg116i37a58ia" path="res://scenes/dashboard_ui/encounter/scripts/encounter_ui.gd" id="1_fenf0"]
 [ext_resource type="Texture2D" uid="uid://bu073ph2mjy7q" path="res://assets/images/dashboard/hublot.png" id="2_8xpg4"]
 [ext_resource type="Texture2D" uid="uid://l1wxbjqsxqfu" path="res://assets/images/rencontres/anim/clown/clown1.png" id="3_gwxm0"]
-[ext_resource type="Texture2D" uid="uid://sbqxtnbhdt86" path="res://assets/images/rencontres/anim/clown/clown2.png" id="4_kfd1c"]
-[ext_resource type="Texture2D" uid="uid://yex288eo48t5" path="res://assets/images/rencontres/anim/clown/clown3.png" id="5_7145b"]
-[ext_resource type="Texture2D" uid="uid://dswvi4jmwq6gy" path="res://assets/images/rencontres/anim/clown/clown4.png" id="6_q7l76"]
-[ext_resource type="Texture2D" uid="uid://b1t3uh456cesg" path="res://assets/images/dashboard/Petit_timer_final.png" id="7_0tlg5"]
+[ext_resource type="Texture2D" uid="uid://dr5f8u7bptiw3" path="res://assets/images/rencontres/anim/flowerman/flowerman1.png" id="5_gwxm0"]
+[ext_resource type="Texture2D" uid="uid://n7bg264sy8cn" path="res://assets/images/rencontres/anim/Flowervoid/Flowervoid1.png" id="6_kfd1c"]
+[ext_resource type="Texture2D" uid="uid://b4tvbxo7ncdm3" path="res://assets/images/dashboard/Petit_timer_final.png" id="7_0tlg5"]
+[ext_resource type="Texture2D" uid="uid://bpfkvlgxq6hao" path="res://assets/images/rencontres/anim/forest_sister/forest_sister2.png" id="7_7145b"]
 [ext_resource type="FontFile" uid="uid://dvjdhrrcnxcai" path="res://assets/fonts/bauhaus_bernard_black.ttf" id="8_3rngt"]
-[ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="9_yqepy"]
+[ext_resource type="Texture2D" uid="uid://cwi6jeduti6sn" path="res://assets/images/dashboard/control_panel_sansframe.png" id="9_yqepy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_drw0f"]
 animations = [{
@@ -17,13 +17,13 @@ animations = [{
 "texture": ExtResource("3_gwxm0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_kfd1c")
+"texture": ExtResource("5_gwxm0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7145b")
+"texture": ExtResource("6_kfd1c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_q7l76")
+"texture": ExtResource("7_7145b")
 }],
 "loop": 1,
 "name": &"default",
@@ -70,6 +70,7 @@ offset_transform_enabled = true
 texture = ExtResource("7_0tlg5")
 
 [node name="LucarneBG" type="TextureRect" parent="Lucarne" unique_id=2035608467]
+z_index = 1
 layout_mode = 1
 offset_left = -129.0
 offset_top = -46.0
@@ -80,10 +81,9 @@ texture = ExtResource("2_8xpg4")
 stretch_mode = 3
 
 [node name="EncounterSprite" type="AnimatedSprite2D" parent="Lucarne/LucarneBG" unique_id=782076438]
-z_index = -1
+show_behind_parent = true
 position = Vector2(322, 365)
 sprite_frames = SubResource("SpriteFrames_drw0f")
-frame_progress = 0.35946596
 
 [node name="EncounterDesc" type="TextureRect" parent="Lucarne" unique_id=1074810704]
 layout_mode = 0
