@@ -135,8 +135,8 @@ mouse_filter = 2
 
 [node name="UnstableCable" parent="DashboardUI" unique_id=1325246831 instance=ExtResource("9_a8run")]
 layout_mode = 0
-min_failure_countdown = 2.0
-max_failure_countdown = 3.0
+min_failure_countdown = 30.0
+max_failure_countdown = 120.0
 
 [node name="pause_menu" parent="." unique_id=1456723423 instance=ExtResource("10_a8run")]
 visible = false
@@ -148,7 +148,7 @@ wait_time = 300.0
 one_shot = true
 
 [node name="EncounterCountDown" type="Timer" parent="." unique_id=852666925]
-wait_time = 15.0
+wait_time = 40.0
 
 [node name="EncounterCooldown" type="Timer" parent="." unique_id=455341062]
 wait_time = 3.0
