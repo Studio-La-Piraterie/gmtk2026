@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://4rxk2g2cnpgp"]
 
+[ext_resource type="Texture2D" uid="uid://3mvntwytw7wq" path="res://assets/images/scope/boots.gif" id="1_67x65"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_iexth"]
 [ext_resource type="Texture2D" uid="uid://inrqboo1bn17" path="res://assets/images/rencontres/boots.png" id="2_67x65"]
 
@@ -7,4 +8,5 @@
 script = ExtResource("1_iexth")
 type = 1
 sprite = ExtResource("2_67x65")
+oscillo_gif = ExtResource("1_67x65")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
