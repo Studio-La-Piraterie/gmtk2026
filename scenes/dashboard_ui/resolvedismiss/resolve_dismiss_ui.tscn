@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://bj1lew07ctuuo"]
 
 [ext_resource type="Script" uid="uid://51gwyo0hp6x" path="res://scenes/dashboard_ui/resolvedismiss/scripts/resolve_dismiss_ui.gd" id="1_8k1j0"]
-[ext_resource type="Texture2D" uid="uid://dn76lv2h6v14i" path="res://assets/images/dashboard/control_panel_sansframe.png" id="2_apt3v"]
+[ext_resource type="Texture2D" uid="uid://cwi6jeduti6sn" path="res://assets/images/dashboard/control_panel_sansframe.png" id="2_apt3v"]
 [ext_resource type="Texture2D" uid="uid://dpaumj55sxsnq" path="res://assets/images/dashboard/button/button_grey.PNG" id="3_320nj"]
 [ext_resource type="Texture2D" uid="uid://djhs1ruhhmet4" path="res://assets/images/dashboard/switch_off_cropped.png" id="3_apt3v"]
 [ext_resource type="Texture2D" uid="uid://dubwhidhyux42" path="res://assets/images/dashboard/button/button_grey_press.PNG" id="4_sgdqs"]
 [ext_resource type="Texture2D" uid="uid://b0wer6yoeplcl" path="res://assets/images/dashboard/switch_on_cropped.png" id="4_y11cp"]
 [ext_resource type="Texture2D" uid="uid://biuq6ya62nns2" path="res://assets/images/dashboard/diode_off_final.png" id="5_ijxki"]
-[ext_resource type="Texture2D" uid="uid://bfpdxx0toxlby" path="res://assets/images/dashboard/button/butto_green.PNG" id="6_320nj"]
-[ext_resource type="Texture2D" uid="uid://daqo3igjwmkrc" path="res://assets/images/dashboard/button/button_press_green.PNG" id="7_sgdqs"]
-[ext_resource type="Texture2D" uid="uid://bh57tll6msejl" path="res://assets/images/dashboard/button/button_off.PNG" id="8_apt3v"]
+[ext_resource type="Texture2D" uid="uid://3j1q7qp6ob5v" path="res://assets/images/dashboard/boutonv2/dismiss_green.PNG" id="8_r6gvb"]
+[ext_resource type="Texture2D" uid="uid://da3s6k668u18y" path="res://assets/images/dashboard/boutonv2/dismiss_press_green.PNG" id="9_20gy0"]
+[ext_resource type="Texture2D" uid="uid://bqnw2oomb81qg" path="res://assets/images/dashboard/boutonv2/dismiss_off.PNG" id="10_r2qy8"]
+[ext_resource type="Texture2D" uid="uid://db042j5ntm8jj" path="res://assets/images/dashboard/boutonv2/resolve_green.PNG" id="11_336sb"]
+[ext_resource type="Texture2D" uid="uid://bch4aksdodrmk" path="res://assets/images/dashboard/boutonv2/resolve_press_green.PNG" id="12_5m08b"]
+[ext_resource type="Texture2D" uid="uid://n82xjn3e0mod" path="res://assets/images/dashboard/boutonv2/resolve_off.PNG" id="13_22ohc"]
 
 [node name="ResolveDismissUI" type="Control" unique_id=232656449 node_paths=PackedStringArray("engage_btn", "ok_btn", "ctrl_btn", "ready_btn", "ok_diode", "ctrl_diode", "ready_diode", "dismiss_btn", "kill_btn")]
 layout_mode = 3
@@ -130,10 +133,10 @@ offset_left = 1042.0
 offset_top = 434.0
 offset_right = 1211.0
 offset_bottom = 586.0
-texture_normal = ExtResource("6_320nj")
-texture_pressed = ExtResource("7_sgdqs")
-texture_hover = ExtResource("6_320nj")
-texture_disabled = ExtResource("8_apt3v")
+texture_normal = ExtResource("8_r6gvb")
+texture_pressed = ExtResource("9_20gy0")
+texture_hover = ExtResource("8_r6gvb")
+texture_disabled = ExtResource("10_r2qy8")
 
 [node name="KillBtn" type="TextureButton" parent="." unique_id=864758014]
 unique_name_in_owner = true
@@ -143,7 +146,7 @@ offset_left = 850.0
 offset_top = 434.0
 offset_right = 1019.0
 offset_bottom = 586.0
-texture_normal = ExtResource("6_320nj")
-texture_pressed = ExtResource("7_sgdqs")
-texture_hover = ExtResource("6_320nj")
-texture_disabled = ExtResource("8_apt3v")
+texture_normal = ExtResource("11_336sb")
+texture_pressed = ExtResource("12_5m08b")
+texture_hover = ExtResource("11_336sb")
+texture_disabled = ExtResource("13_22ohc")
