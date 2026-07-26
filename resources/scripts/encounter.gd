@@ -25,7 +25,7 @@ enum Type {PASSIVE,AGRESSIVE,TARGET}
 @export var oscillo_gif : GIFTexture = null
 
 @export_category("Order carac")
-@export var target_order : String = ""
+@export var target_order : Array[String]
 @export var show_oscillo : bool = false
 
 var min_oscillo_val : float = 0.0
