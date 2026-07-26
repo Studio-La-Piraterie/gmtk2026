@@ -21,7 +21,6 @@ script = ExtResource("1_grn61")
 type = 1
 sprite = SubResource("SpriteFrames_nnxcd")
 description = "hades"
-wave_form = 99
 audio_stream = ExtResource("1_qmqk8")
 oscillo_gif = ExtResource("2_wj8hj")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

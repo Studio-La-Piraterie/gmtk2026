@@ -28,7 +28,6 @@ animations = [{
 script = ExtResource("1_5bcbj")
 sprite = SubResource("SpriteFrames_ljyh6")
 description = "philomele_procne"
-wave_form = null
 audio_stream = ExtResource("1_sryql")
 oscillo_gif = ExtResource("1_2disf")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

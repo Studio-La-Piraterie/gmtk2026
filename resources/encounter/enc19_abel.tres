@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://c4ckvhuinavrq"]
 
+[ext_resource type="AudioStream" uid="uid://b6m5nydxr8g7v" path="res://assets/audio/rencontres/1000hz_abel.ogg" id="1_0puvf"]
 [ext_resource type="Texture2D" uid="uid://bafsagt0wcwh4" path="res://assets/images/scope/abel.gif" id="1_5mosq"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_eb8ly"]
 [ext_resource type="Texture2D" uid="uid://dtpowkltlqmru" path="res://assets/images/rencontres/flowerman.png" id="3_5mosq"]
@@ -19,5 +20,6 @@ animations = [{
 script = ExtResource("1_eb8ly")
 sprite = SubResource("SpriteFrames_7e4qj")
 description = "abel"
+audio_stream = ExtResource("1_0puvf")
 oscillo_gif = ExtResource("1_5mosq")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
