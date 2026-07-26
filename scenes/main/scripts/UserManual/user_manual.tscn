@@ -40,6 +40,7 @@ pages_arr = Array[ExtResource("2_our78")]([ExtResource("3_hwps5"), ExtResource("
 [node name="CloseButton" type="Button" parent="." unique_id=2110323020]
 visible = false
 top_level = true
+z_index = 11
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.57900006
@@ -74,6 +75,7 @@ size_flags_vertical = 3
 [node name="PagesContainer" type="HBoxContainer" parent="." unique_id=1895528809]
 visible = false
 top_level = true
+z_index = 10
 layout_mode = 0
 offset_left = 80.0
 offset_top = 79.0
