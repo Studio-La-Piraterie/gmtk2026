@@ -23,6 +23,9 @@ var amount_target : int = 0
 signal new_target_update_order 
 
 func _init() -> void:
+	for encounter in ENCOUNTER_POOL:
+		if not encounter.type == Encounter.Type.TARGET:
+			_available_encounters.append(encounter)
 
 	amount_target = _available_targets.size()
 	_set_new_target()
@@ -67,11 +70,12 @@ func get_new_encounter() -> Encounter:
 	return selected_encounter 
 
 func encounter_processed(encounter : Encounter, killed :bool)->void:
-	if killed and encounter.type == Encounter.Type.TARGET:
-		amount_target_killed+=1
-		
 	_available_encounters.erase(encounter)
-	_set_new_target()
+	
+	if encounter.type == Encounter.Type.TARGET:
+		_set_new_target()
+		if killed:
+			amount_target_killed+=1
 	
 func _set_new_target()->void:
 	if _available_targets.is_empty():
