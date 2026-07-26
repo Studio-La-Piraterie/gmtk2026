@@ -19,7 +19,7 @@ func update_encounter_ui(encounter :  Encounter)->void:
 			type_color_rect.color = Color.WHITE
 		else:
 			type_color_rect.color = type2color(encounter.type)
-			
+
 
 func type2color (encounter_type : Encounter.Type) -> Color :
 	match encounter_type:

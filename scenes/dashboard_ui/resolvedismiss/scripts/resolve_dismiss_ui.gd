@@ -1,17 +1,20 @@
 extends Control
 class_name ResolveDissmiss
 
-@export var engage_btn: Button = null
-@export var ok_btn: Button = null
-@export var ctrl_btn: Button = null
-@export var ready_btn: Button = null
+const DIODE_OFF = preload("res://assets/images/dashboard/diode_off_final.png")
+const DIODE_ON = preload("res://assets/images/dashboard/diode_on_final.png")
 
-@export var ok_diode: ColorRect = null
-@export var ctrl_diode: ColorRect = null
-@export var ready_diode: ColorRect = null
+@export var engage_btn: TextureButton = null
+@export var ok_btn: TextureButton = null
+@export var ctrl_btn: TextureButton = null
+@export var ready_btn: TextureButton = null
 
-@export var dismiss_btn: Button = null
-@export var kill_btn: Button = null
+@export var ok_diode: TextureRect = null
+@export var ctrl_diode: TextureRect = null
+@export var ready_diode: TextureRect = null
+
+@export var dismiss_btn: TextureButton = null
+@export var kill_btn: TextureButton = null
 
 var resolve_machine_state : ResolveMachineState = ResolveMachineState.NONE :
 	set = set_state
@@ -81,11 +84,11 @@ func _update_resolve_machine_ui(new_state : ResolveMachineState)->void:
 	
 	engage_btn.disabled = new_state < ResolveMachineState.ENCOUNTER_PRESENT
 	ok_btn.disabled = new_state < ResolveMachineState.ENGAGE_SWITCHED
-	ok_diode.color = Color.RED if new_state < ResolveMachineState.ENGAGE_SWITCHED else Color.GREEN  
+	ok_diode.texture = DIODE_OFF  if new_state < ResolveMachineState.ENGAGE_SWITCHED else DIODE_ON  
 	ctrl_btn.disabled = new_state < ResolveMachineState.OK_PRESSED
-	ctrl_diode.color = Color.RED if new_state < ResolveMachineState.OK_PRESSED else Color.GREEN  
+	ctrl_diode.texture = DIODE_OFF  if new_state < ResolveMachineState.OK_PRESSED else DIODE_ON  
 	ready_btn.disabled = new_state < ResolveMachineState.CTRL_PRESSED
-	ready_diode.color = Color.RED if new_state < ResolveMachineState.CTRL_PRESSED else Color.GREEN  
+	ready_diode.texture = DIODE_OFF  if new_state < ResolveMachineState.CTRL_PRESSED else DIODE_ON  
 	kill_btn.disabled = new_state < ResolveMachineState.READY_PRESSED
 	dismiss_btn.disabled = new_state < ResolveMachineState.ENGAGE_SWITCHED
 
