@@ -29,7 +29,9 @@ func set_encounter_order(encounter : Encounter)->void:
 func _update_ui(encounter : Encounter)->void:
 	if encounter == null:
 		encounter = Encounter.new()
-	order_display.text = encounter.target_order
+	for str in encounter.target_order:
+		order_display.text = str
+		await get_tree().create_timer(3).timeout
 	if encounter.show_oscillo:
 		order_gif.gif = encounter.oscillo_gif
 	else:
