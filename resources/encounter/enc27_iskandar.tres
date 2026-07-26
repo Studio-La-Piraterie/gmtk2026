@@ -35,4 +35,5 @@ sprite = SubResource("SpriteFrames_wcq6p")
 description = "iskandar"
 audio_stream = ExtResource("1_8chew")
 oscillo_gif = ExtResource("1_dpn5v")
+target_order = Array[String](["THIRD_ORDER_INTRO", "THIRD_ORDER_LOOKS", "THIRD_ORDER_RESOLVE"])
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

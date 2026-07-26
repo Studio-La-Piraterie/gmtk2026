@@ -23,4 +23,5 @@ sprite = SubResource("SpriteFrames_xx3de")
 description = "grand_soir"
 audio_stream = ExtResource("1_t3glr")
 oscillo_gif = ExtResource("1_gn54v")
+target_order = Array[String](["FIRST_ORDER_INTRO", "FIRST_ORDER_TXT", "FIRST_ORDER_RESOLVE"])
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

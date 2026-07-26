@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ManualPage" format=3 uid="uid://dyah5w2gkgk0j"]
 
 [ext_resource type="Script" uid="uid://b5ug3sbbcjhyb" path="res://resources/scripts/manual_page.gd" id="1_ybdvy"]
-[ext_resource type="Texture2D" uid="uid://d3jdo5xkhmeem" path="res://assets/images/guide/guide8.jpg" id="2_orgjy"]
+[ext_resource type="Texture2D" uid="uid://b4rfrrx1hkldj" path="res://assets/images/guide/guide_new/A COMPUTER (1)-08.png" id="2_orgjy"]
 
 [resource]
 script = ExtResource("1_ybdvy")

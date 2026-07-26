@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bj64jhnrcno5k"]
+
+[ext_resource type="Texture2D" uid="uid://dw7xy8iunsoq3" path="res://assets/menu/submenu/background_sub_menu.png" id="1_ilvam"]
+
+[node name="language_menu" type="Control" unique_id=106261504]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=139483917]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ilvam")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=808885700]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 116.0
+offset_right = 231.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You may choose the appropriate language to fullfill you mission in the best condition"
