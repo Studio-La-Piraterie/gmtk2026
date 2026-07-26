@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cuw2g63xeyj8x"]
+
+[ext_resource type="Script" uid="uid://ggcig3gk2ycp" path="res://autoload/audio_manager/audio_manager.gd" id="1_cqcdj"]
+
+[node name="AudioManager" type="Node" unique_id=262568789]
+script = ExtResource("1_cqcdj")
+
+[node name="EncounterAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=2097456721]
+volume_db = -60.0
+bus = &"Encounter"

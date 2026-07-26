@@ -1,11 +1,58 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://c4ms00ghck4jh"]
 
+[ext_resource type="AudioStream" uid="uid://dpj857ru1seaj" path="res://assets/audio/rencontres/klara.ogg" id="1_dcyhr"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_i0yut"]
 [ext_resource type="Texture2D" uid="uid://bok70y0c2yun3" path="res://assets/images/scope/clara.gif" id="1_lsm5n"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_wc0st"]
+[ext_resource type="Texture2D" uid="uid://ch8ojrwnxtbb5" path="res://assets/images/rencontres/anim/Klara/Klara1.png" id="4_awohy"]
+[ext_resource type="Texture2D" uid="uid://beoyrmklfa1ec" path="res://assets/images/rencontres/anim/Klara/Klara2.png" id="5_osga8"]
+[ext_resource type="Texture2D" uid="uid://c4l3vm0f2q1ft" path="res://assets/images/rencontres/anim/Klara/Klara3.png" id="6_gwa8t"]
+[ext_resource type="Texture2D" uid="uid://dwv2y3gww4pg7" path="res://assets/images/rencontres/anim/Klara/Klara4.png" id="7_bm54b"]
+[ext_resource type="Texture2D" uid="uid://u5pp60wr8vo" path="res://assets/images/rencontres/anim/Klara/Klara5.png" id="8_2d4b7"]
+[ext_resource type="Texture2D" uid="uid://c8ju2b1dscsf0" path="res://assets/images/rencontres/anim/Klara/Klara6.png" id="9_36ecv"]
+[ext_resource type="Texture2D" uid="uid://bg1ggbhkq87aw" path="res://assets/images/rencontres/anim/Klara/Klara7.png" id="10_4x73l"]
+[ext_resource type="Texture2D" uid="uid://c1tqb27wr2pwj" path="res://assets/images/rencontres/anim/Klara/Klara8.png" id="11_ku25r"]
+[ext_resource type="Texture2D" uid="uid://djcudjeip6osp" path="res://assets/images/rencontres/anim/Klara/Klara9.png" id="12_den8b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joini"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_awohy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_osga8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gwa8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bm54b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2d4b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_36ecv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4x73l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ku25r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_den8b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_i0yut")
-sprite = ExtResource("2_wc0st")
+sprite = SubResource("SpriteFrames_joini")
+description = "klara"
+wave_form = 110
+audio_stream = ExtResource("1_dcyhr")
 oscillo_gif = ExtResource("1_lsm5n")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

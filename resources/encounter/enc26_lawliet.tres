@@ -2,11 +2,37 @@
 
 [ext_resource type="Texture2D" uid="uid://c8j63j7cs5kpg" path="res://assets/images/scope/lawliet.gif" id="1_bk07u"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_owysv"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_1m27i"]
+[ext_resource type="AudioStream" uid="uid://bukjstbyycu13" path="res://assets/audio/rencontres/lawliet.ogg" id="1_wcq6p"]
+[ext_resource type="Texture2D" uid="uid://ckvv3v2723i8i" path="res://assets/images/rencontres/anim/sister/sister1.png" id="4_1xcy2"]
+[ext_resource type="Texture2D" uid="uid://bvb6pkyuwwgle" path="res://assets/images/rencontres/anim/sister/sister2.png" id="5_l8h4h"]
+[ext_resource type="Texture2D" uid="uid://d4jgv1tqeko38" path="res://assets/images/rencontres/anim/sister/sister3.png" id="6_c0kgw"]
+[ext_resource type="Texture2D" uid="uid://m75vbsr3y4gk" path="res://assets/images/rencontres/anim/sister/sister4.png" id="7_3t0gv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3glr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1xcy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l8h4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c0kgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3t0gv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_owysv")
 type = 1
-sprite = ExtResource("2_1m27i")
+sprite = SubResource("SpriteFrames_t3glr")
+description = "lawliet"
+audio_stream = ExtResource("1_wcq6p")
 oscillo_gif = ExtResource("1_bk07u")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

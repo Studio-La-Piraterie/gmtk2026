@@ -2,11 +2,37 @@
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_djlwr"]
 [ext_resource type="Texture2D" uid="uid://cso23jdy5y7oi" path="res://assets/images/scope/cain.gif" id="1_i42vq"]
-[ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_bk2d7"]
+[ext_resource type="AudioStream" uid="uid://cei1ko00di8gq" path="res://assets/audio/rencontres/cain.ogg" id="1_jchpv"]
+[ext_resource type="Texture2D" uid="uid://n7bg264sy8cn" path="res://assets/images/rencontres/anim/Flowervoid/Flowervoid1.png" id="3_y3lw3"]
+[ext_resource type="Texture2D" uid="uid://bb7hbpxqe6r1k" path="res://assets/images/rencontres/anim/Flowervoid/Flowervoid2.png" id="4_jchpv"]
+[ext_resource type="Texture2D" uid="uid://d0wirnbj7kiu7" path="res://assets/images/rencontres/anim/Flowervoid/Flowervoid3.png" id="5_j55ix"]
+[ext_resource type="Texture2D" uid="uid://cd6hr6xhte7hh" path="res://assets/images/rencontres/anim/Flowervoid/Flowervoid4.png" id="6_gnyxj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpqwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y3lw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jchpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j55ix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gnyxj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [resource]
 script = ExtResource("1_djlwr")
 type = 2
-sprite = ExtResource("2_bk2d7")
+sprite = SubResource("SpriteFrames_lpqwm")
+description = "cain"
+audio_stream = ExtResource("1_jchpv")
 oscillo_gif = ExtResource("1_i42vq")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

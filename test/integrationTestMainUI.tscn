@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctjcsyva17aoh" path="res://test/TestUnstableCable.tscn" id="4_j2mf3"]
 [ext_resource type="Script" uid="uid://ccv77gyls3x5s" path="res://test/game_over_indicator.gd" id="5_tu6qf"]
 [ext_resource type="Texture2D" uid="uid://dciri8jhuac5p" path="res://assets/images/dashboard/tableau_de_bord_frames_WIP.png" id="5_uwpqv"]
+[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/dashboard_ui/oscilloscope/scripts/oscilloscope.gd" id="6_4wgxf"]
 
 [node name="TestMainUi" type="Control" unique_id=2016960350 node_paths=PackedStringArray("main_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown")]
 layout_mode = 3

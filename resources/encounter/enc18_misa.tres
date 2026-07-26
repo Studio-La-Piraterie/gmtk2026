@@ -4,9 +4,21 @@
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_trd0d"]
 [ext_resource type="Texture2D" uid="uid://bx75f30eoi1hd" path="res://assets/images/rencontres/misa.png" id="2_22j11"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yax81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_22j11")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_trd0d")
 type = 2
-sprite = ExtResource("2_22j11")
+sprite = SubResource("SpriteFrames_yax81")
+description = "misa"
 oscillo_gif = ExtResource("1_7e4qj")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

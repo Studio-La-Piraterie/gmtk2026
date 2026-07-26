@@ -1,3 +1,4 @@
+keys,fr,en,frequency
 abel,Vous étiez persuadé qu'il était bien mal en point. Tout vient à point à qui sait éclore.,You were convinced he was in a pretty poor shape. All things come to he who blooms.,
 antler,"Un mystérieux spécimen vêtu d’une robe sacrée, ses bois sont impressionnants, il semble vieux et sage",A mysterious specimen draped in a sacred robe. Its antlers are impressive. Looks old and wise.,40hz
 bella,"""Hé ! Vous ! Vous avez l'heure ?""","""Hey! You! D'you have the time?""",
@@ -17,7 +18,6 @@ horse,Magnifique cheval blanc. Son attitude est empreinte d'une grande fierté.,
 hortense,"Un bernard-l'ermite sans maison. Très conviviale, cette rencontre.",A homeless hermit crab. A most convivial encounter.,
 iskandar,Troisième partenaire de votre premier amour. Possède une surprenante capacité à arrondir les angles.,Your first love's third partner. Surprisingly soft around the edges.,
 karen,Chuchoteur de compliments. Se glisse dans votre dos pour vous flatter.,Compliment whisperer. Creeps in behind your back to flatter you.,
-keys,fr,en,frequency
 klara,"Par peur de s'atrophier, elle mange chaque jour de belles portions d'haricots. Pratique la photographie comme hobby.","Eats nice portions of beans everyday, out of fear of thinning out into nothingness. Enjoys photography as a hobby.",
 lawliet,Il vous raconte qu'il a trouvé un carnet spécial dans lequel écrire. Il joue de la guitare.,He tells you about this special notebook he found. Plays guitar.,588hz
 macbeth,Prince paralysé par la pensée. Hésite trop et agit trop tard.,"A prince thinking paralyzes. Dithers too much and too often, acts too late.",
@@ -34,3 +34,4 @@ Carries the weight of their past inside their pendant.",
 sinon,Grand littéraire à lunettes. Jeune et passionné mais très réservé.,Spectacled scholar. Male. Young and passionate but very reserved.,
 sophie,Votre premier amour,Your first love,24hz
 souvenirs,Une mélancolie s'empare de vous. C'est sa manière de dire bonjour.,A feeling of melancholia grows within you. That is its way to say hello.,607hz
+laurent,"Son teint est conforme à ses idées. ""Excuse-moi de la réaction.""","Their complexion matches their opinions. ""EXCUSE ME?""",
