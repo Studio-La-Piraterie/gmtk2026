@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3rl2w1d1cfd8"]
 
-[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/main/scripts/oscilloscope.gd" id="1_tvtp8"]
+[ext_resource type="Script" uid="uid://nbi4ayh0mrty" path="res://scenes/dashboard_ui/oscilloscope/scripts/oscilloscope.gd" id="1_tvtp8"]
 [ext_resource type="Texture2D" uid="uid://dciri8jhuac5p" path="res://assets/images/dashboard/tableau_de_bord_frames_WIP.png" id="2_mnjav"]
 [ext_resource type="Texture2D" uid="uid://dvjteq6qk2meq" path="res://assets/images/scope/misa.gif" id="3_sbv0s"]
 [ext_resource type="Texture2D" uid="uid://cfd7drr6j04b2" path="res://assets/images/dashboard/reglette_bouton.png" id="4_mnjav"]

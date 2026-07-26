@@ -6,6 +6,10 @@
 
 [resource]
 script = ExtResource("1_v06a7")
+type = null
 sprite = ExtResource("2_w8sbs")
+description = "clown"
+wave_form = 69
+response = null
 oscillo_gif = ExtResource("1_y5cut")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

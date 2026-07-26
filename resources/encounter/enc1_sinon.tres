@@ -6,6 +6,10 @@
 
 [resource]
 script = ExtResource("1_5bgfa")
+type = null
 sprite = ExtResource("2_5bgfa")
+description = "sinon"
+wave_form = null
+response = null
 oscillo_gif = ExtResource("1_852bm")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

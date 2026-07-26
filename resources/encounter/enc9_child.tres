@@ -1,11 +1,17 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://dvkkov4kdxefq"]
 
+[ext_resource type="AudioStream" uid="uid://dix44omfk2uh4" path="res://assets/audio/rencontres/child.ogg" id="1_nnxcd"]
 [ext_resource type="Texture2D" uid="uid://kuq5j0mh7uk2" path="res://assets/images/scope/child.gif" id="1_rar0f"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_xdksd"]
 [ext_resource type="Texture2D" uid="uid://c8ccqet2jrvlh" path="res://assets/images/rencontres/child.png" id="2_rar0f"]
 
 [resource]
 script = ExtResource("1_xdksd")
+type = null
 sprite = ExtResource("2_rar0f")
+description = "child"
+wave_form = null
+response = null
+audio_stream = ExtResource("1_nnxcd")
 oscillo_gif = ExtResource("1_rar0f")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"

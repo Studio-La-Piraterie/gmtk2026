@@ -48,7 +48,7 @@ folder_colors={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://resources/csv localisation/rencontre.fr.translation", "res://resources/csv localisation/rencontre.en.translation")
+locale/translations=PackedStringArray("res://resources/localization/rencontres.en.translation", "res://resources/localization/rencontres.fr.translation")
 
 [physics]
 

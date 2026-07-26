@@ -2,10 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://e4tbcihvgnbl" path="res://assets/images/scope/philomele_procne.gif" id="1_2disf"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_5bcbj"]
+[ext_resource type="AudioStream" uid="uid://c7sfls7puub65" path="res://assets/audio/rencontres/philomele_procne.ogg" id="1_sryql"]
 [ext_resource type="Texture2D" uid="uid://dhcwybhoxgwhe" path="res://icon.svg" id="2_i44le"]
 
 [resource]
 script = ExtResource("1_5bcbj")
+type = null
 sprite = ExtResource("2_i44le")
+description = "philomele_procne"
+wave_form = null
+response = null
+audio_stream = ExtResource("1_sryql")
 oscillo_gif = ExtResource("1_2disf")
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
