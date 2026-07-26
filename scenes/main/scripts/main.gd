@@ -26,7 +26,7 @@ func _on_game_over(game_over_type : GameOverType):
 			"END_GEN_LAYA"
 		
 	dashboard_ui.ai_chat.update_terminal(dashboard_ui.ai_chat.discussions[ai_chat_text])
-	await get_tree().create_timer(7)
+	await get_tree().create_timer(7).timeout
 	
 	var fade_t : Tween = create_tween()
 	fade_t.tween_property(self,"modulate",Color.BLACK,1.5)
@@ -54,6 +54,7 @@ func _ready() -> void:
 	encounter_countdown.timeout.connect(_dismiss_encounter)
 	main_countdown.timeout.connect(emit_game_over)
 	game_over.connect(_on_game_over)
+	encounter_manager.new_target_update_order.connect(dashboard_ui.update_ai_chat_target)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause_unpause") && not get_tree().is_paused():
@@ -64,8 +65,6 @@ func _process(_delta: float) -> void:
 	dashboard_ui.update_main_countdown(main_countdown.time_left)
 
 func _set_target(new_target : Encounter):
-	if _current_target != new_target:
-		dashboard_ui.update_ai_chat_target()
 	
 	_current_target = new_target
 	if dashboard_ui != null:

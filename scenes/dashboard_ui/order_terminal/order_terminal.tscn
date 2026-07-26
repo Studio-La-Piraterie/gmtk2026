@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_0ciqq"]
 script = ExtResource("3_rxctv")
 oscillo_gif = ExtResource("2_hgcao")
-target_order = "Tuer tuer Tuer tuer Tuer tuer Tuer tuerTuer tuer Tuer tuer"
 show_oscillo = true
 metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
 

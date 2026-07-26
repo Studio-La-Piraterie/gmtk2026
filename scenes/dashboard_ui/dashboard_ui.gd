@@ -51,7 +51,7 @@ func set_encounter(encounter : Encounter) -> void:
 		update_encounter_ui(encounter)
 
 func update_ai_chat_target():
-	ai_chat.update_terminal(ai_chat.discussion_order.pop_front())
+	ai_chat.update_terminal(ai_chat.discussion_order.pop_back())
 
 func update_oscilloscope_ui(encounter : Encounter) ->void :
 	oscilloscope.update(encounter.oscillo_gif, encounter.min_oscillo_val, encounter.max_oscillo_val)
