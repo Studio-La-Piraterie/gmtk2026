@@ -22,7 +22,6 @@ var current_right_page : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	minimized_manual.hide()
 	left_page_button.pressed.connect(previous_page)
 	right_page_button.pressed.connect(next_page)
 	close_button.pressed.connect(close_manual)

@@ -70,6 +70,7 @@ offset_transform_enabled = true
 texture = ExtResource("7_0tlg5")
 
 [node name="LucarneBG" type="TextureRect" parent="Lucarne" unique_id=2035608467]
+show_behind_parent = true
 z_index = 1
 layout_mode = 1
 offset_left = -129.0
