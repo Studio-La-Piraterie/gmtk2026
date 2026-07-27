@@ -13,7 +13,7 @@ enum GameOverType {TIME_UP, PACIFIC_VICTORY, NEUTRAL_VICTORY, AGGRESSIVE_VICTORY
 signal game_over(game_over_type : GameOverType)
 
 func _on_game_over(game_over_type : GameOverType):
-	main_countdown.pause()
+	main_countdown.stop()
 	var ai_chat_text : String 
 	match game_over_type:
 		GameOverType.TIME_UP:
