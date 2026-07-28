@@ -25,6 +25,7 @@ GameManager="*uid://bkbd3pfahm61v"
 SignalBus="*uid://douchx8t4mg31"
 Utils="*uid://dpawhisk253d8"
 AudioManager="*uid://cuw2g63xeyj8x"
+SFXManager="*uid://bbrlhjufq1wb7"
 
 [display]
 

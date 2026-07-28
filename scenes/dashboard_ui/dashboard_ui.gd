@@ -41,11 +41,12 @@ func set_encounter(encounter : Encounter) -> void:
 	if encounter == null:
 		update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER)
 		encounter = Encounter.new()
+		AudioManager.stop_encounter_audio()
 	else:
 		update_resolve_machine_ui(ResolveDissmiss.ResolveMachineState.ENCOUNTER_PRESENT)
+		AudioManager.play_encounter_audio(encounter.audio_stream)
 	
 	currently_displayed_encounter = encounter
-	play_encounter_audio(encounter.audio_stream)
 	update_oscilloscope_ui(encounter)
 	if not unstable_cable.hasFailed:
 		update_encounter_ui(encounter)
@@ -66,20 +67,18 @@ func update_main_countdown(time_left : float) ->void:
 	if not main_countdown_display.is_skipping:
 		main_countdown_display.displayed_time=time_left
 
-func play_encounter_audio(encounter_audio : AudioStream) -> void:
-	encounter_audio_player.stream = encounter_audio
-	encounter_audio_player.play()
-
 func unstable_cable_fail()->void:
 	update_encounter_ui(Encounter.new())
 	resolve_dismiss_ui.disable()
 	oscilloscope.disable()
 	order_terminal.disable()
-	encounter_audio_player.stream_paused = true
+	AudioManager.encounter_audio_player.stream_paused = true
+	AudioManager.encounter_bgm.stream_paused = true
 	
 func unstable_cable_restored()->void:
 	update_encounter_ui(currently_displayed_encounter)
 	resolve_dismiss_ui.enable()
 	oscilloscope.enable()
 	order_terminal.enable()
-	encounter_audio_player.stream_paused = false
+	AudioManager.encounter_audio_player.stream_paused = false
+	AudioManager.encounter_bgm.stream_paused = false

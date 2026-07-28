@@ -1,10 +1,22 @@
 [gd_scene format=3 uid="uid://cuw2g63xeyj8x"]
 
 [ext_resource type="Script" uid="uid://ggcig3gk2ycp" path="res://autoload/audio_manager/audio_manager.gd" id="1_cqcdj"]
+[ext_resource type="AudioStream" uid="uid://7th02mgvecqe" path="res://assets/audio/ambiance/background.wav" id="2_ryp21"]
+[ext_resource type="AudioStream" uid="uid://b4e8wllxc1acp" path="res://assets/audio/sfx/rencontre.wav" id="3_s45aw"]
 
 [node name="AudioManager" type="Node" unique_id=262568789]
 script = ExtResource("1_cqcdj")
 
+[node name="MenuBGM" type="AudioStreamPlayer" parent="." unique_id=366096729]
+stream = ExtResource("2_ryp21")
+volume_db = -10.0
+bus = &"Music"
+
 [node name="EncounterAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=2097456721]
+volume_db = -60.0
+bus = &"Encounter"
+
+[node name="EncounterBGM" type="AudioStreamPlayer" parent="." unique_id=1733634306]
+stream = ExtResource("3_s45aw")
 volume_db = -60.0
 bus = &"Encounter"

@@ -50,3 +50,9 @@ func restore()->void:
 	plug_unplug_audio.stream = PLUG_AUDIO
 	plug_unplug_audio.play()
 	restored.emit()
+	await get_tree().create_timer(4.0, false).timeout
+	var tween = Utils.kill_and_create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	await tween.tween_property(plug_unplug_audio, "volume_db", -60.0, 5.5).finished
+	plug_unplug_audio.stop()
+	plug_unplug_audio.volume_db = 0.0
