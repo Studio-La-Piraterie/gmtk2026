@@ -30,6 +30,8 @@ var tween_diode_sfx: Tween
 var tween_resolvedismiss_diode_sfx: Tween
 var tween_resolvedismiss_button_sfx: Tween
 
+signal dismiss_encounter
+signal kill_encounter
 
 var resolve_machine_state : ResolveMachineState = ResolveMachineState.NONE :
 	set = set_state
@@ -53,13 +55,20 @@ func _ready():
 	ctrl_btn.pressed.connect(set_state.bind(ResolveMachineState.CTRL_PRESSED))
 	ready_btn.pressed.connect(set_state.bind(ResolveMachineState.READY_PRESSED))
 	
-	dismiss_btn.pressed.connect(func(): SFXManager.play_sfx(resolve_button_sfx, tween_resolvedismiss_button_sfx))
-	kill_btn.pressed.connect(func(): SFXManager.play_sfx(dismiss_button_sfx, tween_resolvedismiss_button_sfx))
+	dismiss_btn.pressed.connect(_dissmiss_encounter)
+	kill_btn.pressed.connect(_resolve_encounter)
 	
 	if get_tree().current_scene == self: # when launching the scene for ui testing
 		set_state(ResolveMachineState.ENCOUNTER_PRESENT)
 	else: set_state(ResolveMachineState.NO_ENCOUNTER)
 
+func _resolve_encounter():
+	SFXManager.play_sfx(resolve_button_sfx, tween_resolvedismiss_button_sfx)
+	kill_encounter.emit()
+	
+func _dissmiss_encounter():
+	SFXManager.play_sfx(dismiss_button_sfx, tween_resolvedismiss_button_sfx)
+	dismiss_encounter.emit()
 
 func set_state(new_state : ResolveMachineState) ->void:
 	

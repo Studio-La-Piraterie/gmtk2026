@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://birtd10my03lj"]
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_4la3f"]
-[ext_resource type="AudioStream" uid="uid://d1u3qsidesm8a" path="res://assets/audio/rencontres/bella.ogg" id="1_eeb1v"]
+[ext_resource type="AudioStream" uid="uid://df0ggnaqk60ob" path="res://assets/audio/rencontres/bella.ogg" id="1_eeb1v"]
 [ext_resource type="Texture2D" uid="uid://d0gyfh4ifhytp" path="res://assets/images/scope/bella.gif" id="1_s3erf"]
 [ext_resource type="Texture2D" uid="uid://ymsk4x673uct" path="res://assets/images/rencontres/bella.png" id="2_qxhap"]
 

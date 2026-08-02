@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_pn1q2"]
 [ext_resource type="Texture2D" uid="uid://ch5hlgqtn4yfi" path="res://assets/images/scope/horse.gif" id="1_psxod"]
-[ext_resource type="AudioStream" uid="uid://bsh2lfprfiyeu" path="res://assets/audio/rencontres/horse.ogg" id="1_yaeml"]
+[ext_resource type="AudioStream" uid="uid://cuuibaakrv31u" path="res://assets/audio/rencontres/horse.ogg" id="1_yaeml"]
 [ext_resource type="Texture2D" uid="uid://du3mk67at463j" path="res://assets/images/rencontres/anim/horse/horse1.png" id="4_w25ys"]
 [ext_resource type="Texture2D" uid="uid://c7o4ogibb2hpw" path="res://assets/images/rencontres/anim/horse/horse2.png" id="5_pm388"]
 [ext_resource type="Texture2D" uid="uid://vpkyv4ku0h2g" path="res://assets/images/rencontres/anim/horse/horse3.png" id="6_8fl4h"]
