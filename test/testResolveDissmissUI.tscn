@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dhid24id5wu6k"]
+
+[ext_resource type="Script" uid="uid://2eddiywpig0s" path="res://test/test_resolve_dissmiss_ui.gd" id="1_rsdqj"]
+[ext_resource type="PackedScene" uid="uid://bj1lew07ctuuo" path="res://scenes/dashboard_ui/resolvedismiss/resolve_dismiss_ui.tscn" id="1_tg0x5"]
+[ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="2_0qrn4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg0x5"]
+bg_color = Color(0, 0.8784314, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox55c"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgxny"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_rsdqj"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_tg0x5")
+Button/styles/normal = SubResource("StyleBoxFlat_ox55c")
+Button/styles/pressed = SubResource("StyleBoxFlat_lgxny")
+Label/font_sizes/font_size = 24
+
+[sub_resource type="Resource" id="Resource_rsdqj"]
+script = ExtResource("2_0qrn4")
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
+
+[sub_resource type="Resource" id="Resource_0qrn4"]
+script = ExtResource("2_0qrn4")
+type = 1
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
+
+[sub_resource type="Resource" id="Resource_7x6y6"]
+script = ExtResource("2_0qrn4")
+type = 2
+metadata/_custom_type_script = "uid://cpg3u0cvpw5r5"
+
+[node name="TestResolveDissmissUi" type="Control" unique_id=1373585709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rsdqj")
+script = ExtResource("1_rsdqj")
+encounter_list = Array[ExtResource("2_0qrn4")]([SubResource("Resource_rsdqj"), SubResource("Resource_0qrn4"), SubResource("Resource_7x6y6")])
+
+[node name="ResolveDismissUI" parent="." unique_id=232656449 instance=ExtResource("1_tg0x5")]
+unique_name_in_owner = true
+layout_mode = 0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CurrentEcounter" type="ColorRect" parent="." unique_id=1615125291]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 47.0
+offset_right = 551.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CurrentEcounter" unique_id=947152245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="EncounterTypeLbl" type="Label" parent="CurrentEcounter/VBoxContainer" unique_id=892141613]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Encounter type:"
+
+[node name="EncounterStatus" type="Label" parent="CurrentEcounter/VBoxContainer" unique_id=1895268556]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Last encounter status:"
+
+[node name="GetNewEncounter" type="Button" parent="CurrentEcounter/VBoxContainer" unique_id=1771484303]
+unique_name_in_owner = true
+layout_mode = 2
+text = "get next encounter"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=847684195]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 356.0
+offset_right = 313.0
+offset_bottom = 537.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=659506437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="DisabledState" type="Label" parent="ColorRect/VBoxContainer" unique_id=2034218101]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Disabled : false
+"
+
+[node name="DisableBtn" type="Button" parent="ColorRect/VBoxContainer" unique_id=1904059434]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Disable"

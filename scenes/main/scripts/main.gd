@@ -66,7 +66,6 @@ var _current_encounter : Encounter = null :
 var _current_target : Encounter = null :
 	set = _set_target
 
-
 func _set_target(new_target : Encounter):
 	
 	_current_target = new_target
@@ -108,7 +107,6 @@ func _resolve_encounter(killed : bool) -> void :
 	_set_encounter(null)
 	_set_target(encounter_manager.get_current_target())
 
-	dashboard_ui.resolve_dismiss_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER
 	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
 	
 	main_countdown.start(new_main_countdown_time) 
