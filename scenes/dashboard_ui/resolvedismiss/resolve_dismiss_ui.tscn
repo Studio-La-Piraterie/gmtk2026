@@ -54,6 +54,7 @@ dismiss_button_sfx = NodePath("SFX/DismissButtonSFX")
 resolve_button_sfx = NodePath("SFX/ResolveButtonSFX")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1424582824]
+visible = false
 z_index = -100
 layout_mode = 0
 offset_right = 1920.0

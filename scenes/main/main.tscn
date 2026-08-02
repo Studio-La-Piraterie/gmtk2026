@@ -36,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_hujxm")
 dashboard_ui = NodePath("DashboardUI")
 resolve_dissmiss_ui = NodePath("DashboardUI/ResolveDismissUI")
@@ -51,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("2_hujxm")
 resolve_dismiss_ui = NodePath("ResolveDismissUI")
 encounter_ui = NodePath("EncounterUI")
@@ -102,9 +103,11 @@ metadata/_custom_type_script = "uid://bvb0rg454spd7"
 
 [node name="Oscilloscope" parent="DashboardUI" unique_id=705844124 instance=ExtResource("9_b1x3f")]
 layout_mode = 0
+mouse_filter = 2
 
 [node name="OrderTerminal" parent="DashboardUI" unique_id=509945745 instance=ExtResource("10_th5th")]
 layout_mode = 0
+mouse_filter = 2
 
 [node name="AiChat" parent="DashboardUI" unique_id=1520334426 instance=ExtResource("10_blune")]
 layout_mode = 1
@@ -146,6 +149,7 @@ offset_right = 460.60004
 offset_bottom = 220.0
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 2
 
 [node name="pause_menu" parent="." unique_id=1456723423 instance=ExtResource("10_a8run")]
 visible = false
