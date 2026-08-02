@@ -1,6 +1,7 @@
 class_name MainGame extends Node
 
 @export var dashboard_ui : DashboardUI
+@export var resolve_dissmiss_ui : ResolveDissmiss
 @export var timer_before_new_encounter : Timer
 @export var encounter_countdown : Timer
 @export var main_countdown : Timer
@@ -11,6 +12,32 @@ var encounter_manager := EncounterManager.new()
 enum GameOverType {TIME_UP, PACIFIC_VICTORY, NEUTRAL_VICTORY, AGGRESSIVE_VICTORY}
 
 signal game_over(game_over_type : GameOverType)
+
+func _ready() -> void:
+	
+	_set_target(encounter_manager.get_current_target())
+
+	pause_menu.resume_game()
+	add_child(encounter_manager)
+	
+	main_countdown.start()
+	timer_before_new_encounter.start()
+	
+	timer_before_new_encounter.timeout.connect(_go_to_next_encounter)
+	encounter_countdown.timeout.connect(_dismiss_encounter)
+	main_countdown.timeout.connect(emit_game_over)
+	game_over.connect(_on_game_over)
+	encounter_manager.new_target_update_order.connect(dashboard_ui.update_ai_chat_target)
+	resolve_dissmiss_ui.dismiss_encounter.connect(_dismiss_encounter)
+	resolve_dissmiss_ui.kill_encounter.connect(_kill_encounter)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause_unpause") && not get_tree().is_paused():
+		get_viewport().set_input_as_handled()
+		pause_menu.pause_game()
+
+func _process(_delta: float) -> void:
+	dashboard_ui.update_main_countdown(main_countdown.time_left)
 
 func _on_game_over(game_over_type : GameOverType):
 	main_countdown.stop()
@@ -32,37 +59,12 @@ func _on_game_over(game_over_type : GameOverType):
 	fade_t.tween_property(self,"modulate",Color.BLACK,1.5)
 	await fade_t.finished
 	GameManager.change_game_scene(GameManager.GameState.MAIN_MENU)
-
 	
 var _current_encounter : Encounter = null :
 	set = _set_encounter
 
 var _current_target : Encounter = null :
 	set = _set_target
-
-func _ready() -> void:
-	
-	_set_target(encounter_manager.get_current_target())
-
-	pause_menu.resume_game()
-	add_child(encounter_manager)
-	
-	main_countdown.start()
-	timer_before_new_encounter.start()
-	
-	timer_before_new_encounter.timeout.connect(_go_to_next_encounter)
-	encounter_countdown.timeout.connect(_dismiss_encounter)
-	main_countdown.timeout.connect(emit_game_over)
-	game_over.connect(_on_game_over)
-	encounter_manager.new_target_update_order.connect(dashboard_ui.update_ai_chat_target)
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause_unpause") && not get_tree().is_paused():
-		get_viewport().set_input_as_handled()
-		pause_menu.pause_game()
-
-func _process(_delta: float) -> void:
-	dashboard_ui.update_main_countdown(main_countdown.time_left)
 
 func _set_target(new_target : Encounter):
 	
@@ -105,7 +107,6 @@ func _resolve_encounter(killed : bool) -> void :
 	_set_encounter(null)
 	_set_target(encounter_manager.get_current_target())
 
-	dashboard_ui.resolve_dismiss_ui.resolve_machine_state = ResolveDissmiss.ResolveMachineState.NO_ENCOUNTER
 	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
 	
 	main_countdown.start(new_main_countdown_time) 
@@ -131,9 +132,3 @@ func check_end_game_condition()->GameOverType:
 	
 	return GameOverType.PACIFIC_VICTORY
 	
-
-func _on_dismiss_btn_pressed():
-	_dismiss_encounter()
-
-func _on_kill_btn_pressed():
-	_kill_encounter()
