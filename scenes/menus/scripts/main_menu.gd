@@ -1,11 +1,10 @@
 extends Control
 class_name MainMenu
 
-@onready var start: BaseButton = $AnimBackground/Start
+@onready var start: BaseButton = $AnimBackground/StartButton
 @onready var quit: BaseButton = $AnimBackground/Start2
 @onready var language: BaseButton = $AnimBackground/Language
 @onready var credits: BaseButton = $AnimBackground/Credits
-
 func _ready() -> void:
 	start.pressed.connect(start_game)
 	quit.pressed.connect(quit_game)
@@ -27,3 +26,9 @@ func quit_game()->void:
 	fade_t.tween_property(self,"modulate",Color.BLACK,1.5)
 	await fade_t.finished
 	get_tree().quit()
+	
+func _on_start_button_mouse_entered() -> void:
+	start.text = start.text + "*"
+
+func _on_start_button_mouse_exited() -> void:
+	start.text = "START"

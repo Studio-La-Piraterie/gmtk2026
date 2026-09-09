@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://f1e8pf656iok" path="res://assets/menu/mainmenu/mainmenu_notselect_credits.png" id="9_bh4e2"]
 [ext_resource type="Texture2D" uid="uid://ws55d0h1r082" path="res://assets/menu/mainmenu/mainmenu_select_quit_hover_main.png" id="9_uxao6"]
 [ext_resource type="Texture2D" uid="uid://cpvkj66oraolb" path="res://assets/menu/mainmenu/mainmenu_select_credits.png" id="10_3w8rc"]
+[ext_resource type="FontFile" uid="uid://khkwe4ebujdl" path="res://assets/fonts/ARIAL.TTF" id="14_3w8rc"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_m2y2t"]
 frames = 3
@@ -74,6 +75,16 @@ _data = {
 &"anim_background_menu": SubResource("Animation_bh4e2")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2y2t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eeb1v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bf4ca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q0r6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hebbo"]
+
 [node name="MainMenu" type="Control" unique_id=850704912]
 layout_mode = 3
 anchors_preset = 15
@@ -93,6 +104,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 184.0
+offset_top = 15.0
+offset_right = 184.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_m2y2t")
@@ -115,9 +130,9 @@ texture = ExtResource("5_88kup")
 
 [node name="Start" type="TextureButton" parent="AnimBackground" unique_id=1878778420]
 layout_mode = 0
-offset_left = 537.00006
+offset_left = 307.0
 offset_top = 632.00006
-offset_right = 697.00006
+offset_right = 467.0
 offset_bottom = 683.00006
 scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("5_imvie")
@@ -135,9 +150,9 @@ texture_hover = ExtResource("9_uxao6")
 
 [node name="Language" type="TextureButton" parent="AnimBackground" unique_id=98355146]
 layout_mode = 0
-offset_left = 830.0
+offset_left = 540.0
 offset_top = 906.0
-offset_right = 1019.0
+offset_right = 729.0
 offset_bottom = 944.0
 scale = Vector2(1.4, 1.4)
 texture_normal = ExtResource("8_bh4e2")
@@ -145,10 +160,36 @@ texture_hover = ExtResource("8_88kup")
 
 [node name="Credits" type="TextureButton" parent="AnimBackground" unique_id=941047227]
 layout_mode = 0
-offset_left = 1300.0
+offset_left = 1007.0001
 offset_top = 1177.0001
-offset_right = 1512.0
+offset_right = 1219.0001
 offset_bottom = 1229.0001
 scale = Vector2(1.19, 1.19)
 texture_normal = ExtResource("9_bh4e2")
 texture_hover = ExtResource("10_3w8rc")
+
+[node name="StartButton" type="Button" parent="AnimBackground" unique_id=1048255422]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -36.0
+offset_right = -216.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_3w8rc")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m2y2t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eeb1v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bf4ca")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2q0r6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hebbo")
+text = "START"
+alignment = 0
+
+[connection signal="mouse_entered" from="AnimBackground/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="AnimBackground/StartButton" to="." method="_on_start_button_mouse_exited"]
