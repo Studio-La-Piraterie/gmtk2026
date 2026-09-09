@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://bj64jhnrcno5k"]
 
 [ext_resource type="Texture2D" uid="uid://dw7xy8iunsoq3" path="res://assets/menu/submenu/background_sub_menu.png" id="1_ilvam"]
+[ext_resource type="FontFile" uid="uid://khkwe4ebujdl" path="res://assets/fonts/ARIAL.TTF" id="2_s6opo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87mda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lo1f6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8u7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i30fc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugnqt"]
 
 [node name="language_menu" type="Control" unique_id=106261504]
 layout_mode = 3
@@ -10,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=139483917]
+[node name="Background" type="TextureRect" parent="." unique_id=139483917]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,11 +30,89 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ilvam")
 
-[node name="Label" type="Label" parent="TextureRect" unique_id=808885700]
+[node name="TitleMenu" type="Label" parent="Background" unique_id=808885700]
 layout_mode = 0
-offset_left = 191.0
-offset_top = 116.0
-offset_right = 231.0
-offset_bottom = 139.0
+offset_left = 144.0
+offset_top = 364.0
+offset_right = 1506.0
+offset_bottom = 408.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "You may choose the appropriate language to fullfill you mission in the best condition"
+theme_override_font_sizes/font_size = 28
+text = "You may choose the appropriate language to fullfill your mission in the best condition"
+uppercase = true
+
+[node name="FrenchButtonBackground" type="ColorRect" parent="Background" unique_id=696385316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -697.0
+offset_top = -25.5
+offset_right = -491.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FrenchButton" type="Button" parent="Background/FrenchButtonBackground" unique_id=404809281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -32.5
+offset_right = 61.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_s6opo")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_87mda")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lo1f6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e8u7v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i30fc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugnqt")
+text = "FRENCH"
+alignment = 0
+
+[node name="EnglishButtonBackground2" type="ColorRect" parent="Background" unique_id=1003939473]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.0
+offset_top = -25.5
+offset_right = -198.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="EnglishButton" type="Button" parent="Background/EnglishButtonBackground2" unique_id=976016699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -32.5
+offset_right = 61.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_s6opo")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_87mda")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lo1f6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e8u7v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i30fc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugnqt")
+text = "ENGLISH"
+alignment = 0

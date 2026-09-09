@@ -2,10 +2,14 @@ extends Control
 class_name MainMenu
 
 @onready var start: BaseButton = $AnimBackground/StartButton
-@onready var quit: BaseButton = $AnimBackground/Start2
-@onready var language: BaseButton = $AnimBackground/Language
-@onready var credits: BaseButton = $AnimBackground/Credits
+@onready var quit: BaseButton = $AnimBackground/QuitButton
+@onready var language: BaseButton = $AnimBackground/LanguageButton
+@onready var credits: BaseButton = $AnimBackground/CreditButton
+
 func _ready() -> void:
+	for button in [start, language,credits, quit]:
+		button.mouse_entered.connect(button_hover.bind(button))
+		button.mouse_exited.connect(button_unhover.bind(button))
 	start.pressed.connect(start_game)
 	quit.pressed.connect(quit_game)
 	
@@ -27,8 +31,8 @@ func quit_game()->void:
 	await fade_t.finished
 	get_tree().quit()
 	
-func _on_start_button_mouse_entered() -> void:
-	start.text = start.text + "*"
-
-func _on_start_button_mouse_exited() -> void:
-	start.text = "START"
+func button_hover(button : Button) -> void:
+	button.text = button.text + "*"
+	
+func button_unhover(button : Button) -> void:
+	button.text = button.text.trim_suffix("*")
