@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dauyljr8vn1io" path="res://assets/images/guide/guide0_cover.jpg" id="13_ie0jy"]
 [ext_resource type="Resource" uid="uid://cey7pmtun7x1i" path="res://resources/manual_pages/page11.tres" id="14_lgs8q"]
 [ext_resource type="Texture2D" uid="uid://b57p22s6ohekx" path="res://assets/menu/croix_carnet.png" id="15_lgs8q"]
+[ext_resource type="AudioStream" uid="uid://y0v4hddufqbl" path="res://assets/audio/sfx/book_in.wav" id="17_ceqxx"]
+[ext_resource type="AudioStream" uid="uid://ch3523qj04kyx" path="res://assets/audio/sfx/book_out.wav" id="18_c3y7h"]
+[ext_resource type="AudioStream" uid="uid://13pcxtgpetkf" path="res://assets/audio/sfx/page_turn.ogg" id="19_63b36"]
 
 [sub_resource type="Gradient" id="Gradient_5hxmf"]
 
@@ -27,7 +30,7 @@ gradient = SubResource("Gradient_5hxmf")
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xtrkc"]
 gradient = SubResource("Gradient_io3ue")
 
-[node name="UserManual" type="Control" unique_id=1282962460]
+[node name="UserManual" type="Control" unique_id=1282962460 node_paths=PackedStringArray("take_manual_sfx", "down_manual_sfx", "turning_page_sfx")]
 layout_mode = 3
 anchor_right = 0.597
 anchor_bottom = 0.48200002
@@ -39,6 +42,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dmr00")
 pages_arr = Array[ExtResource("2_our78")]([ExtResource("3_hwps5"), ExtResource("4_46jbt"), ExtResource("5_dcppl"), ExtResource("6_2g0xr"), ExtResource("7_q4fsr"), ExtResource("8_ka0th"), ExtResource("9_jbtdi"), ExtResource("10_5l3mu"), ExtResource("11_iv2ph"), ExtResource("12_r3tbb"), ExtResource("13_ex0x8"), ExtResource("14_lgs8q")])
+take_manual_sfx = NodePath("SFXManual/TakeManual")
+down_manual_sfx = NodePath("SFXManual/DownManual")
+turning_page_sfx = NodePath("SFXManual/TurnPage")
 
 [node name="CloseButton" type="Button" parent="." unique_id=2110323020]
 visible = false
@@ -131,3 +137,15 @@ anchor_right = 1.0
 offset_left = -87.0
 offset_bottom = 1157.0
 grow_horizontal = 0
+
+[node name="SFXManual" type="Node" parent="." unique_id=1952188006]
+
+[node name="TakeManual" type="AudioStreamPlayer" parent="SFXManual" unique_id=241670503]
+stream = ExtResource("17_ceqxx")
+volume_db = -6.0
+
+[node name="DownManual" type="AudioStreamPlayer" parent="SFXManual" unique_id=1170938632]
+stream = ExtResource("18_c3y7h")
+
+[node name="TurnPage" type="AudioStreamPlayer" parent="SFXManual" unique_id=1281514562]
+stream = ExtResource("19_63b36")

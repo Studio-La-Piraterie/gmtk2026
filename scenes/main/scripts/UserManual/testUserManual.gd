@@ -14,6 +14,15 @@ class_name UserManual extends Node
 @onready var right_page = $PagesContainer/RightPage
 @onready var right_page_button = $PagesContainer/RightPage/RightPageButton
 
+@export var take_manual_sfx: AudioStreamPlayer
+@export var down_manual_sfx: AudioStreamPlayer
+@export var turning_page_sfx: AudioStreamPlayer
+
+var tween_take_manual: Tween
+var tween_down_manual: Tween
+var tween_turning_page: Tween
+
+
 # -1 signifie aucune page à afficher | 
 # La première page commence à l'index 0 (couverture)
 # La dernière page pages_arr.size() est la 4ème de couverture
@@ -43,11 +52,14 @@ func open_manual() -> void:
 	container.show()
 	close_button.show()
 	minimized_manual.hide()
+	SFXManager.play_sfx(take_manual_sfx, tween_take_manual)
+	
 
 func close_manual() -> void:
 	container.hide()
 	close_button.hide()
 	minimized_manual.show()
+	SFXManager.play_sfx(down_manual_sfx, tween_down_manual)
 	
 
 func next_page() -> void:
@@ -62,6 +74,7 @@ func next_page() -> void:
 	current_left_page += 2
 	set_left_page()
 	set_right_page()
+	SFXManager.play_sfx(turning_page_sfx, tween_turning_page)
 
 func previous_page() -> void:
 	# Si la page de gauche ne contient aucune page, on annule
@@ -74,6 +87,7 @@ func previous_page() -> void:
 	current_left_page -= 2
 	set_left_page()
 	set_right_page()
+	SFXManager.play_sfx(turning_page_sfx, tween_turning_page)
 
 ## Set and diplay right page
 func set_right_page() -> void:
