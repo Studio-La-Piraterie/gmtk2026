@@ -87,6 +87,7 @@ func previous_page() -> void:
 	current_left_page -= 2
 	set_left_page()
 	set_right_page()
+	
 	SFXManager.play_sfx(turning_page_sfx, tween_turning_page)
 
 ## Set and diplay right page

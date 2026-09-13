@@ -2,7 +2,7 @@ extends Control
 class_name MainMenu
 
 @onready var start: BaseButton = $AnimBackground/StartButton
-@onready var quit: BaseButton = $AnimBackground/QuitButton
+@onready var quit: BaseButton = $AnimBackground/QuitButtonBackground/QuitButton
 @onready var language: BaseButton = $AnimBackground/LanguageButton
 @onready var credits: BaseButton = $AnimBackground/CreditButton
 

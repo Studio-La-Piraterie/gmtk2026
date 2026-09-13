@@ -6,7 +6,9 @@ class_name OrderTerminal
 @onready var order_gif: GIFPlayer = %OrderGif
 @onready var disable_btn: BaseButton = %Disable
 
+
 @export var _displayed_target_order : Encounter = null
+@export var sfx_order: AudioStreamPlayer 
 var disabled := false
 
 func _ready() -> void:
@@ -25,6 +27,7 @@ func set_encounter_order(encounter : Encounter)->void:
 	
 	_displayed_target_order = encounter
 	_update_ui(_displayed_target_order)
+	sfx_order.play()
 
 func _update_ui(encounter : Encounter)->void:
 	if encounter == null:

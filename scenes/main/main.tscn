@@ -22,13 +22,15 @@
 [ext_resource type="Resource" uid="uid://bjekdkdxdbxfi" path="res://resources/AI/generated/fourth_order_laya.tres" id="16_p8abn"]
 [ext_resource type="Resource" uid="uid://y0lkfqn14hfi" path="res://resources/AI/generated/fifth_order_laya.tres" id="16_pg34l"]
 [ext_resource type="Resource" uid="uid://b6mqjnf3bynli" path="res://resources/AI/generated/sixth_order_laya.tres" id="17_m4h2d"]
+[ext_resource type="AudioStream" uid="uid://nyy2mftwrxk7" path="res://assets/audio/sfx/time_bonus.wav" id="23_s17dp"]
+[ext_resource type="AudioStream" uid="uid://d1nho71huibyb" path="res://assets/audio/sfx/time_penalty.wav" id="24_37hlw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yyfjg"]
 font = ExtResource("6_yyfjg")
 font_size = 135
 font_color = Color(0.8509804, 0.0627451, 0.03137255, 1)
 
-[node name="Main" type="Control" unique_id=2016960350 node_paths=PackedStringArray("dashboard_ui", "resolve_dissmiss_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown", "pause_menu")]
+[node name="Main" type="Control" unique_id=2016960350 node_paths=PackedStringArray("dashboard_ui", "resolve_dissmiss_ui", "timer_before_new_encounter", "encounter_countdown", "main_countdown", "pause_menu", "sfx_time_bonus", "sfx_time_penalty")]
 process_mode = 1
 layout_mode = 3
 anchors_preset = 15
@@ -44,6 +46,8 @@ timer_before_new_encounter = NodePath("EncounterCooldown")
 encounter_countdown = NodePath("EncounterCountDown")
 main_countdown = NodePath("MainCountdown")
 pause_menu = NodePath("pause_menu")
+sfx_time_bonus = NodePath("SFXMain/SFXTimeBonus")
+sfx_time_penalty = NodePath("SFXMain/SFXTimePenalty")
 
 [node name="DashboardUI" type="Control" parent="." unique_id=1726214704 node_paths=PackedStringArray("resolve_dismiss_ui", "encounter_ui", "unstable_cable", "oscilloscope", "order_terminal", "ai_chat")]
 layout_mode = 1
@@ -165,6 +169,14 @@ wait_time = 40.0
 
 [node name="EncounterCooldown" type="Timer" parent="." unique_id=455341062]
 wait_time = 3.0
+
+[node name="SFXMain" type="Node" parent="." unique_id=130340364]
+
+[node name="SFXTimeBonus" type="AudioStreamPlayer" parent="SFXMain" unique_id=1316499277]
+stream = ExtResource("23_s17dp")
+
+[node name="SFXTimePenalty" type="AudioStreamPlayer" parent="SFXMain" unique_id=1043382493]
+stream = ExtResource("24_37hlw")
 
 [editable path="DashboardUI/UserManual"]
 [editable path="DashboardUI/ResolveDismissUI"]

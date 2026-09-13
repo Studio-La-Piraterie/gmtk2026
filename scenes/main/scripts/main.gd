@@ -6,6 +6,8 @@ class_name MainGame extends Node
 @export var encounter_countdown : Timer
 @export var main_countdown : Timer
 @export var pause_menu: PauseMenu 
+@export var sfx_time_bonus : AudioStreamPlayer
+@export var sfx_time_penalty : AudioStreamPlayer
 
 var encounter_manager := EncounterManager.new()
 
@@ -110,6 +112,10 @@ func _resolve_encounter(killed : bool) -> void :
 	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
 	
 	main_countdown.start(new_main_countdown_time) 
+	if encounter_result_time < 0:
+		sfx_time_bonus.play()
+	if encounter_result_time > 0:
+		sfx_time_penalty.play()
 
 	if not encounter_manager.are_encounter_remaining():
 		emit_game_over()
