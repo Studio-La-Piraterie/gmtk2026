@@ -24,16 +24,32 @@ func _ready() -> void:
 	unstable_cable.failed.connect(unstable_cable_fail)
 	unstable_cable.restored.connect(unstable_cable_restored)
 
+
+
+
 func set_target(new_target : Encounter) ->void:
 	if not is_node_ready() :
 		return
 	if new_target == null:
 		new_target = Encounter.new()
+		
+	
 	
 	current_target = new_target
+	
+	
 	order_terminal.set_encounter_order(current_target)
+	await get_tree().create_timer(3.5).timeout
 	
+	#timer_terminal()
 	
+func clear_terminal() -> void:
+	pass
+func timer_terminal() -> void:
+	##fonction qui met un timer pour le prochain ordre au terminal
+	await get_tree().create_timer(3.5).timeout
+	
+
 func set_encounter(encounter : Encounter) -> void:
 	if not is_node_ready() :
 		return

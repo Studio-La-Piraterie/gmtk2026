@@ -102,12 +102,15 @@ func _resolve_encounter(killed : bool) -> void :
 		
 	AudioManager.stop_encounter_noise()
 	
+	if _current_target == _current_encounter:
+		_set_target(encounter_manager.get_current_target())
+	
 	encounter_manager.encounter_processed(_current_encounter,killed)
 	var encounter_result_time : float = _current_encounter.get_encounter_result(killed)
 	var new_main_countdown_time := main_countdown.time_left + encounter_result_time
 	
 	_set_encounter(null)
-	_set_target(encounter_manager.get_current_target())
+	
 
 	dashboard_ui.main_countdown_display.animate_time_skip(main_countdown.time_left,new_main_countdown_time)
 	

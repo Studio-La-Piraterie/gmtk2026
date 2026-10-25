@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://4qwaajk3x4of"]
 
-[ext_resource type="AudioStream" uid="uid://brqmluto4mh2g" path="res://assets/audio/rencontres/godot.ogg" id="1_8blxo"]
+[ext_resource type="AudioStream" uid="uid://fcyxgenyqdtr" path="res://assets/audio/rencontres/godot.ogg" id="1_8blxo"]
 [ext_resource type="Script" uid="uid://cpg3u0cvpw5r5" path="res://resources/scripts/encounter.gd" id="1_gpmsb"]
 [ext_resource type="Texture2D" uid="uid://unm7mdjgvdng" path="res://assets/images/scope/godot.gif" id="1_mtm7p"]
 [ext_resource type="Texture2D" uid="uid://cl4ypvtdgawjf" path="res://assets/images/rencontres/anim/godot/godot1.png" id="4_x5ajv"]

@@ -20,6 +20,7 @@ var aggressive_probability : int = 20
 var amount_target_killed : int = 0
 var amount_target : int = 0
 
+
 signal new_target_update_order 
 
 func _init() -> void:
@@ -83,7 +84,9 @@ func _set_new_target()->void:
 	_current_target = _available_targets.pop_front()
 	_available_encounters.append(_current_target)
 	new_target_update_order.emit()
-
+	
+func _timer_target_updated()-> void:
+	pass
 func are_encounter_remaining()->bool:
 	return !_available_encounters.is_empty()
 
